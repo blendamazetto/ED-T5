@@ -231,6 +231,11 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
     }
 
+    for(int i = 0; i < 10; i++)
+    {
+        free(registrador[i]);
+    }
+
     gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry);
      
     finalizaSvg(saidaSvgQry);
