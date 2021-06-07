@@ -17,6 +17,8 @@
 #include "quadtree.h"
 #include "hashtable.h"
 #include "codt.h"
+#include "aresta.h"
+#include "vertice.h"
 
 /*
 *Le o arquivo geo

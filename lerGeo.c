@@ -321,11 +321,13 @@ void lerVia(char arqVia[])
         if(strcmp(tipo, "v")==0)
         {
             fscanf(via,"%s %lf %lf\n", id, &x, &y);
+            Vertice vertice = criaVertice(id, x, y);
         }
 
         else if(strcmp(tipo, "e")==0)
         {
             fscanf(via, "%s %s %s %s %lf %lf %s\n", i, j, ldir, lesq, &cmp, &vm, nomeRua);
+            Aresta aresta = criaAresta(i, j, ldir, lesq, cmp, vm, nomeRua);
         }
     }
 
