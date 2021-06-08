@@ -298,12 +298,12 @@ void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
 void lerVia(char arqVia[], Grafo grafo)
 {
     char tipo[10];
-    char id[20];
+    char id[60];
     double x, y, cmp, vm;
     char nomeRua[200];
-    char ldir[20];
-    char lesq[20];
-    char i[20], j[20];
+    char ldir[60];
+    char lesq[60];
+    char i[60], j[60];
 
     FILE *via;
     via = fopen(arqVia,"r");

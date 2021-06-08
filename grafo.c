@@ -10,7 +10,7 @@ typedef struct adjc{
 
 typedef struct adj{
     Aresta aresta;
-    char j[20];
+    char j[60];
 }NodeAdjacenciaStruct;
 
 Grafo createGrafo()
@@ -99,7 +99,52 @@ void removerAresta(Grafo grafo, char i[], char j[])
     No node = getNodeAdjacencia(grafo, i, j);
     NodeAdjacenciaStruct* aux = getInfo(node);
     free(aux->aresta);
+    free(aux);
     removerNo(grafo, node, NULL);
+}
+
+void desalocarNodeAdjacencia(No node)
+{
+    NodeAdjacenciaStruct* aux = (NodeAdjacenciaStruct*) node;
+    free(aux->aresta);
+    free(aux);
+}
+
+void desalocarVertice(No node)
+{
+    NodeGrafoStruct* no = (NodeGrafoStruct*) node;
+    removeList(no->adjacencia, desalocarNodeAdjacencia);
+    free(no->vertice);
+    free(no);
+}
+
+void desalocarGrafo(Grafo grafo)
+{
+    removeList(grafo, desalocarVertice);
+}
+
+No getNodeGrafo(Grafo grafo, char id[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(strcmp(getVerticeId(no->vertice), id) == 0)
+        {
+            return node;
+        }
+    }
+    return NULL;
+}
+
+void removerVertice(Grafo grafo, char id[])
+{
+    No node  = getNodeGrafo(grafo, id);
+    NodeGrafoStruct* no = getInfo(node);
+    if(strcmp(getVerticeId(no->vertice), id) == 0)
+    {
+        desalocarVertice(no);
+        removerNo(grafo, node, NULL);
+    }
 }
 
 void printarGrafo(Grafo grafo, FILE *svg)

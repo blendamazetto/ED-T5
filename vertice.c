@@ -5,10 +5,9 @@
 
 typedef struct v{
 
-    char id[20];
+    char id[60];
     double x;
     double y;
-    Ponto ponto;
 
 }VerticeStruct;
 
@@ -19,7 +18,6 @@ Vertice criaVertice(char id[], double x, double y)
     strcpy(vertice->id, id);
     vertice->x = x;
     vertice->y = y;
-    vertice->ponto = createPonto(x, y);
 
     return vertice;
 }
@@ -42,12 +40,6 @@ double getVerticeY(Vertice vertice)
     return vert->y;
 }
 
-Ponto getVerticePonto(Vertice vertice)
-{
-    VerticeStruct* vert = (VerticeStruct*) vertice;
-    return vert->ponto;
-}
-
 void setVerticeId(Vertice vertice, char id[])
 {
     VerticeStruct* vert = (VerticeStruct*) vertice;
@@ -64,10 +56,4 @@ void setVerticeY(Vertice vertice, double y)
 {
     VerticeStruct* vert = (VerticeStruct*) vertice;
     vert->y = y;
-}
-
-void setVerticePonto(Vertice vertice, Ponto ponto)
-{
-    VerticeStruct* vert = (VerticeStruct*) vertice;
-    vert->ponto = ponto;
 }

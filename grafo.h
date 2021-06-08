@@ -21,6 +21,14 @@ No getNodeAdjacencia(Grafo grafo, char i[], char j[]);
 
 void removerAresta(Grafo grafo, char i[], char j[]);
 
+void desalocarNodeAdjacencia(No node);
+
+void desalocarVertice(No node);
+
+void desalocarGrafo(Grafo grafo);
+
+void removerVertice(Grafo grafo, char id[]);
+
 void printarGrafo(Grafo grafo, FILE *svg);
 
 #endif

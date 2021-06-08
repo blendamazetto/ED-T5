@@ -5,10 +5,10 @@
 
 typedef struct a{
 
-    char i[20];
-    char j[20];
-    char ldir[20];
-    char lesq[20];
+    char i[60];
+    char j[60];
+    char ldir[60];
+    char lesq[60];
     double cmp;
     double vm;
     char nomeRua[200];

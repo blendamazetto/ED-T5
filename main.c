@@ -318,6 +318,8 @@ int main (int argc, char *argv[])
         removeList(listasQry[i],NULL);
     }
 
+    desalocarGrafo(grafo);
+
    free(dir_entrada);
    free(dir_saida);
    free(arqGeo);
