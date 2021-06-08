@@ -19,6 +19,7 @@
 #include "codt.h"
 #include "aresta.h"
 #include "vertice.h"
+#include "grafo.h"
 
 /*
 *Le o arquivo geo
@@ -41,7 +42,7 @@ void lerEc(char arqEc[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
 */
 void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash tabelas[], Lista hashAux[]);
 
-void lerVia(char arqVia[]);
+void lerVia(char arqVia[], Grafo grafo);
 
 
 #endif

@@ -14,6 +14,7 @@
 #include "quadra.h"
 #include "posto.h"
 #include "hashtable.h"
+#include "grafo.h"
 
 char *concatenacao(char dir_entrada[])
 {	
@@ -57,6 +58,8 @@ int main (int argc, char *argv[])
     }
 
     Hash tabelas[4];
+
+    Grafo grafo = createGrafo();
 
     char *dir_entrada = NULL;
     char *arq_geoNome = NULL;
@@ -269,7 +272,7 @@ int main (int argc, char *argv[])
 
     if(arq_viaNome != NULL)
     {
-        lerVia(arqVia);
+        lerVia(arqVia, grafo);
     }
 
 
