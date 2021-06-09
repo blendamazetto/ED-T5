@@ -17,4 +17,6 @@ void setVerticeX(Vertice vertice, double x);
 
 void setVerticeY(Vertice vertice, double y);
 
+Vertice copiarVertice(Vertice vert);
+
 #endif

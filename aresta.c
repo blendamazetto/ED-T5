@@ -113,3 +113,19 @@ void setArestaVm(Aresta aresta, double vm)
     ArestaStruct* are = (ArestaStruct*) aresta;
     are->vm = vm;
 }
+
+Aresta copiarAresta(Aresta aresta)
+{
+    ArestaStruct* arest = (ArestaStruct*) malloc(sizeof(ArestaStruct));
+    ArestaStruct* are = (ArestaStruct*) aresta;
+
+    strcpy(arest->i, are->i);
+    strcpy(arest->j, are->j);
+    strcpy(arest->ldir, are->ldir);
+    strcpy(arest->lesq, are->lesq);
+    arest->cmp = are->cmp;
+    arest->vm = are->vm;
+    strcpy(arest->nomeRua, are->nomeRua);
+
+    return arest;
+}

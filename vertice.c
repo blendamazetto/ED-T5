@@ -57,3 +57,15 @@ void setVerticeY(Vertice vertice, double y)
     VerticeStruct* vert = (VerticeStruct*) vertice;
     vert->y = y;
 }
+
+Vertice copiarVertice(Vertice vert)
+{
+    VerticeStruct* vertice = (VerticeStruct*) malloc(sizeof(VerticeStruct));
+    VerticeStruct* ver = (VerticeStruct*) vert;
+
+    strcpy(vertice->id, ver->id);
+    vertice->x = ver->x;
+    vertice->y = ver->y;
+
+    return vertice;
+}

@@ -31,4 +31,6 @@ void removerVertice(Grafo grafo, char id[]);
 
 void printarGrafo(Grafo grafo, FILE *svg);
 
+Grafo algoritmoPrim(Grafo grafo, int tam);
+
 #endif
