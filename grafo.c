@@ -4,8 +4,6 @@
 #include "grafo.h"
 #include "hashtable.h"
 #include <math.h>
-#define IN 99
-#define N 6
 
 typedef struct adjc{
     Vertice vertice;
@@ -282,67 +280,6 @@ int getPosicaoDoVertice(Grafo grafo, char id[])
         cont++;
     }
     return 0;
-}
-
-double getCustoPorPosicao(char id[], int i, Grafo grafo)
-{
-    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
-    {
-        NodeGrafoStruct* aux = getInfo(ij);
-        if(strcmp(getVerticeId(aux->vertice), id) == 0)
-        {
-            int cont = 0;
-            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
-            {
-                if(cont == i)
-                {
-                    NodeAdjacenciaStruct* no = getInfo(ih);
-                    Aresta aresta = no->aresta;
-                    double custo = getArestaCmp(aresta);
-                    return custo;
-                }
-                cont++;
-            }  
-        }
-    }
-
-    return 0.0;
-}
-
-int getTamanhoAdjById(Grafo grafo, char id[])
-{
-    for(No i = getFirst(grafo); i != NULL; i = getNext(i))
-    {
-        NodeGrafoStruct* aux = getInfo(i);
-        Vertice v = aux->vertice;
-        if(strcmp(getVerticeId(v), id) == 0)
-        {
-            return tamanhoDaLista(aux->adjacencia);
-        }
-    }
-    return 0;
-}
-
-char* getDestinobyPosicao(Grafo grafo, int i, char id[])
-{
-    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
-    {
-        NodeGrafoStruct* aux = getInfo(ij);
-        if(strcmp(getVerticeId(aux->vertice), id) == 0)
-        {
-            int cont = 0;
-            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
-            {
-                NodeAdjacenciaStruct *au = getInfo(ih); 
-                if(cont == i)
-                {
-                    return au->j;
-                }
-                cont++;
-            }  
-        }
-    }
-    return NULL;
 }
 
 char* getIdPorPosicao(Grafo grafo, int i, char id[])
