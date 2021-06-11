@@ -3,6 +3,9 @@
 #include <string.h>
 #include "grafo.h"
 #include "hashtable.h"
+#include <math.h>
+#define IN 99
+#define N 6
 
 typedef struct adjc{
     Vertice vertice;
@@ -266,3 +269,253 @@ Grafo algoritmoPrim(Grafo grafo, int tam)
     return arvoreMinima;
 }
 
+int getPosicaoDoVertice(Grafo grafo, char id[])
+{
+    int cont = 0;
+    for(No i = getFirst(grafo); i != NULL; i = getNext(i))
+    {
+        NodeGrafoStruct* al = getInfo(i);
+        if(strcmp(getVerticeId(al->vertice), id) == 0)
+        {
+            return cont;
+        }
+        cont++;
+    }
+    return 0;
+}
+
+double getCustoPorPosicao(char id[], int i, Grafo grafo)
+{
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(strcmp(getVerticeId(aux->vertice), id) == 0)
+        {
+            int cont = 0;
+            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
+            {
+                if(cont == i)
+                {
+                    NodeAdjacenciaStruct* no = getInfo(ih);
+                    Aresta aresta = no->aresta;
+                    double custo = getArestaCmp(aresta);
+                    return custo;
+                }
+                cont++;
+            }  
+        }
+    }
+
+    return 0.0;
+}
+
+int getTamanhoAdjById(Grafo grafo, char id[])
+{
+    for(No i = getFirst(grafo); i != NULL; i = getNext(i))
+    {
+        NodeGrafoStruct* aux = getInfo(i);
+        Vertice v = aux->vertice;
+        if(strcmp(getVerticeId(v), id) == 0)
+        {
+            return tamanhoDaLista(aux->adjacencia);
+        }
+    }
+    return 0;
+}
+
+char* getDestinobyPosicao(Grafo grafo, int i, char id[])
+{
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(strcmp(getVerticeId(aux->vertice), id) == 0)
+        {
+            int cont = 0;
+            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
+            {
+                NodeAdjacenciaStruct *au = getInfo(ih); 
+                if(cont == i)
+                {
+                    return au->j;
+                }
+                cont++;
+            }  
+        }
+    }
+    return NULL;
+}
+
+char* getIdPorPosicao(Grafo grafo, int i, char id[])
+{
+    int cont = 0;
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(strcmp(id, getVerticeId(aux->vertice)) == 0)
+        {
+            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
+            {
+                if(cont == i)
+                {
+                    NodeAdjacenciaStruct* nas = getInfo(ih);
+                    return nas->j;
+                }
+                cont++;
+            }
+        }
+    }
+    return NULL;
+}
+
+char* getIdPorPosicaoVertice(Grafo grafo, int i)
+{
+    int cont = 0;
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(cont == i)
+        {
+            return getVerticeId(aux->vertice);
+        }
+        cont++;     
+    }
+    return NULL;
+}
+
+Vertice getVerticebyPosicao(Grafo grafo, int i)
+{
+    int cont = 0;
+    for(No node = getFirst(grafo); node != NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* aux = getInfo(node);
+        if(cont == i)
+        {
+            return aux->vertice;
+        }
+        cont++;     
+    }
+    return NULL;
+}
+
+int indiceMenorDistancia(Hash hashtable, double *distancia, int tam, Grafo grafo)
+{
+    int indice = -1;
+    double menorDistancia = 10000.0;
+    char id[60];
+
+    for(int i = 0; i < tam; i++)
+    {
+        strcpy(id, getIdPorPosicaoVertice(grafo, i));
+        if(searchHashTable(id, hashtable, tam) == NULL)
+        {
+            if(menorDistancia >= distancia[i])
+            {
+                menorDistancia = distancia[i];
+                indice = i;
+            }
+        }
+    }
+    return indice;
+}
+
+Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam)
+{
+    Hash visitado = createHashTable(tam);
+    Lista path = create();
+    Vertice vertice = getVertice(grafo, inicial), verticeAux;
+    Aresta aresta, arestaAux;
+    No nodeVertice;
+    NodeAdjacenciaStruct* aux;
+    int anterior[tam], primeiro = 1, contador = 0, loop = 1, idAnt;
+    double distancia[tam], menor, dist = 9999, distAtual = 0, distAux;
+    char info[2] = "0", final[100], destino[100], buscaAux[60], idAnterior[60], start[60];
+    strcpy(buscaAux, fim);
+    strcpy(idAnterior, fim);
+    strcpy(start, inicial);
+
+    for(int a = 0; a < tam; a++)
+    {
+        anterior[a] = -1;
+        distancia[a] = dist;
+    }
+    
+    while(loop > 0)
+    {
+        primeiro = 1;
+        nodeVertice = getNodeGrafo(grafo, getVerticeId(vertice));
+        NodeGrafoStruct* al = getInfo(nodeVertice);
+
+        for(No j = getFirst(al->adjacencia); j != NULL; j = getNext(j))
+        {   
+            aux = getInfo(j);
+            strcpy(destino, aux->j);
+            verticeAux = getVertice(grafo, destino);
+
+            if(searchHashTable(getVerticeId(verticeAux), visitado, tam) == NULL)
+            {
+                if(primeiro)
+                {
+                    inicial =  getVerticeId(vertice);
+                    aresta = getArestabyNo(getInfo(j));
+                    strcpy(final, getDestino(getInfo(j)));
+                    menor = getArestaCmp(aresta);
+                    primeiro = 0;
+                    distAux =  getArestaCmp(aresta) + distAtual;
+
+                    if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                    {
+                        dist = distAtual + getArestaCmp(aresta);
+                        distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                        anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                    }
+                }
+                else
+                {
+                    arestaAux = getArestabyNo(getInfo(j));
+                    distAux =  getArestaCmp(arestaAux) + distAtual;
+
+                    if(menor > getArestaCmp(aux->aresta))
+                    {
+                        inicial = getVerticeId(vertice);
+                        strcpy(final, getDestino(getInfo(j)));
+                        menor = getArestaCmp(aresta);
+                        aresta = getArestabyNo(getInfo(j));         
+                    }
+                    if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                    {
+                        dist = distAtual + getArestaCmp(arestaAux);
+                        distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                        anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                    }
+                }
+            }
+        }       
+        if (primeiro)
+        {   
+            break;
+        }
+
+        primeiro = 1;
+        insertHashTable(info, getVerticeId(vertice), tam, visitado);
+        distAtual = distAtual + getArestaCmp(aresta);
+        vertice = getVerticebyPosicao(grafo, indiceMenorDistancia(visitado, distancia, tam, grafo));
+        contador++;
+        loop = indiceMenorDistancia(visitado, distancia, tam, grafo);
+    }
+
+    while(1)
+    {
+        insert(path, copiarVertice(getVertice(grafo, idAnterior)));
+        idAnt = anterior[getPosicaoDoVertice(grafo, idAnterior)];
+        strcpy(idAnterior, getIdPorPosicaoVertice(grafo, idAnt));
+
+        if(strcmp(start, idAnterior) == 0)
+        {
+            break;
+        }
+    }
+
+    insert(path, copiarVertice(getVertice(grafo, start)));
+    deleteHashTable(visitado, tam, 0);
+    return path;
+}

@@ -33,4 +33,6 @@ void printarGrafo(Grafo grafo, FILE *svg);
 
 Grafo algoritmoPrim(Grafo grafo, int tam);
 
+Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam);
+
 #endif
