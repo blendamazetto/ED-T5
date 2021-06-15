@@ -56,6 +56,20 @@ Vertice getVertice(Grafo grafo, char id[])
     return NULL;
 }
 
+char* getVerticebyPonto(Grafo grafo, double x, double y)
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(getVerticeX(no->vertice) == x && getVerticeY(no->vertice) == y)
+        {
+            return getVerticeId(no->vertice);
+        }
+    }
+
+    return NULL;
+}
+
 Aresta getAresta(Grafo grafo, char i[], char j[])
 {
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
@@ -171,7 +185,7 @@ char* getDestino(No node)
     return aux->j;
 }
 
-void printarGrafo(Grafo grafo, FILE *svg)
+void printarGrafo(Grafo grafo, FILE *svg, char cor[])
 {
     double x1, y1, x2, y2;
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))       
@@ -189,7 +203,7 @@ void printarGrafo(Grafo grafo, FILE *svg)
             {
                 x2 = getVerticeX(getVertice(grafo, aux->j));
                 y2 = getVerticeY(getVertice(grafo, aux->j));
-                fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, "black");
+                fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cor);
             }
         }
     }
@@ -355,9 +369,10 @@ int indiceMenorDistancia(Hash hashtable, double *distancia, int tam, Grafo grafo
     return indice;
 }
 
-Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam)
+Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam)
 {
     Hash visitado = createHashTable(tam);
+    Lista pathInvertido = create();
     Lista path = create();
     Vertice vertice = getVertice(grafo, inicial), verticeAux;
     Aresta aresta, arestaAux;
@@ -453,6 +468,126 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam)
     }
 
     insert(path, copiarVertice(getVertice(grafo, start)));
+
+    for (No noAux = getLast(path); noAux != NULL; noAux = getPrevious(noAux))
+    {
+        Vertice v = copiarVertice(getInfo(noAux));
+        insert(pathInvertido, v);
+    }
+    
+    removeList(path, free);
+    deleteHashTable(visitado, tam, 0);
+    return pathInvertido;
+}
+
+
+Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
+{
+    Hash visitado = createHashTable(tam);
+    Lista path = create();
+    Lista pathInvertido = create();
+    Vertice vertice = getVertice(grafo, inicial), verticeAux;
+    Aresta aresta, arestaAux;
+    No nodeVertice;
+    NodeAdjacenciaStruct* aux;
+    int anterior[tam], primeiro = 1, contador = 0, loop = 1, idAnt;
+    double distancia[tam], menor, dist = 9999, distAtual = 0, distAux;
+    char info[2] = "0", final[100], destino[100], buscaAux[60], idAnterior[60], start[60];
+    strcpy(buscaAux, fim);
+    strcpy(idAnterior, fim);
+    strcpy(start, inicial);
+
+    for(int a = 0; a < tam; a++)
+    {
+        anterior[a] = -1;
+        distancia[a] = dist;
+    }
+    
+    while(loop > 0)
+    {
+        primeiro = 1;
+        nodeVertice = getNodeGrafo(grafo, getVerticeId(vertice));
+        NodeGrafoStruct* al = getInfo(nodeVertice);
+
+        for(No j = getFirst(al->adjacencia); j != NULL; j = getNext(j))
+        {   
+            aux = getInfo(j);
+            strcpy(destino, aux->j);
+            verticeAux = getVertice(grafo, destino);
+
+            if(searchHashTable(getVerticeId(verticeAux), visitado, tam) == NULL)
+            {
+                if(primeiro)
+                {
+                    inicial =  getVerticeId(vertice);
+                    aresta = getArestabyNo(getInfo(j));
+                    strcpy(final, getDestino(getInfo(j)));
+                    menor = getArestaVm(aresta);
+                    primeiro = 0;
+                    distAux =  getArestaVm(aresta) + distAtual;
+
+                    if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                    {
+                        dist = distAtual + getArestaVm(aresta);
+                        distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                        anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                    }
+                }
+                else
+                {
+                    arestaAux = getArestabyNo(getInfo(j));
+                    distAux =  getArestaVm(arestaAux) + distAtual;
+
+                    if(menor > getArestaVm(aux->aresta))
+                    {
+                        inicial = getVerticeId(vertice);
+                        strcpy(final, getDestino(getInfo(j)));
+                        menor = getArestaVm(aresta);
+                        aresta = getArestabyNo(getInfo(j));         
+                    }
+                    if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                    {
+                        dist = distAtual + getArestaVm(arestaAux);
+                        distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                        anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                    }
+                }
+            }
+        }       
+        if (primeiro)
+        {   
+            break;
+        }
+
+        primeiro = 1;
+        insertHashTable(info, getVerticeId(vertice), tam, visitado);
+        distAtual = distAtual + getArestaVm(aresta);
+        vertice = getVerticebyPosicao(grafo, indiceMenorDistancia(visitado, distancia, tam, grafo));
+        contador++;
+        loop = indiceMenorDistancia(visitado, distancia, tam, grafo);
+    }
+
+    while(1)
+    {
+        insert(path, copiarVertice(getVertice(grafo, idAnterior)));
+        idAnt = anterior[getPosicaoDoVertice(grafo, idAnterior)];
+        strcpy(idAnterior, getIdPorPosicaoVertice(grafo, idAnt));
+
+        if(strcmp(start, idAnterior) == 0)
+        {
+            break;
+        }
+    }
+
+    insert(path, copiarVertice(getVertice(grafo, start)));
+
+    for (No noAux = getLast(path); noAux != NULL; noAux = getPrevious(noAux))
+    {
+        Vertice v = copiarVertice(getInfo(noAux));
+        insert(pathInvertido, v);
+    }
+    
+    removeList(path, free);
     deleteHashTable(visitado, tam, 0);
     return path;
 }

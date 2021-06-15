@@ -11,7 +11,6 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
     {
         Info q = getInfoByIdQt(arvoresObjetos[3], cep);
 
-
         if(strcmp(face, "N"))
         {
             x = getQuadraX(q) + num;

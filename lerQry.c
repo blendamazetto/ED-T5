@@ -28,12 +28,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     char tipo[5], sufx[20], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, sfx[25], tp[20];
     int b;
 
-    char* registrador[10];
-
-    for(int i = 0; i < 10; i++)
-    {
-        registrador[i] = (char*) malloc((strlen(id) +1) *sizeof (char));
-    }    
+    Ponto registradores[10]; 
 
     while(fscanf(qry,"%s",tipo) != EOF)
     {
@@ -229,11 +224,6 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
             fscanf(qry,"%s %d %d %s", sufx, &indiceRegistrador, &indiceRegistrador2, cmc);
             fprintf(saida,"%s %s %d %d %s\n", tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc);
         }
-    }
-
-    for(int i = 0; i < 10; i++)
-    {
-        free(registrador[i]);
     }
 
     gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry);

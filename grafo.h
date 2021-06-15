@@ -15,6 +15,8 @@ void adicionarAresta(Grafo grafo, char i[], char j[], Aresta aresta);
 
 Vertice getVertice(Grafo grafo, char id[]);
 
+char* getVerticebyPonto(Grafo grafo, double x, double y);
+
 Aresta getAresta(Grafo grafo, char i[], char j[]);
 
 No getNodeAdjacencia(Grafo grafo, char i[], char j[]);
@@ -29,10 +31,12 @@ void desalocarGrafo(Grafo grafo);
 
 void removerVertice(Grafo grafo, char id[]);
 
-void printarGrafo(Grafo grafo, FILE *svg);
+void printarGrafo(Grafo grafo, FILE *svg, char cor[]);
 
 Grafo algoritmoPrim(Grafo grafo, int tam);
 
-Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam);
+Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam);
+
+Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam);
 
 #endif
