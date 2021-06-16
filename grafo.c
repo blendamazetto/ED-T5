@@ -43,6 +43,31 @@ void adicionarAresta(Grafo grafo, char i[], char j[], Aresta aresta)
     }
 }
 
+Vertice encontrarVerticeMaisProximo(Grafo grafo, Ponto ponto)
+{
+    double x1, y1, x2, y2, menorDist = 9999, dist;
+    Vertice verticeEncontrado;
+
+    x1 = getPontoX(ponto);
+    y1 = getPontoY(ponto);
+
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        x2 = getVerticeX(no->vertice);
+        y2 = getVerticeY(no->vertice);
+
+        dist = sqrt(pow(x1 - x2,2) + pow(y1 - y2,2));
+
+        if(dist < menorDist)
+        {
+            menorDist = dist;
+            verticeEncontrado = no->vertice;
+        }
+    }
+    return verticeEncontrado;
+}
+
 Vertice getVertice(Grafo grafo, char id[])
 {
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
@@ -484,8 +509,8 @@ Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam)
 Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
 {
     Hash visitado = createHashTable(tam);
-    Lista path = create();
     Lista pathInvertido = create();
+    Lista path = create();
     Vertice vertice = getVertice(grafo, inicial), verticeAux;
     Aresta aresta, arestaAux;
     No nodeVertice;
@@ -571,6 +596,14 @@ Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
     {
         insert(path, copiarVertice(getVertice(grafo, idAnterior)));
         idAnt = anterior[getPosicaoDoVertice(grafo, idAnterior)];
+
+        if(idAnt == -1)
+        {
+            printf("Não existe caminho\n");
+            removeList(path, free);
+            return NULL;
+        }
+
         strcpy(idAnterior, getIdPorPosicaoVertice(grafo, idAnt));
 
         if(strcmp(start, idAnterior) == 0)
@@ -589,5 +622,5 @@ Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
     
     removeList(path, free);
     deleteHashTable(visitado, tam, 0);
-    return path;
+    return pathInvertido;
 }
