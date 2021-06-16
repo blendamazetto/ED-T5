@@ -27,6 +27,10 @@ No getNodeAdjacencia(Grafo grafo, char i[], char j[]);
 
 void removerAresta(Grafo grafo, char i[], char j[]);
 
+void removerArestabyLdir(Grafo grafo, char ldir[]);
+
+void removerArestabyLesq(Grafo grafo, char lesq[]);
+
 void desalocarNodeAdjacencia(No node);
 
 void desalocarVertice(No node);

@@ -90,7 +90,7 @@ void escreveTextoNumerico(TextoNumerico t, FILE* svg)
     strcpy(cor_b, getTextoNumericoCorb(t));
     strcpy(cor_p, getTextoNumericoCorp(t));
 
-    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">%lf</text>\n", x, y, cor_b, cor_p, texto);
+    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">%.0lf</text>\n", x, y, cor_b, cor_p, texto);
 }
 
 
@@ -257,18 +257,7 @@ void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry
 {
     gerarSvgGeo(saidaSvgQry, arvoresObjetos, NULL);
 
-    int i=0;
-
-    if(i==0)
-    { 
-        No node;
-        for(node = getFirst(listasQry[i]); node != NULL; node = getNext(node))
-        {
-            Info textNum = getInfo(node);
-            escreveTextoNumerico(textNum, saidaSvgQry);
-        } 
-        i++;
-    }
+    int i=1;
     if(i==1)
     {
         No node;
@@ -277,7 +266,17 @@ void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry
             Info r = getInfo(node);
             desenhaRetangulo(r, saidaSvgQry);         
         } 
-        i++;
+        i=0;
+    }
+    if(i==0)
+    { 
+        No node;
+        for(node = getFirst(listasQry[i]); node != NULL; node = getNext(node))
+        {
+            Info textNum = getInfo(node);
+            escreveTextoNumerico(textNum, saidaSvgQry);
+        } 
+        i=2;
     }
     if(i==2)
     {

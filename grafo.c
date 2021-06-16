@@ -144,6 +144,42 @@ void removerAresta(Grafo grafo, char i[], char j[])
     removerNo(grafo, node, NULL);
 }
 
+void removerArestabyLdir(Grafo grafo, char ldir[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            if(strcmp(ldir, getArestaLdir(aux->aresta)) == 0)
+            {
+                free(aux->aresta);
+                free(aux);
+                removerNo(grafo, node, NULL);
+            }
+        }
+    }
+}
+
+void removerArestabyLesq(Grafo grafo, char lesq[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            if(strcmp(lesq, getArestaLesq(aux->aresta)) == 0)
+            {
+                free(aux->aresta);
+                free(aux);
+                removerNo(grafo, node, NULL);
+            }
+        }
+    }
+}
+
 void desalocarNodeAdjacencia(No node)
 {
     NodeAdjacenciaStruct* aux = (NodeAdjacenciaStruct*) node;

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "qry3.h"
 
-void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double num, Lista listasQry[])
+void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double num, Lista listasQry[], Lista casosCovid)
 {
     double x, y;
 
@@ -38,10 +38,13 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
         Casos caso = criaCasos(n, x, y, face, num, cep);
         insereQt(arvoresObjetos[10], getCasosPonto(caso), caso);
 
+        Casos caso1 = criaCasos(n, x, y, face, num, cep);
+        insert(casosCovid, caso1);
+
         Retangulo ret = criaRetangulo("0", 10, 10, x, y, "2", "orange", "orange");
         insert(listasQry[1], ret);
 
-        TextoNumerico textNum = criaTextoNumerico(x, y, "white", "white", n);
+        TextoNumerico textNum = criaTextoNumerico(x, y+10, "white", "white", n);
         insert(listasQry[0], textNum);
     }
 }

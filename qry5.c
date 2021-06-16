@@ -231,3 +231,58 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
 
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
 }
+
+void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], QuadTree arvoresObjetos[])
+{
+    char quadra[25];
+    int somaLeste = 0;
+    int somaOeste = 0;
+
+    for(No node = getFirst(casosCovid); node != NULL; node = getNext(node))
+    {
+        somaLeste = 0;
+        somaOeste = 0;
+
+        Info info = getInfo(node);
+        strcpy(quadra, getCasosCEP(info));
+
+        for(No no = getFirst(casosCovid); no != NULL; no = getNext(no))
+        {
+            Info inf = getInfo(node);
+            if(strcmp(quadra, getCasosCEP(inf)) == 0)
+            {
+                if(strcmp(getCasosFace(inf), "L") == 0)
+                {
+                    somaLeste = somaLeste + getCasosN(inf);
+                }
+                if(strcmp(getCasosFace(inf), "O") == 0)
+                {
+                    somaOeste = somaOeste + getCasosN(inf);
+                }
+            }
+        }
+
+        if(somaLeste > max)
+        {
+            Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
+
+            removerArestabyLdir(grafo, quadra);
+            fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
+
+            Linha l = criaLinha((getQuadraX(q) - 2), getQuadraY(q), (getQuadraX(q) - 2), (getQuadraY(q) + getQuadraH(q)), "red");
+            insert(listasQry[2], l);
+        }
+
+        if(somaOeste > max)
+        {
+            Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
+
+            removerArestabyLesq(grafo, quadra);
+            fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
+
+            Linha l = criaLinha((getQuadraX(q) + getQuadraW(q) + 2), getQuadraY(q), (getQuadraX(q) + getQuadraW(q) + 2), (getQuadraY(q) + getQuadraH(q)), "red");
+            insert(listasQry[2], l);
+        }
+    }
+}
+

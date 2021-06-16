@@ -28,7 +28,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     double x, y, r, w ,h, num, n;
     char tipo[5], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, tp[20], indiceRegistrador[3], indiceRegistrador2[3], lastSufx[25];
     int b;
-
+    Lista casosCovid = create();
     Ponto registradores[11]; 
 
     for(int b = 0; b < 11; b++)
@@ -129,7 +129,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%lf %s %s %lf",&n, cep, face, &num);
             fprintf(saida,"cv %lf %s %s %lf\n", n, cep, face, num);
-            cv(arvoresObjetos, n, cep, face, num, listasQry);
+            cv(arvoresObjetos, n, cep, face, num, listasQry, casosCovid);
+
         }
         else if(strcmp(tipo, "soc")==0)
         {
@@ -250,6 +251,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%d",&max);
             fprintf(saida,"%s %d\n",tipo, max);
+            bf(max, grafo[0], casosCovid, saida, listasQry, arvoresObjetos);
         }
         else if (strcmp(tipo, "sp?")==0)
         {
@@ -317,12 +319,15 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
      
     finalizaSvg(saidaSvgQry);
 
-    char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
-    sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
-    svg = fopen(pathSvg, "a");
-    finalizaSvg(svg);
-    free(pathSvg);
-    fclose(svg);
+    if(iniciouSufx == 1)
+    {
+        char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
+        sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
+        svg = fopen(pathSvg, "a");
+        finalizaSvg(svg);
+        free(pathSvg);
+        fclose(svg);
+    }
     fclose(saida);
     fclose(qry);
     free(saidaSvg);

@@ -9,9 +9,9 @@
     *Faz contas para colocar um retangulo laranja na face determinada no comando
     *Precisamos de um void ointer com as listas, os dois arquivos de saida como parametro para a funcao
     *Alem dos dados necessarios para a criacao do retangulo
-    *Retorna nada
+    *Retorna nada, 
 */
-void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double num, Lista listasQry[]);
+void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double num, Lista listasQry[], Lista casosCovid);
 
 /*
     *Comando soc do QRY
