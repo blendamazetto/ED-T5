@@ -18,7 +18,9 @@
 #include "lista.h"
 #include "stack.h"
 #include "quadtree.h"
+#include "grafo.h"
 
+int indiceReg(char* r);
 /*
     *Calcula a distancia entre duas figuras
     *Precisamos das coordenadas dessas figuras

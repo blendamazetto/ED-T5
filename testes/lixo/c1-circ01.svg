@@ -1,0 +1,21 @@
+<svg version="1.1" baseProfile="full" width="10000" height="10000" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<filter id="shadow0">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#FFFF00"/>
+		</filter>
+		<filter id="shadow1">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#FF9955"/>
+		</filter>
+		<filter id="shadow2">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#FF0000"/>
+		</filter>
+		<filter id="shadow3">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#FF00CC"/>
+		</filter>
+		<filter id="shadow4">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#6600FF"/>
+		</filter>
+		<filter id="shadow5">
+			<feDropShadow dx="2" dy="2" stdDeviation="0.2" flood-color="#A02C5A"/>
+		</filter>
+	</defs>

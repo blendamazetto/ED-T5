@@ -295,8 +295,9 @@ void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
     }
 }
 
-void lerVia(char arqVia[], Grafo grafo)
+void lerVia(char arqVia[], Grafo grafo[])
 {
+
     char tipo[10];
     char id[60];
     double x, y, cmp, vm;
@@ -322,14 +323,20 @@ void lerVia(char arqVia[], Grafo grafo)
         {
             fscanf(via,"%s %lf %lf\n", id, &x, &y);
             Vertice vertice = criaVertice(id, x, y);
-            adicionarVertice(grafo, vertice);
+            Vertice vertice1 = criaVertice(id, x, y);
+            adicionarVertice(grafo[0], vertice);
+            adicionarVertice(grafo[1], vertice1);
         }
 
         else if(strcmp(tipo, "e")==0)
         {
             fscanf(via, "%s %s %s %s %lf %lf %s\n", i, j, ldir, lesq, &cmp, &vm, nomeRua);
-            Aresta aresta = criaAresta(i, j, ldir, lesq, cmp, vm, nomeRua);
-            adicionarAresta(grafo, i, j, aresta);
+            Aresta arestaRua = criaAresta(i, j, ldir, lesq, cmp, vm, nomeRua);
+            Aresta arestaCiclovia = criaAresta(i, j, ldir, lesq, cmp, vm, nomeRua);
+            Aresta arestaCiclovia2 = criaAresta(j, i, ldir, lesq, cmp, vm, nomeRua);
+            adicionarAresta(grafo[0], i, j, arestaRua);
+            adicionarAresta(grafo[1], i, j, arestaCiclovia);
+            adicionarAresta(grafo[1], j, i, arestaCiclovia2);
         }
     }
 

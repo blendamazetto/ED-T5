@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lerQry.h"
 
-void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresObjetos[], Hash tabelas[], Lista listasObjetos[])
+void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresObjetos[], Hash tabelas[], Lista listasObjetos[], Grafo grafo[])
 {
     char* saidaTxt = malloc((5 + strlen(saidaQry))*sizeof(char));
     char* saidaSvg = malloc((5 + strlen(saidaQry))*sizeof(char));
@@ -13,6 +13,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     FILE* qry = fopen(arqQry,"r");
     FILE* saida = fopen(saidaTxt,"w");
     FILE* saidaSvgQry = fopen(saidaSvg,"w");
+    FILE* svg;
 
     iniciaSvg(saidaSvgQry);
 
@@ -23,12 +24,17 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     }
 
     char j[20], k[20], cmc[22], cmr[22];
-    int ident, intJ, intK, indiceRegistrador, indiceRegistrador2, max;
+    int ident, intJ, intK, max;
     double x, y, r, w ,h, num, n;
-    char tipo[5], sufx[20], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, sfx[25], tp[20];
+    char tipo[5], sufx[20], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, sfx[25], tp[20], indiceRegistrador[3], indiceRegistrador2[3], sufxAux[25], lastSufx[25];
     int b;
 
-    Ponto registradores[10]; 
+    Ponto registradores[11]; 
+
+    for(int b = 0; b < 11; b++)
+    {
+        registradores[b] = createPonto(0,0);
+    }
 
     while(fscanf(qry,"%s",tipo) != EOF)
     {
@@ -181,33 +187,61 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
         else if (strcmp(tipo, "@m?")==0)
         {
-            fscanf(qry,"%d %s", &indiceRegistrador, cpf);
-            fprintf(saida, "%s %d %s\n", tipo, indiceRegistrador, cpf);
+            fscanf(qry,"%s %s", indiceRegistrador, cpf);
+            fprintf(saida, "%s %s %s\n", tipo, indiceRegistrador, cpf);
+            mQuestionMark(indiceReg(indiceRegistrador), cpf, arvoresObjetos, registradores, listasQry);
         }
         else if (strcmp(tipo, "@e?")==0)
         {
-            fscanf(qry,"%d %s %s %lf", &indiceRegistrador, cep, face, &num);
-            fprintf(saida,"%s %d %s %s %lf\n", tipo, indiceRegistrador, cep, face, num);
+            fscanf(qry,"%s %s %s %lf", indiceRegistrador, cep, face, &num);
+            fprintf(saida,"%s %s %s %s %lf\n", tipo, indiceRegistrador, cep, face, num);
+            eQuestionMark(indiceReg(indiceRegistrador), cep, face, num, arvoresObjetos, registradores, listasQry);
         }
         else if (strcmp(tipo, "@g?")==0)
         {
-            fscanf(qry,"%d %s", &indiceRegistrador, id);
-            fprintf(saida,"%s %d %s\n",tipo, indiceRegistrador, id);
+            fscanf(qry,"%s %s", indiceRegistrador, id);
+            fprintf(saida,"%s %s %s\n",tipo, indiceRegistrador, id);
+            gQuestionMark(indiceReg(indiceRegistrador), id, arvoresObjetos, registradores, listasQry);
         }
         else if (strcmp(tipo, "@xy")==0)
         {
-            fscanf(qry,"%d %lf %lf",&indiceRegistrador, &x, &y);
-            fprintf(saida,"%s %d %lf %lf\n",tipo,indiceRegistrador, x, y);
+            fscanf(qry,"%s %lf %lf",indiceRegistrador, &x, &y);
+            fprintf(saida,"%s %s %lf %lf\n",tipo,indiceRegistrador, x, y);
+            xy(indiceReg(indiceRegistrador), x, y, registradores, listasQry);
         }
         else if (strcmp(tipo, "ccv")==0)
         {
             fscanf(qry,"%s", sufx);
             fprintf(saida,"%s %s\n",tipo, sufx);
+            strcpy(lastSufx, sufx);
+            ccv(grafo[1], saidaQry, sufx);
         }
+       
         else if (strcmp(tipo, "p?")==0)
         {
-            fscanf(qry,"%s %d %d %s %s", sufx, &indiceRegistrador, &indiceRegistrador2, cmc, cmr);
-            fprintf(saida,"%s %s %d %d %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            fscanf(qry,"%s %s %s %s %s", sufxAux, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            fprintf(saida,"%s %s %s %s %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            if(strcmp(sufxAux, "-") == 0)
+            {
+                char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
+                svg = fopen(pathSvg, "w");
+                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador), cmc, cmr, grafo[0], registradores, saida, svg);
+                free(pathSvg);
+                fclose(svg);
+            }
+            else
+            {
+                char* pathSvg = malloc((6 + strlen(sufxAux) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, sufxAux);
+                strcpy(lastSufx, sufxAux);
+                svg = fopen(pathSvg, "w");
+                iniciaSvg(svg);
+                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg);
+                free(pathSvg);
+            }
+            finalizaSvg(svg);
+            fclose(svg);
         }
         else if (strcmp(tipo, "bf")==0)
         {
@@ -216,13 +250,14 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
         else if (strcmp(tipo, "sp?")==0)
         {
-            fscanf(qry,"%s %d %d %s %s", sufx, &indiceRegistrador, &indiceRegistrador2, cmc, cmr);
-            fprintf(saida,"%s %s %d %d %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            fscanf(qry,"%s %s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            fprintf(saida,"%s %s %s %s %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
         }
         else if (strcmp(tipo, "pb?")==0)
         {
-            fscanf(qry,"%s %d %d %s", sufx, &indiceRegistrador, &indiceRegistrador2, cmc);
-            fprintf(saida,"%s %s %d %d %s\n", tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc);
+            fscanf(qry,"%s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc);
+            fprintf(saida,"%s %s %s %s %s\n", tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc);
+            pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
         }
     }
 

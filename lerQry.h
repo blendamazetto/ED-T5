@@ -22,12 +22,13 @@
 #include "qry2.h"
 #include "qry3.h"
 #include "qry4.h"
+#include "qry5.h"
 
 /*
 *Le o arquivo Qry e realiza suas funçcoes
 *precisa do nome do arquivo qry e a lista
 *não retorna nada
 */
-void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresObjetos[], Hash tabelas[], Lista listasObjetos[]);
+void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresObjetos[], Hash tabelas[], Lista listasObjetos[], Grafo grafo[]);
 
 #endif

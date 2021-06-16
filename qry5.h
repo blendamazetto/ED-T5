@@ -7,6 +7,7 @@
 #include "estabelecimentoComercial.h"
 #include "svg.h"
 #include "grafo.h"
+#include "ponto.h"
 
 #ifndef __QRY5_h
 #define __QRY5_h

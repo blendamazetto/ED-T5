@@ -1,6 +1,7 @@
 #include "vertice.h"
 #include "aresta.h"
 #include "lista.h"
+#include "ponto.h"
 
 #ifndef __GRAFO_H
 #define __GRAFO_H
@@ -12,6 +13,8 @@ Grafo createGrafo();
 void adicionarVertice(Grafo grafo, Vertice vertice);
 
 void adicionarAresta(Grafo grafo, char i[], char j[], Aresta aresta);
+
+Vertice encontrarVerticeMaisProximo(Grafo grafo, Ponto ponto);
 
 Vertice getVertice(Grafo grafo, char id[]);
 

@@ -12,25 +12,24 @@ void mQuestionMark(int r, char cpf[], QuadTree arvoresObjetos[], Ponto registrad
         return;
     }
 
-    double x = getPontoX(getMoradorPonto(morador));
-    double y = getPontoY(getMoradorPonto(morador));
+    setPontoX(registradores[r], getPontoX(getMoradorPonto(morador)));
+    setPontoY(registradores[r], getPontoY(getMoradorPonto(morador)));
 
-    registradores[r] = createPonto(GetPontoX(getMoradorPonto(morador)), getPontoY(getMoradorPonto(morador)));
-
-    Linha l = criaLinha(GetPontoX(getMoradorPonto(morador)), getPontoY(getMoradorPonto(morador)), GetPontoX(getMoradorPonto(morador)), 0, "black");
+    Linha l = criaLinha(getPontoX(getMoradorPonto(morador)), getPontoY(getMoradorPonto(morador)), getPontoX(getMoradorPonto(morador)), 0, "black");
     insert(listasQry[2], l);
 
     char texto[30];
     sprintf(texto,"REGISTRADOR %i", r);
 
-    Texto t = criaTexto("0", GetPontoX(getMoradorPonto(morador)), 0, "black", "black", texto);
+    Texto t = criaTexto("0", getPontoX(getMoradorPonto(morador)), 11, "black", "black", texto);
     insert(listasQry[4], t);
 
 }
 
 void eQuestionMark(int r, char cep[], char face[], double num, QuadTree arvoresObjetos[], Ponto registradores[], Lista listasQry[])
 {
-    registradores[r] = criaPonto(getPontoX(descobrirPonto(cep, face, num, arvoresObjetos[3])), getPontoY(descobrirPonto(cep, face, num, arvoresObjetos[3])));
+    setPontoX(registradores[r], getPontoX(descobrirPonto(cep, face, num, arvoresObjetos[3])));
+    setPontoY(registradores[r], getPontoY(descobrirPonto(cep, face, num, arvoresObjetos[3])));
 
     Linha l = criaLinha(getPontoX(registradores[r]), getPontoY(registradores[r]), getPontoX(registradores[r]), 0, "black");
     insert(listasQry[2], l);
@@ -38,21 +37,19 @@ void eQuestionMark(int r, char cep[], char face[], double num, QuadTree arvoresO
     char texto[30];
     sprintf(texto,"REGISTRADOR %i", r);
 
-    Texto t = criaTexto("0", getPontoX(registradores[r]), 0, "black", "black", texto);
+    Texto t = criaTexto("0", getPontoX(registradores[r]), 11, "black", "black", texto);
     insert(listasQry[4], t);
 }
 
 void gQuestionMark(int r, char id[], QuadTree arvoresObjetos[], Ponto registradores[], Lista listasQry[])
 {
     Info info;
-    Ponto p;
     double x,y;
 
     switch(id[0]) 
     {
         case 'h':
             info = getInfoByIdQt(arvoresObjetos[4], id);
-            p = getHidrantePonto(info);
             x = getHidranteX(info);
             y = getHidranteY(info);
 
@@ -60,7 +57,6 @@ void gQuestionMark(int r, char id[], QuadTree arvoresObjetos[], Ponto registrado
         
         case 's':
             info = getInfoByIdQt(arvoresObjetos[5], id);
-            p = getSemaforoPonto(info);
             x = getSemaforoX(info);
             y = getSemaforoY(info);
 
@@ -68,14 +64,14 @@ void gQuestionMark(int r, char id[], QuadTree arvoresObjetos[], Ponto registrado
 
         case 'r':
             info = getInfoByIdQt(arvoresObjetos[6], id);
-            p = getRadiobasePonto(info);
             x = getRadiobaseX(info);
             y = getRadiobaseY(info);
 
             break;
     }
 
-    registradores[r] = criaPonto(x, y);
+    setPontoX(registradores[r], x);
+    setPontoY(registradores[r], y);
 
     Linha l = criaLinha(x, y, x, 0, "black");
     insert(listasQry[2], l);
@@ -83,13 +79,14 @@ void gQuestionMark(int r, char id[], QuadTree arvoresObjetos[], Ponto registrado
     char texto[30];
     sprintf(texto,"REGISTRADOR %i", r);
 
-    Texto t = criaTexto("0", x, 0, "black", "black", texto);
+    Texto t = criaTexto("0", x, 11, "black", "black", texto);
     insert(listasQry[4], t);
 }
 
 void xy(int r, double x, double y, Ponto registradores[], Lista listasQry[])
 {
-    registradores[r] = criaPonto(x, y);
+    setPontoX(registradores[r], x);
+    setPontoY(registradores[r], y);
 
     Linha l = criaLinha(x, y, x, 0, "black");
     insert(listasQry[2], l);
@@ -97,7 +94,7 @@ void xy(int r, double x, double y, Ponto registradores[], Lista listasQry[])
     char texto[30];
     sprintf(texto,"REGISTRADOR %i", r);
 
-    Texto t = criaTexto("0", x, 0, "black", "black", texto);
+    Texto t = criaTexto("0", x, 11, "black", "black", texto);
     insert(listasQry[4], t);
 }
 
@@ -117,7 +114,6 @@ void ccv(Grafo grafo, char saida[], char sufx[])
     printarGrafo(grafo, svg, "black");
     printarGrafo(prim, svg, "yellow");
 
-    finalizaSvg(svg);
     free(pathSvg);
 }
 
@@ -128,21 +124,20 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     int tam = tamanhoDaLista(grafo);
     double x1, y1, x2, y2;
 
-    if (getVerticebyPonto(grafo, GetPontoX(registradores[r1]), getPontoY(registradores[r1])) == NULL && getVerticebyPonto(grafo, GetPontoX(registradores[r2]), getPontoY(registradores[r2])) == NULL)
-    {
-        fprintf(saida,"VERTICE INEXISTENTE\n");
-        return;
-    }
-
-    strcpy(inicial, getVerticebyPonto(grafo, GetPontoX(registradores[r1]), getPontoY(registradores[r1])));
-    strcpy(final, getVerticebyPonto(grafo, GetPontoX(registradores[r2]), getPontoY(registradores[r2])));
+    strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
+    strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
 
     Lista maisCurto = dijsktraCMP(grafo, inicial, final, tam);
     Lista maisRapido = dijsktraVM(grafo, inicial, final, tam);
 
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5, "yellow", "yellow");
+    if(maisCurto == NULL || maisRapido == NULL)
+    {
+        return;
+    }
+
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5.0, "yellow", "yellow");
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), "black", "black");
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5, "yellow", "yellow");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5.0, "yellow", "yellow");
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
@@ -152,6 +147,10 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getNext(node));
+        if(vertice2 == NULL)
+        {
+            break;
+        }
         x1 = getVerticeX(vertice1) + 1;
         y1 = getVerticeY(vertice1) + 1;
         x2 = getVerticeX(vertice2) + 1;
@@ -170,6 +169,10 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getNext(node));
+        if(vertice2 == NULL)
+        {
+            break;
+        }
         x1 = getVerticeX(vertice1) - 1;
         y1 = getVerticeY(vertice1) - 1;
         x2 = getVerticeX(vertice2) - 1;
@@ -190,20 +193,19 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     int tam = tamanhoDaLista(grafo);
     double x1, y1, x2, y2;
 
-    if (getVerticebyPonto(grafo, GetPontoX(registradores[r1]), getPontoY(registradores[r1])) == NULL && getVerticebyPonto(grafo, GetPontoX(registradores[r2]), getPontoY(registradores[r2])) == NULL)
-    {
-        fprintf(saida,"VERTICE INEXISTENTE\n");
-        return;
-    }
-
-    strcpy(inicial, getVerticebyPonto(grafo, GetPontoX(registradores[r1]), getPontoY(registradores[r1])));
-    strcpy(final, getVerticebyPonto(grafo, GetPontoX(registradores[r2]), getPontoY(registradores[r2])));
+    strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
+    strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
 
     Lista maisCurto = dijsktraCMP(grafo, inicial, final, tam);
 
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5, "yellow", "yellow");
+    if(maisCurto == NULL)
+    {
+        return;
+    }
+
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5.0, "yellow", "yellow");
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), "black", "black");
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5, "yellow", "yellow");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5.0, "yellow", "yellow");
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
@@ -213,6 +215,10 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getNext(node));
+        if(vertice2 == NULL)
+        {
+            break;
+        }
         x1 = getVerticeX(vertice1) + 1;
         y1 = getVerticeY(vertice1) + 1;
         x2 = getVerticeX(vertice2) + 1;

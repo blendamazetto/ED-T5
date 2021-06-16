@@ -1,0 +1,17 @@
+v vertice1 1 1
+v vertice2 1 30
+v vertice3 30 1
+v vertice4 30 30
+v vertice5 60 15
+v vertice6 60 30
+v vertice7 60 60
+e vertice1 vertice2 ldir lesq 8 8 Rua1
+e vertice2 vertice4 ldir lesq 4 4 Rua2
+e vertice1 vertice3 ldir lesq 10 10 Rua4
+e vertice3 vertice4 ldir lesq 10 10 Rua4
+e vertice3 vertice5 ldir lesq 10 10 Rua4
+e vertice5 vertice6 ldir lesq 2 2 Rua4
+e vertice3 vertice6 ldir lesq 4 4 Rua4 
+e vertice4 vertice6 ldir lesq 10 10 Rua1
+e vertice7 vertice6 ldir lesq 4 4 Rua1
+e vertice4 vertice7 ldir lesq 2 2 Rua1

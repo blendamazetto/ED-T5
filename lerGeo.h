@@ -42,7 +42,7 @@ void lerEc(char arqEc[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
 */
 void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash tabelas[], Lista hashAux[]);
 
-void lerVia(char arqVia[], Grafo grafo);
+void lerVia(char arqVia[], Grafo grafo[]);
 
 
 #endif

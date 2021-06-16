@@ -59,7 +59,10 @@ int main (int argc, char *argv[])
 
     Hash tabelas[4];
 
-    Grafo grafo = createGrafo();
+    Grafo grafo[2];
+
+    grafo[0] = createGrafo();
+    grafo[1] = createGrafo();
 
     char *dir_entrada = NULL;
     char *arq_geoNome = NULL;
@@ -282,7 +285,7 @@ int main (int argc, char *argv[])
         saidaQry = (char*)malloc((strlen(dir_saida) + strlen(saida) + 6)* sizeof(char));
         sprintf(saidaQry,"%s-%s",saida,nomeQry);
 
-        lerQry(saidaQry,arqQry, listasQry, arvoresObjetos, tabelas, listasObjetos);
+        lerQry(saidaQry,arqQry, listasQry, arvoresObjetos, tabelas, listasObjetos, grafo);
     }
 
     deleteHashTable(tabelas[0], tamanho(listasObjetos[11]), 0);
@@ -318,19 +321,26 @@ int main (int argc, char *argv[])
         removeList(listasQry[i],NULL);
     }
 
-    desalocarGrafo(grafo);
+    FILE *svg;
+    svg = fopen("./testes/teste.svg", "w");
+    fprintf(svg, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+    printarGrafo(grafo[0], svg, "red");
+    fprintf(svg, "</svg>");
 
-   free(dir_entrada);
-   free(dir_saida);
-   free(arqGeo);
-   free(arqQry);
-   free(nomeSvgGeo);
-   free(nomeGeo);
-   free(nomeQry);
-   free(saidaQry);   
-   free(saida);
-   free(arq_ecNome);
-   free(arq_pmNome);
-   free(arqPm);
-   free(arqEc);
+    desalocarGrafo(grafo[0]);
+    desalocarGrafo(grafo[1]);
+
+    free(dir_entrada);
+    free(dir_saida);
+    free(arqGeo);
+    free(arqQry);
+    free(nomeSvgGeo);
+    free(nomeGeo);
+    free(nomeQry);
+    free(saidaQry);   
+    free(saida);
+    free(arq_ecNome);
+    free(arq_pmNome);
+    free(arqPm);
+    free(arqEc);
 }
