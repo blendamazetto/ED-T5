@@ -404,7 +404,7 @@ Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam)
     No nodeVertice;
     NodeAdjacenciaStruct* aux;
     int anterior[tam], primeiro = 1, contador = 0, loop = 1, idAnt;
-    double distancia[tam], menor, dist = 99999, distAtual = 0, distAux;
+    double distancia[tam], menor, dist = 9999, distAtual = 0, distAux;
     char info[2] = "0", final[100], destino[100], buscaAux[60], idAnterior[60], start[60];
     strcpy(buscaAux, fim);
     strcpy(idAnterior, fim);
@@ -479,6 +479,13 @@ Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam)
     {
         insert(path, copiarVertice(getVertice(grafo, idAnterior)));
         idAnt = anterior[getPosicaoDoVertice(grafo, idAnterior)];
+
+        if(idAnt == -1)
+        {
+            printf("Não existe caminho");
+            return NULL;
+        }
+
         strcpy(idAnterior, getIdPorPosicaoVertice(grafo, idAnt));
 
         if(strcmp(start, idAnterior) == 0)
@@ -573,7 +580,7 @@ Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
                     }
                 }
             }
-        }    
+        }       
         primeiro = 1;
         insertHashTable(info, getVerticeId(vertice), tam, visitado);
         distAtual = distancia[indiceMenorDistancia(visitado, distancia, tam, grafo)];
@@ -589,8 +596,7 @@ Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam)
 
         if(idAnt == -1)
         {
-            printf("Não existe caminho\n");
-            removeList(path, free);
+            printf("Não existe caminho");
             return NULL;
         }
 

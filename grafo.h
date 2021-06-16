@@ -2,6 +2,7 @@
 #include "aresta.h"
 #include "lista.h"
 #include "ponto.h"
+#include "quadtree.h"
 
 #ifndef __GRAFO_H
 #define __GRAFO_H

@@ -24,9 +24,9 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     }
 
     char j[20], k[20], cmc[22], cmr[22];
-    int ident, intJ, intK, max;
+    int ident, intJ, intK, max, iniciouSufx = 0;
     double x, y, r, w ,h, num, n;
-    char tipo[5], sufx[20], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, sfx[25], tp[20], indiceRegistrador[3], indiceRegistrador2[3], sufxAux[25], lastSufx[25];
+    char tipo[5], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, tp[20], indiceRegistrador[3], indiceRegistrador2[3], lastSufx[25];
     int b;
 
     Ponto registradores[11]; 
@@ -213,35 +213,38 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%s", sufx);
             fprintf(saida,"%s %s\n",tipo, sufx);
-            strcpy(lastSufx, sufx);
-            ccv(grafo[1], saidaQry, sufx);
+            ccv(grafo[1], sufx, saidaQry);
         }
        
         else if (strcmp(tipo, "p?")==0)
         {
-            fscanf(qry,"%s %s %s %s %s", sufxAux, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            fscanf(qry,"%s %s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
             fprintf(saida,"%s %s %s %s %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
-            if(strcmp(sufxAux, "-") == 0)
+            if(strcmp(sufx, "-") == 0)
             {
                 char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
-                svg = fopen(pathSvg, "w");
-                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador), cmc, cmr, grafo[0], registradores, saida, svg);
+                svg = fopen(pathSvg, "a");
+                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg);
                 free(pathSvg);
                 fclose(svg);
             }
             else
             {
-                char* pathSvg = malloc((6 + strlen(sufxAux) + strlen(saidaQry))*sizeof(char));
-                sprintf(pathSvg,"%s-%s.svg", saidaQry, sufxAux);
-                strcpy(lastSufx, sufxAux);
+                char* pathSvg = malloc((6 + strlen(sufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, sufx);
                 svg = fopen(pathSvg, "w");
-                iniciaSvg(svg);
+                if(iniciouSufx == 0)
+                {
+                    iniciaSvg(svg);
+                    gerarSvgGeo(svg, arvoresObjetos, NULL);
+                    iniciouSufx = 1;
+                }
                 pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg);
+                strcpy(lastSufx, sufx);
                 free(pathSvg);
+                fclose(svg);
             }
-            finalizaSvg(svg);
-            fclose(svg);
         }
         else if (strcmp(tipo, "bf")==0)
         {
@@ -252,12 +255,61 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%s %s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
             fprintf(saida,"%s %s %s %s %s %s\n",tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc, cmr);
+            if(strcmp(sufx, "-") == 0)
+            {
+                char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
+                svg = fopen(pathSvg, "a");
+                //chamar função
+                free(pathSvg);
+                fclose(svg);
+            }
+            else
+            {
+                char* pathSvg = malloc((6 + strlen(sufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, sufx);
+                svg = fopen(pathSvg, "w");
+                if(iniciouSufx == 0)
+                {
+                    iniciaSvg(svg);
+                    gerarSvgGeo(svg, arvoresObjetos, NULL);
+                    iniciouSufx = 1;
+                }
+                //chamar função
+                strcpy(lastSufx, sufx);
+                free(pathSvg);
+                fclose(svg);
+            }
         }
         else if (strcmp(tipo, "pb?")==0)
         {
             fscanf(qry,"%s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc);
             fprintf(saida,"%s %s %s %s %s\n", tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc);
-            pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
+            if(strcmp(sufx, "-") == 0)
+            {
+                char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
+                svg = fopen(pathSvg, "a");
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
+                free(pathSvg);
+                fclose(svg);
+            }
+            else
+            {
+                char* pathSvg = malloc((6 + strlen(sufx) + strlen(saidaQry))*sizeof(char));
+                sprintf(pathSvg,"%s-%s.svg", saidaQry, sufx);
+                svg = fopen(pathSvg, "w");
+                if(iniciouSufx == 0)
+                {
+                    iniciaSvg(svg);
+                    gerarSvgGeo(svg, arvoresObjetos, NULL);
+                    iniciouSufx = 1;
+                }
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
+                strcpy(lastSufx, sufx);
+                free(pathSvg);
+                fclose(svg);
+            }
         }
     }
 
@@ -265,6 +317,12 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
      
     finalizaSvg(saidaSvgQry);
 
+    char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
+    sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
+    svg = fopen(pathSvg, "a");
+    finalizaSvg(svg);
+    free(pathSvg);
+    fclose(svg);
     fclose(saida);
     fclose(qry);
     free(saidaSvg);

@@ -98,23 +98,23 @@ void xy(int r, double x, double y, Ponto registradores[], Lista listasQry[])
     insert(listasQry[4], t);
 }
 
-void ccv(Grafo grafo, char saida[], char sufx[])
+void ccv(Grafo grafo, char sufx[], char saidaQry[])
 {
     int tam = tamanhoDaLista(grafo);
 
-    char* pathSvg = malloc((6 + strlen(sufx) + strlen(saida))*sizeof(char));
-    sprintf(pathSvg,"%s-%s.svg", saida, sufx);
-
+    char* pathSvg = malloc((6 + strlen(sufx) + strlen(saidaQry))*sizeof(char));
+    sprintf(pathSvg,"%s-%s.svg", saidaQry, sufx);
     FILE* svg = fopen(pathSvg, "w");
+    iniciaSvg(svg);
 
     Grafo prim = algoritmoPrim(grafo, tam);
-    
-    iniciaSvg(svg);
 
     printarGrafo(grafo, svg, "black");
     printarGrafo(prim, svg, "yellow");
 
+    finalizaSvg(svg);
     free(pathSvg);
+    fclose(svg);
 }
 
 void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg)
@@ -135,10 +135,10 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
         return;
     }
 
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5.0, "yellow", "yellow");
-    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), "black", "black");
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5.0, "yellow", "yellow");
-    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), "black", "black");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getVertice(grafo, inicial)), getVerticeY(getVertice(grafo, inicial)), 5.0, "yellow", "yellow");
+    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getVertice(grafo, inicial)), getVerticeY(getVertice(grafo, inicial)), "black", "black");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), 5.0, "yellow", "yellow");
+    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     fprintf(saida, "Inicia no vertice com ID: %s\n", inicial);
@@ -156,7 +156,7 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
         x2 = getVerticeX(vertice2) + 1;
         y2 = getVerticeY(vertice2) + 1;
 
-        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
+        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
 
         fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
     }
@@ -178,7 +178,7 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
         x2 = getVerticeX(vertice2) - 1;
         y2 = getVerticeY(vertice2) - 1;
 
-        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmr);
+        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmr);
 
         fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
     }
@@ -203,10 +203,10 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
         return;
     }
 
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), 5.0, "yellow", "yellow");
-    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getFirst(maisCurto)), getVerticeY(getFirst(maisCurto)), "black", "black");
-    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), 5.0, "yellow", "yellow");
-    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getLast(maisCurto)), getVerticeY(getLast(maisCurto)), "black", "black");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", getVerticeX(getVertice(grafo, inicial)), getVerticeY(getVertice(grafo, inicial)), 5.0, "yellow", "yellow");
+    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">INICIO</text>\n", getVerticeX(getVertice(grafo, inicial)), getVerticeY(getVertice(grafo, inicial)), "black", "black");
+    fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ",getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), 5.0, "yellow", "yellow");
+    fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     fprintf(saida, "Inicia no vertice com ID: %s\n", inicial);
@@ -224,11 +224,10 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
         x2 = getVerticeX(vertice2) + 1;
         y2 = getVerticeY(vertice2) + 1;
 
-        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
+        fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
 
         fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
 }
-

@@ -20,7 +20,7 @@ void gQuestionMark(int r, char id[], QuadTree arvoresObjetos[], Ponto registrado
 
 void xy(int r, double x, double y, Ponto registradores[], Lista listasQry[]);
 
-void ccv(Grafo grafo, char saida[], char sufx[]);
+void ccv(Grafo grafo, char sufx[], char saidaQry[]);
 
 void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg);
 
