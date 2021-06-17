@@ -1,11 +1,12 @@
+#ifndef __GRAFO_H
+#define __GRAFO_H
+
 #include "vertice.h"
 #include "aresta.h"
 #include "lista.h"
-#include "ponto.h"
 #include "quadtree.h"
-
-#ifndef __GRAFO_H
-#define __GRAFO_H
+#include "qry.h"
+#include <stdio.h>
 
 typedef void* Grafo;
 
@@ -30,6 +31,8 @@ void removerAresta(Grafo grafo, char i[], char j[]);
 void removerArestabyLdir(Grafo grafo, char ldir[]);
 
 void removerArestabyLesq(Grafo grafo, char lesq[]);
+
+void removerVerticesDentroCirculo(Grafo grafo, double x, double y, double r);
 
 void desalocarNodeAdjacencia(No node);
 

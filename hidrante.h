@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __HIDRANTE_H
 #define __HIDRANTE_H
+
+#include "ponto.h"
 
 //Define "Hidrante" como um void pointer
 typedef void* Hidrante;

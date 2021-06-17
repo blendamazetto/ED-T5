@@ -228,6 +228,24 @@ void removerVertice(Grafo grafo, char id[])
     }
 }
 
+void removerVerticesDentroCirculo(Grafo grafo, double x, double y, double r)
+{ 
+    double pontoX;
+    double pontoY;
+
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        pontoX = getVerticeX(no->vertice);
+        pontoY = getVerticeY(no->vertice);
+
+        if(distancia(pontoX, pontoY, x, y) <= r)
+        {
+            removerVertice(grafo, getVerticeId(no->vertice));
+        }
+    }
+}
+
 Vertice getVerticebyNo(No node)
 {
     NodeGrafoStruct* no = (NodeGrafoStruct*) node;

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "ponto.h"
 
 typedef struct ponto
@@ -60,5 +61,5 @@ void atribuirPonto(Ponto *p1, Ponto *p2)
 double getPontoDist(Ponto pont, double x, double y) 
 {
     PontoStruct* ponto = (PontoStruct*) pont;
-    return distancia(ponto->x, ponto->y, x, y);
+    return sqrt(pow(ponto->x - x ,2) + pow(ponto->y - y,2));
 }

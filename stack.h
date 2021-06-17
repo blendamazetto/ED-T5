@@ -1,7 +1,7 @@
-#include "lista.h"
-
 #ifndef __STACK__
 #define __STACK__
+
+#include "lista.h"
 
 //Define "Lista" como um void pointer
 typedef void* Pilha;

@@ -1,9 +1,9 @@
+#ifndef __QRY3_h
+#define __QRY3_h
+
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
-
-#ifndef __QRY3_h
-#define __QRY3_h
 
 /*
     *Faz contas para colocar um retangulo laranja na face determinada no comando
@@ -19,7 +19,7 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
     *Retorna nada
     
 */
-void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[]);
+void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo);
 
 /*
     *Utilizando funcoes determinadas implementa o comando ci

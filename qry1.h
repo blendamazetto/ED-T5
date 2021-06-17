@@ -1,9 +1,9 @@
+#ifndef __QRY1_h
+#define __QRY1_h
+
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
-
-#ifndef __QRY1_h
-#define __QRY1_h
 
 /*
     *Faz as comparacoes do comando o? para saber qual funcao de colisao chamar

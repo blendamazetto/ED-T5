@@ -1,8 +1,9 @@
-#include "lista.h"
-#include "ponto.h"
-
 #ifndef QUADTREE_H_INCLUDED
 #define QUADTREE_H_INCLUDED
+
+#include "lista.h"
+#include "ponto.h"
+#include <stdio.h>
 
 /*
      Implementa uma Point Quadtree. Uma quadtree vazia é criada pela operação criaQt().

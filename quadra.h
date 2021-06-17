@@ -1,8 +1,9 @@
+#ifndef __QUADRA_H
+#define __QUADRA_H
+
 #include "ponto.h"
 #include "quadtree.h"
 
-#ifndef __QUADRA_H
-#define __QUADRA_H
 
 //Define "Quadra" como um void pointern 
 typedef void* Quadra;

@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __POSTO_H
 #define __POSTO_H
+
+#include "ponto.h"
 
 //Define "Posto" como um void pointer
 typedef void* Posto;

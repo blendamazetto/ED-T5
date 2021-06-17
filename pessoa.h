@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __PESSOA_H
 #define __PESSOA_H
+
+#include "ponto.h"
 
 //Define "Estabelecimento" como um void pointer
 typedef void* Pessoa;

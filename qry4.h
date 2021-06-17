@@ -1,3 +1,6 @@
+#ifndef __QRY4_h
+#define __QRY4_h
+
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
@@ -6,9 +9,6 @@
 #include "pessoa.h"
 #include "estabelecimentoComercial.h"
 #include "svg.h"
-
-#ifndef __QRY4_h
-#define __QRY4_h
 
 /*
     * lista os moradores de uma quadra
@@ -57,6 +57,6 @@ void epgl (QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], Hash tabel
     * recebe uma quadtree, uma hashtable, um file saida, parametros do comando, e duas listas
     * nao retorna nada
 */
-void catac (QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], double x, double y, double r);
+void catac (QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], double x, double y, double r, Grafo grafo[]);
 
 #endif

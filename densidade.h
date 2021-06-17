@@ -1,10 +1,10 @@
+#ifndef __DENSIDADE_H
+#define __DENSIDADE_H
+
 #include "ponto.h"
 #include "lista.h"
 #include "quadtree.h"
 #include "quadra.h"
-
-#ifndef __DENSIDADE_H
-#define __DENSIDADE_H
 
 //Define "Densidade" como um void pointer
 typedef void* Densidade;

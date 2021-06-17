@@ -322,7 +322,7 @@ int main (int argc, char *argv[])
     }
 
     FILE *svg;
-    svg = fopen("./testes/teste.svg", "w");
+    svg = fopen("./teste/teste.svg", "w");
     fprintf(svg, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
     printarGrafo(grafo[0], svg, "red");
     fprintf(svg, "</svg>");

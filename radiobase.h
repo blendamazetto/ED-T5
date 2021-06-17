@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __RADIOBASE_H
 #define __RADIOBASE_H
+
+#include "ponto.h"
 
 //Define "Radiobase" como um void pointer 
 typedef void* Radiobase;

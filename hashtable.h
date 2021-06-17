@@ -1,8 +1,8 @@
-#include "lista.h"
 
 #ifndef __HASHTABLE__
 #define __HASHTABLE__
 
+#include "lista.h"
 //Define "Hash" como um void pointer
 typedef void* Hash;
 

@@ -31,7 +31,7 @@ void lerGeo(char arqGeo[], char nomeSvgGeo[], Lista listasObjetos[], QuadTree ar
     FILE *geo = fopen(arqGeo,"r");
     FILE *svg = fopen(nomeSvgGeo,"w");
 
-    if(geo == NULL)
+    if(geo == NULL || svg == NULL)
     {
         printf("\nERRO\nArquivo .geo nao pode ser aberto\n");
         exit(1);

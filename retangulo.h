@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __RETANGULO_H
 #define __RETANGULO_H
+
+#include "ponto.h"
 
 //Define "Retangulo" como um void pointer
 typedef void* Retangulo;

@@ -1,8 +1,8 @@
-#include "stack.h"
-#include "lista.h"
-
 #ifndef __FILA__
 #define __FILA__
+
+#include "stack.h"
+#include "lista.h"
 
 //Define "Lista" como um void pointer
 typedef void* Fila;

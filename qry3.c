@@ -49,9 +49,12 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
     }
 }
 
-void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[])
+void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo)
 {
-    double x, y;
+    double x, y, x1, y1, x2, y2;
+    Ponto inicio = createPonto(0, 0);
+    Ponto fim = createPonto(0, 0);
+    char inicial[60], final[60];
 
     if(getNodeByIdQt(arvoresObjetos[3], cep) != NULL)
     {
@@ -119,6 +122,33 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
                 insert(listasQry[7], lin);
 
                 fprintf(saida,"X: %lf Y: %lf\n", getPostoX(inf), getPostoY(inf));
+
+                setPontoX(inicio, x);
+                setPontoY(inicio, y);
+                setPontoX(fim, getPostoX(inf));
+                setPontoY(fim, getPostoY(inf));
+
+                strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, inicio)));
+                strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, fim)));
+
+                Lista maisCurto = dijsktraCMP(grafo, inicial, final, tamanhoDaLista(grafo));
+
+                for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
+                {
+                    Vertice vertice1 = getInfo(node);
+                    Vertice vertice2 = getInfo(getNext(node));
+                    if(vertice2 == NULL)
+                    {
+                        break;
+                    }
+                    x1 = getVerticeX(vertice1) + 1;
+                    y1 = getVerticeY(vertice1) + 1;
+                    x2 = getVerticeX(vertice2) + 1;
+                    y2 = getVerticeY(vertice2) + 1;
+
+                    Linha l = criaLinha(x1, y1, x2, y2, "red");
+                    insert(listasQry[2], l);
+                }
             }
         }
     }

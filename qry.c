@@ -28,13 +28,13 @@ int pontoInternoRet(Ponto ponto, double xRet, double yRet, double w, double h)
 
 int orientacao(Ponto a, Ponto b, Ponto c)
 {
-    double area = (getPontoX(c) - getPontoX(b)) * (getPontoY(b) - getPontoY(a)) - (getPontoY(c) - getPontoY(b)) * (getPontoX(b) - getPontoX(a));
+    double area = (getPontoX(b) - getPontoX(a)) * (getPontoY(c) - getPontoY(a)) - (getPontoY(b) - getPontoY(a)) * (getPontoX(c) - getPontoX(a));
 
-    if(area > 1)
+    if(area < 0)
     {
         return -1; //horario
     }
-    if(area < 1)
+    if(area > 1)
     {
         return 1; //anti-horario
     }
@@ -111,27 +111,32 @@ Lista convexHull(Lista list, Ponto (*getPonto)(Info), void (*swap)(Info, Info))
 
     quickSortList(list, getNext(primeiro), getLast(list), getPonto, swap);
 
-    int j = tamanhoDaLista(list);
+    Lista auxiliar = create();
+    insert(auxiliar, getInfo(primeiro));
 
     for(i = getNext(getNext(primeiro)); i != NULL; i = getNext(i))
     {
         p1 = getPonto(getInfo(i));
         p2 = getPonto(getInfo(getPrevious(i)));
 
-        if(orientacao(getPonto(getInfo(primeiro)),p2,p1) == 0)
+        if(orientacao(getPonto(getInfo(primeiro)),p2,p1) != 0)
         {
-            removerNo(list, getPrevious(i), 0);
-            j--;
+            insert(auxiliar, getInfo(getPrevious(i)));
         }
     }
+
+    insert(auxiliar, getInfo(getLast(list)));
+
+    int j = tamanhoDaLista(auxiliar);
     if (j < 3)
     {
+        removeList(auxiliar, 0);
         return NULL;
     }
 
     Lista envConv = create();
 
-    for(i = primeiro, j = 0; j < 3; j++, i = getNext(i))
+    for(i = getFirst(auxiliar), j = 0; j < 3; j++, i = getNext(i))
     {
         insert(envConv, getPonto(getInfo(i)));
     }
@@ -145,6 +150,8 @@ Lista convexHull(Lista list, Ponto (*getPonto)(Info), void (*swap)(Info, Info))
         insert(envConv, getPonto(getInfo(i)));
         i = getNext(i);
     }
+
+    removeList(auxiliar, 0);
     return envConv;
 }
 
@@ -182,6 +189,10 @@ void balancearQuadTree(QuadTree qt, Lista l, Ponto (*getPonto)(void*), void (*sw
                 }
             }
             removeList(envCov,NULL);
+        }
+        else
+        {
+            break;
         }
     }while (tamanhoDaLista(l) > 3);
 

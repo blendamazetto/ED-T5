@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __CASOS_H
 #define __CASOS_H
+
+#include "ponto.h"
 
 //Define "Casos" como um void pointer
 typedef void* Casos;

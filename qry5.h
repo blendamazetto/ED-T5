@@ -1,3 +1,6 @@
+#ifndef __QRY5_h
+#define __QRY5_h
+
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
@@ -8,9 +11,6 @@
 #include "svg.h"
 #include "grafo.h"
 #include "ponto.h"
-
-#ifndef __QRY5_h
-#define __QRY5_h
 
 void mQuestionMark(int r, char cpf[], QuadTree arvoresObjetos[], Ponto registradores[], Lista listasQry[]);
 

@@ -1,9 +1,9 @@
+#ifndef __QRY2_h
+#define __QRY2_h
+
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
-
-#ifndef __QRY2_h
-#define __QRY2_h
 
 /*
     *Verifica as quadras dentro de uma certa regiao do equipamente urbano

@@ -1,8 +1,7 @@
-#include "ponto.h"
-
 #ifndef __MORADOR_H
 #define __MORADOR_H
 
+#include "ponto.h"
 //Define "Estabelecimento" como um void pointer
 typedef void* Morador;
 

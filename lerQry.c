@@ -130,13 +130,12 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
             fscanf(qry,"%lf %s %s %lf",&n, cep, face, &num);
             fprintf(saida,"cv %lf %s %s %lf\n", n, cep, face, num);
             cv(arvoresObjetos, n, cep, face, num, listasQry, casosCovid);
-
         }
         else if(strcmp(tipo, "soc")==0)
         {
             fscanf(qry,"%d %s %s %lf",&b, cep, face, &num);
             fprintf(saida,"soc %d %s %s %lf\n", b, cep, face, num);
-            soc(arvoresObjetos, b, cep, face, num, saida, listasQry);
+            soc(arvoresObjetos, b, cep, face, num, saida, listasQry, grafo[0]);
         }
         else if(strcmp(tipo, "ci")==0)
         {
@@ -184,7 +183,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%lf %lf %lf",&x, &y, &r);
             fprintf(saida,"%s %lf %lf %lf\n",tipo, x, y, r);
-            catac(arvoresObjetos, saida, listasQry, x, y, r);
+            catac(arvoresObjetos, saida, listasQry, x, y, r, grafo);
         }
         else if (strcmp(tipo, "@m?")==0)
         {

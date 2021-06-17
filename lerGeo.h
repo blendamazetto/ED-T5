@@ -1,5 +1,6 @@
 #ifndef __LERGEO_H
 #define __LERGEO_H
+
 #include "circulo.h"
 #include "retangulo.h"
 #include "texto.h"

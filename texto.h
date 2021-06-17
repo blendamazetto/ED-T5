@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __TEXTO_H
 #define __TEXTO_H
+
+#include "ponto.h"
 
 //Define "Texto" como um void pointer
 typedef void* Texto;

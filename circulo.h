@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __CIRCULO_H
 #define __CIRCULO_H
+
+#include "ponto.h"
 
 //Define "Circulo" como um void pointer
 typedef void* Circulo;

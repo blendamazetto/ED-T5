@@ -1,7 +1,7 @@
-#include "ponto.h"
-
 #ifndef __SEMAFARO_H
 #define __SEMAFARO_H
+
+#include "ponto.h"
 
 //Define "Semaforo" como um void pointer
 typedef void* Semaforo;

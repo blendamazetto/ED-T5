@@ -1,5 +1,3 @@
-#include "qry.h"
-
 #ifndef __PONTO__
 #define __PONTO__
 

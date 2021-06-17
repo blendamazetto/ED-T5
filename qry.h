@@ -1,6 +1,7 @@
 #ifndef __QRY_h
 #define __QRY_h
-#include "circulo.h"
+
+#include <stdio.h>
 #include "retangulo.h"
 #include "texto.h"
 #include "hidrante.h"
@@ -14,11 +15,11 @@
 #include "linha.h"
 #include "poligono.h"
 #include "casos.h"
-#include "ponto.h"
 #include "lista.h"
 #include "stack.h"
 #include "quadtree.h"
 #include "grafo.h"
+#include "circulo.h"
 
 int indiceReg(char* r);
 /*
