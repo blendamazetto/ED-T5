@@ -6,7 +6,7 @@ void iniciaSvg(FILE* svg)
 {
     char* corSombra[6] = {"#FFFF00", "#FF9955", "#FF0000", "#FF00CC", "#6600FF", "#A02C5A"};
 
-    fprintf(svg, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\">\n\t<defs>\n");
+    fprintf(svg, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n\t<defs>\n");
 
     for(int i = 0; i < 6; i++)
     {
@@ -253,7 +253,7 @@ void gerarSvgGeo(FILE* svg, QuadTree tree[], Lista l)
     }
 }
 
-void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry)
+void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry, Envoltoria env)
 {
     gerarSvgGeo(saidaSvgQry, arvoresObjetos, NULL);
 
@@ -347,4 +347,6 @@ void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry
             desenhaCirculoTransparente(circ, saidaSvgQry);
         }
     }
+
+    printarEnvoltoria(env, saidaSvgQry);
 }

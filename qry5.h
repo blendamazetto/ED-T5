@@ -11,6 +11,7 @@
 #include "svg.h"
 #include "grafo.h"
 #include "ponto.h"
+#include "path.h"
 
 void mQuestionMark(int r, char cpf[], QuadTree arvoresObjetos[], Ponto registradores[], Lista listasQry[]);
 
@@ -22,10 +23,12 @@ void xy(int r, double x, double y, Ponto registradores[], Lista listasQry[]);
 
 void ccv(Grafo grafo, char sufx[], char saidaQry[]);
 
-void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg);
+void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg,  int idPInt);
 
-void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg);
+void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg, int idPInt);
 
 void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], QuadTree arvoresObjetos[]);
+
+void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, FILE* saida, Ponto registradores[], FILE *svg, int idPInt, Envoltoria env, int idEnv);
 
 #endif

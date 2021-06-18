@@ -21,6 +21,8 @@
 #include "grafo.h"
 #include "circulo.h"
 
+int insidePolygon(Lista pontos, Ponto ponto);
+
 int indiceReg(char* r);
 /*
     *Calcula a distancia entre duas figuras

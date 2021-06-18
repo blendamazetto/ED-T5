@@ -43,7 +43,7 @@ void mud(QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], Hash tabelas
     * recebe uma quadtree, um char, um file saida, um char com o sufixo
     * nao retorna nada
 */
-void dmprbt(QuadTree arvoresObjetos[], char t, char saida[], char sfx[]);
+void dmprbt(QuadTree arvoresObjetos[], char t[], FILE *desenha);
 
 /*
     * imprime e destaca dados sobre os estabelecimentos comerciais dentro de uma area

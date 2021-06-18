@@ -117,7 +117,7 @@ void ccv(Grafo grafo, char sufx[], char saidaQry[])
     fclose(svg);
 }
 
-void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg)
+void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg, int idPInt)
 {
     char inicial[60];
     char final[60];
@@ -127,8 +127,11 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
     strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
 
-    Lista maisCurto = dijsktraCMP(grafo, inicial, final, tam);
-    Lista maisRapido = dijsktraVM(grafo, inicial, final, tam);
+    Ponto pInicial = createPonto(getVerticeX(encontrarVerticeMaisProximo(grafo, registradores[r1])), getVerticeY(encontrarVerticeMaisProximo(grafo, registradores[r1])));
+    Ponto pFinal = createPonto(getVerticeX(encontrarVerticeMaisProximo(grafo, registradores[r2])), getVerticeY(encontrarVerticeMaisProximo(grafo, registradores[r2])));
+
+    Lista maisCurto = dijsktra(grafo, inicial, final, tam, getArestaCmp);
+    Lista maisRapido = dijsktra(grafo, inicial, final, tam, getArestaTempo);
 
     if(maisCurto == NULL || maisRapido == NULL)
     {
@@ -184,9 +187,16 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS RAPIDO\n");
+
+    Path pathMaisCurto = criaPath(grafo, pInicial, pFinal, maisCurto, cmc, idPInt);
+    idPInt = idPInt + 2;;
+    Path pathMaisRapido = criaPath(grafo, pInicial, pFinal, maisRapido, cmc, idPInt);
+
+    desenhaPathSvg(pathMaisCurto, svg);
+    desenhaPathSvg(pathMaisRapido, svg);
 }
 
-void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg)
+void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg, int idPInt)
 {
     char inicial[60];
     char final[60];
@@ -196,7 +206,10 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
     strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
 
-    Lista maisCurto = dijsktraCMP(grafo, inicial, final, tam);
+    Ponto pInicial = createPonto(getVerticeX(encontrarVerticeMaisProximo(grafo, registradores[r1])), getVerticeY(encontrarVerticeMaisProximo(grafo, registradores[r1])));
+    Ponto pFinal = createPonto(getVerticeX(encontrarVerticeMaisProximo(grafo, registradores[r2])), getVerticeY(encontrarVerticeMaisProximo(grafo, registradores[r2])));
+
+    Lista maisCurto = dijsktra(grafo, inicial, final, tam, getArestaCmp);
 
     if(maisCurto == NULL)
     {
@@ -230,6 +243,11 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
+
+    Path pathMaisCurto = criaPath(grafo, pInicial, pFinal, maisCurto, cmc, idPInt);
+    idPInt = idPInt + 2;
+
+    desenhaPathSvg(pathMaisCurto, svg);
 }
 
 void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], QuadTree arvoresObjetos[])
@@ -286,3 +304,40 @@ void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], 
     }
 }
 
+void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, FILE* saida, Ponto registradores[], FILE *svg,  int idPInt, Envoltoria env, int idEnv)
+{
+    Ponto ponto;
+    Lista l = create();
+    Lista casos = NULL;
+
+    for(No node = getFirst(casosCovid); node != NULL; node = getNext(node))
+    {
+        Info info = getInfo(node);
+        ponto = getCasosPonto(info);
+        insert(l, ponto);
+    }
+    if(tamanhoDaLista(l) > 2)
+    {
+        casos = convexHull(l,NULL,swapPonto);
+    }
+    if(casos == NULL)
+    {
+        casos = l;
+    }
+    else
+    {
+        removeList(l,NULL);
+    }
+
+    criarVerticeEnvoltoria(env, idEnv, "yellow");
+    
+    for(No node = getFirst(casos); node != NULL; node = getNext(node))
+    {
+        Info a = getInfo(node);
+        Ponto p = createPonto(getPontoX(a), getPontoY(a));
+        adicionarPontoEnvoltoria(idEnv, p, env);
+    }
+
+    removerVerticesDentroPoligono(grafo, casos);
+    pQuestionMark(r1, r2, cmc, cmr, grafo, registradores, saida, svg, idPInt);
+}

@@ -3,6 +3,43 @@
 #include <string.h>
 #include "qry.h"
 
+/*int insidePolygon(Lista pontos, Ponto ponto)
+{
+    int edge = tamanhoDaLista(pontos);
+    int i, j, c = 0, cont = 0, y[edge], x[edge];
+    int px = getPontoX(ponto);
+    int py = getPontoY(ponto);   
+
+    for(No node = getFirst(ponto); node != NULL; node = getNext(node))
+    {
+        Info info = getInfo(node);
+        y[cont] = getPontoY(info);
+        x[cont] = getPontoX(info);
+        cont++;
+    }
+
+    for (i = 0, j = edge-1; i < edge; j = i++) 
+    {
+        if (((y[i] > py) != (y[j] > py)) && (px < (x[j]-x[i]) * (py-y[i]) / (y[j]-y[i]) + x[i]))
+        c = !c;
+    }
+    return c;
+}*/
+
+int insidePolygon(Lista pontos, Ponto ponto)
+{
+    insertList(getInfo(getFirst(pontos)), pontos);
+    for(No node = getNext(getFirst(pontos)); node != NULL; node = getNext(node)){
+        int flag = orientacao(getInfo(getPrevious(node)), getInfo(node), ponto);
+        if(flag == -1){
+            removerNo(pontos, getLast(pontos), NULL);
+            return 0;
+        }
+    }
+    removerNo(pontos, getLast(pontos), NULL);
+    return 1;
+}
+
 int indiceReg(char r[])
 {
     int indice = r[1] - '0';

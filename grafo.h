@@ -12,6 +12,8 @@ typedef void* Grafo;
 
 Grafo createGrafo();
 
+void removerVerticesDentroPoligono(Grafo grafo, Lista casos);
+
 void adicionarVertice(Grafo grafo, Vertice vertice);
 
 void adicionarAresta(Grafo grafo, char i[], char j[], Aresta aresta);
@@ -46,8 +48,8 @@ void printarGrafo(Grafo grafo, FILE *svg, char cor[]);
 
 Grafo algoritmoPrim(Grafo grafo, int tam);
 
-Lista dijsktraCMP(Grafo grafo, char inicial[], char fim[], int tam);
+Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(Aresta aresta));
 
-Lista dijsktraVM(Grafo grafo, char inicial[], char fim[], int tam);
+Lista getListaAdjacencia(Grafo grafo, char id[]);
 
 #endif

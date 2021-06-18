@@ -122,10 +122,10 @@ void mud(QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], Hash tabelas
     fprintf(saida,"ENDERECO NOVO: CEP: %s FACE: %s NUM: %lf COMPL: %s\n", getMoradorCep(morador), getMoradorFace(morador), getMoradorNum(morador), getMoradorCompl(morador));
 }
 
-void dmprbt(QuadTree arvoresObjetos[], char t, char saida[], char sfx[])
+void dmprbt(QuadTree arvoresObjetos[], char t[], FILE *desenha)
 {
     int i;
-    switch(t) {
+    switch(t[0]) {
     case 'q':
         i = 3;
         break;
@@ -142,17 +142,8 @@ void dmprbt(QuadTree arvoresObjetos[], char t, char saida[], char sfx[])
         return;
     }
 
-    char* pathSvg = malloc((6 + strlen(sfx) + strlen(saida))*sizeof(char));
+    desenharQt(arvoresObjetos[i], desenha);
 
-    sprintf(pathSvg,"%s-%s.svg",saida,sfx);
-
-    FILE* svg = fopen(pathSvg, "w");
-
-    iniciaSvg(svg);
-    desenharQt(arvoresObjetos[i], svg);
-    finalizaSvg(svg);
-
-    free(pathSvg);
 }
 
 void epgl (QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], Hash tabelas[], double x, double y, double w, double h, Lista listasObjetos[], char tp[])
@@ -165,7 +156,7 @@ void epgl (QuadTree arvoresObjetos[], FILE* saida, Lista listasQry[], Hash tabel
         return;
     }
 
-    if(strcmp(tp, "*"))
+    if(strcmp(tp, "*") == 0)
     {
         for(No node = getFirst(l) ; node != NULL; node = getNext(node))
         {

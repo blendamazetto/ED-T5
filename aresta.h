@@ -33,6 +33,8 @@ void setArestaCmp(Aresta aresta, double cmp);
 
 void setArestaVm(Aresta aresta, double vm);
 
+double getArestaTempo(Aresta aresta);
+
 Aresta copiarAresta(Aresta aresta);
 
 #endif

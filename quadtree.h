@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 /*
-     Implementa uma Point Quadtree. Uma quadtree vazia é criada pela operação criaQt().
+     Implementa uma Ponto Quadtree. Uma quadtree vazia é criada pela operação criaQt().
      Após a criação, dados associados a coordenadas bidimensionais podem ser inseridos
      por meio da operação insereQt()
      São implementadas várias funções de busca espacial que retornam uma lista contendo

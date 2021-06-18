@@ -4,6 +4,7 @@
 #include "lista.h"
 #include "quadtree.h"
 #include "qry.h"
+#include "envoltoria.h"
 
 /*
     *Faz contas para colocar um retangulo laranja na face determinada no comando
@@ -26,6 +27,6 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
     *Precisamos de um void pointer para lista os eixos e raio e tambem o documento de saida
     *Nao retorna nada
 */
-void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], FILE* saidaSvgQry);
+void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], FILE* saidaSvgQry, int idEnv, Envoltoria env);
 
 #endif

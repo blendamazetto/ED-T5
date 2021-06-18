@@ -15,6 +15,7 @@
 #include "textoNumerico.h"
 #include "linha.h"
 #include "poligono.h"
+#include "envoltoria.h"
 #include <string.h>
 
 
@@ -159,7 +160,7 @@ void gerarSvgGeo(FILE* svg, QuadTree tree[], Lista l);
     *Retorna nada.
     * 
 */
-void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry);
+void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry, Envoltoria env);
 
 
 #endif

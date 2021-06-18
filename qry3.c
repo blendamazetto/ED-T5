@@ -131,7 +131,7 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
                 strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, inicio)));
                 strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, fim)));
 
-                Lista maisCurto = dijsktraCMP(grafo, inicial, final, tamanhoDaLista(grafo));
+                Lista maisCurto = dijsktra(grafo, inicial, final, tamanhoDaLista(grafo), getArestaCmp);
 
                 for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
                 {
@@ -154,7 +154,7 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
     }
 }
 
-void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], FILE* saidaSvgQry)
+void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], FILE* saidaSvgQry, int idEnv, Envoltoria env)
 {
     No node;
     Info fig, c;
@@ -259,14 +259,14 @@ void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Li
         return;
     }
 
-    fprintf(saidaSvgQry,"\t<polygon id=\"%d\" fill=\"%s\" fill-opacity=\"0.2\" stroke=\"red\" stroke-width=\"5px\" points=\"",tamanhoDaLista(casos), cor);
+    criarVerticeEnvoltoria(env, idEnv, cor);
     
     for(node = getFirst(casos); node != NULL; node = getNext(node))
     {
-        fig = getInfo(node);
-        fprintf(saidaSvgQry," %lf,%lf",getPontoX(fig),getPontoY(fig));
+        Info a = getInfo(node);
+        Ponto p = createPonto(getPontoX(a), getPontoY(a));
+        adicionarPontoEnvoltoria(idEnv, p, env);
     }
-    fprintf(saidaSvgQry," \"/>\n");
 
     removeList(casos,NULL);
 }

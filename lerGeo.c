@@ -143,16 +143,6 @@ void lerGeo(char arqGeo[], char nomeSvgGeo[], Lista listasObjetos[], QuadTree ar
     tabelas[3] = createHashTable(tamanhoDaLista(hashAux[0]));
     setTamanhoFinal(listasObjetos[3], tamanhoDaLista(listasObjetos[3]));
 
-    for(No node = getFirst(hashAux[0]); node != NULL; node = getNext(node))
-    {
-        Info info = getInfo(node);
-
-        char auxCep[20];
-        strcpy(auxCep, getQuadraCep(info));
-
-        insertHashTable(info, auxCep, tamanhoDaLista(hashAux[0]), tabelas[3]);
-    }
-
     void* (*getPonto[8])(void*) = {getCirculoPonto, getRetanguloPonto, getTextoPonto, getQuadraPonto, getHidrantePonto, getSemaforoPonto, getRadiobasePonto, getPostoPonto};
     
     void (*swap[8])(void*, void*) = {swapCirculo, swapRetangulo, swapTexto, swapQuadra, swapHidrante, swapSemaforo, swapRadiobase, swapPosto};
@@ -165,6 +155,16 @@ void lerGeo(char arqGeo[], char nomeSvgGeo[], Lista listasObjetos[], QuadTree ar
     for(No node = getFirst(listasObjetos[8]); node != NULL; node = getNext(node))
     {
         densidadeQuadras(getInfo(node),arvoresObjetos[3]);
+    }
+
+    for(No node = getFirst(hashAux[0]); node != NULL; node = getNext(node))
+    {
+        Info info = getInfo(node);
+
+        char auxCep[20];
+        strcpy(auxCep, getQuadraCep(info));
+
+        insertHashTable(info, auxCep, tamanhoDaLista(hashAux[0]), tabelas[3]);
     }
 
     gerarSvgGeo(svg, arvoresObjetos, NULL);
@@ -216,13 +216,13 @@ void lerEc(char arqEc[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
     tabelas[1] = createHashTable(tamanhoDaLista(hashAux[1]));
     setTamanhoFinal(listasObjetos[12],tamanhoDaLista(listasObjetos[12]));
 
+    balancearQuadTree(arvoresObjetos[8], listasObjetos[9], getEstabelecimentoPonto, swapEstabelecimento);
+
     for(No node = getFirst(hashAux[1]); node != NULL; node = getNext(node))
     {
         Info info = getInfo(node);
         insertHashTable(getCodtDescricao(info), getCodtCodt(info), tamanhoDaLista(hashAux[1]), tabelas[1]);
     }
-
-    balancearQuadTree(arvoresObjetos[8], listasObjetos[9], getEstabelecimentoPonto, swapEstabelecimento);
 
     fclose(ec);
 }

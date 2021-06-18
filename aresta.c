@@ -114,6 +114,16 @@ void setArestaVm(Aresta aresta, double vm)
     are->vm = vm;
 }
 
+double getArestaTempo(Aresta aresta)
+{
+    ArestaStruct* are = (ArestaStruct*) aresta;
+    if(are->vm == 0)
+    {
+        return are->cmp;
+    }
+    return are->cmp/are->vm;
+}
+
 Aresta copiarAresta(Aresta aresta)
 {
     ArestaStruct* arest = (ArestaStruct*) malloc(sizeof(ArestaStruct));

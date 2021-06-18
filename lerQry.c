@@ -24,12 +24,13 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     }
 
     char j[20], k[20], cmc[22], cmr[22];
-    int ident, intJ, intK, max, iniciouSufx = 0;
+    int ident, intJ, intK, max, iniciouSufx = 0, idPInt = 0, idEnv = 0;
     double x, y, r, w ,h, num, n;
-    char tipo[5], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t, tp[20], indiceRegistrador[3], indiceRegistrador2[3], lastSufx[25];
+    char tipo[5], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t[3], tp[20], indiceRegistrador[3], indiceRegistrador2[3], lastSufx[25];
     int b;
     Lista casosCovid = create();
     Ponto registradores[11]; 
+    Envoltoria env = createEnvoltoria();
 
     for(int b = 0; b < 11; b++)
     {
@@ -141,7 +142,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%lf %lf %lf",&x, &y, &r);
             fprintf(saida,"%s %lf %lf %lf\n",tipo, x, y, r);
-            ci(saida, arvoresObjetos, x, y, r, listasQry, saidaSvgQry);
+            ci(saida, arvoresObjetos, x, y, r, listasQry, saidaSvgQry, idEnv, env);
+            idEnv++;
         }
         else if(strcmp(tipo, "m?")==0)
         {
@@ -169,9 +171,18 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
         else if(strcmp(tipo, "dmprbt")==0)
         {
-            fscanf(qry," %c %s", &t, sfx);
-            fprintf(saida,"%s %c %s\n", tipo, t, sfx);
-            dmprbt(arvoresObjetos, t, saidaQry, sfx);
+            fscanf(qry," %s %s", t, sfx);
+            fprintf(saida,"%s %s %s\n", tipo, t, sfx);
+
+            char* pathSvg = malloc((6 + strlen(sfx) + strlen(saidaQry))*sizeof(char));
+            sprintf(pathSvg,"%s-%s.svg", saidaQry, sfx);
+            FILE * desenha = fopen(pathSvg, "w");
+            iniciaSvg(desenha);
+
+            dmprbt(arvoresObjetos, t, desenha);
+
+            finalizaSvg(desenha);
+            free(pathSvg);
         }
         else if(strcmp(tipo, "eplg?")==0)
         {
@@ -225,7 +236,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                 char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
                 svg = fopen(pathSvg, "a");
-                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg);
+                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg, idPInt);
+                idPInt = idPInt + 2;;
                 free(pathSvg);
                 fclose(svg);
             }
@@ -240,7 +252,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                     gerarSvgGeo(svg, arvoresObjetos, NULL);
                     iniciouSufx = 1;
                 }
-                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg);
+                pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg, idPInt);
+                idPInt = idPInt + 2;;
                 strcpy(lastSufx, sufx);
                 free(pathSvg);
                 fclose(svg);
@@ -261,7 +274,9 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                 char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
                 svg = fopen(pathSvg, "a");
-                //chamar função
+                sp(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], casosCovid, saida, registradores, svg, idPInt, env, idEnv);
+                idPInt = idPInt + 2;
+                idEnv++;
                 free(pathSvg);
                 fclose(svg);
             }
@@ -276,7 +291,9 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                     gerarSvgGeo(svg, arvoresObjetos, NULL);
                     iniciouSufx = 1;
                 }
-                //chamar função
+                sp(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], casosCovid, saida, registradores, svg, idPInt, env, idEnv);
+                idPInt = idPInt + 2;
+                idEnv++;
                 strcpy(lastSufx, sufx);
                 free(pathSvg);
                 fclose(svg);
@@ -291,7 +308,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                 char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
                 svg = fopen(pathSvg, "a");
-                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg, idPInt);
+                idPInt = idPInt + 2;
                 free(pathSvg);
                 fclose(svg);
             }
@@ -306,7 +324,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                     gerarSvgGeo(svg, arvoresObjetos, NULL);
                     iniciouSufx = 1;
                 }
-                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg);
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg, idPInt);
+                idPInt = idPInt + 2;
                 strcpy(lastSufx, sufx);
                 free(pathSvg);
                 fclose(svg);
@@ -314,7 +333,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
     }
 
-    gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry);
+    gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry, env);
      
     finalizaSvg(saidaSvgQry);
 
