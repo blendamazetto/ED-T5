@@ -22,22 +22,18 @@ void getDirecao(double x1, double x2, double y1, double y2, char direcao[])
     if(x2 > x1 && y1 == y2)
     {
         strcpy(direcao, "oeste");
-        printf("entrou 1");
     }
     else if(x1 > x2 && y1 == y2)
     {
         strcpy(direcao, "leste");
-        printf("entrou 2");
     }
     else if(y1 < y2 && x1 == x2)
     {
         strcpy(direcao, "norte");
-        printf("entrou 3");
     }
     else if(y1 > y2 && x1 == x2)
     {
         strcpy(direcao, "sul");
-        printf("entrou 4");
     }
     else
     {
