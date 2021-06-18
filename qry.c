@@ -3,29 +3,6 @@
 #include <string.h>
 #include "qry.h"
 
-/*int insidePolygon(Lista pontos, Ponto ponto)
-{
-    int edge = tamanhoDaLista(pontos);
-    int i, j, c = 0, cont = 0, y[edge], x[edge];
-    int px = getPontoX(ponto);
-    int py = getPontoY(ponto);   
-
-    for(No node = getFirst(ponto); node != NULL; node = getNext(node))
-    {
-        Info info = getInfo(node);
-        y[cont] = getPontoY(info);
-        x[cont] = getPontoX(info);
-        cont++;
-    }
-
-    for (i = 0, j = edge-1; i < edge; j = i++) 
-    {
-        if (((y[i] > py) != (y[j] > py)) && (px < (x[j]-x[i]) * (py-y[i]) / (y[j]-y[i]) + x[i]))
-        c = !c;
-    }
-    return c;
-}*/
-
 int insidePolygon(Lista pontos, Ponto ponto)
 {
     insertList(getInfo(getFirst(pontos)), pontos);
@@ -38,6 +15,34 @@ int insidePolygon(Lista pontos, Ponto ponto)
     }
     removerNo(pontos, getLast(pontos), NULL);
     return 1;
+}
+
+void getDirecao(double x1, double x2, double y1, double y2, char direcao[])
+{
+    if(x2 > x1 && y1 == y2)
+    {
+        strcpy(direcao, "oeste");
+        printf("entrou 1");
+    }
+    else if(x1 > x2 && y1 == y2)
+    {
+        strcpy(direcao, "leste");
+        printf("entrou 2");
+    }
+    else if(y1 < y2 && x1 == x2)
+    {
+        strcpy(direcao, "norte");
+        printf("entrou 3");
+    }
+    else if(y1 > y2 && x1 == x2)
+    {
+        strcpy(direcao, "sul");
+        printf("entrou 4");
+    }
+    else
+    {
+        strcpy(direcao, "\0");
+    }
 }
 
 int indiceReg(char r[])

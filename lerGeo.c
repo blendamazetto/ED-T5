@@ -297,7 +297,6 @@ void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
 
 void lerVia(char arqVia[], Grafo grafo[])
 {
-
     char tipo[10];
     char id[60];
     double x, y, cmp, vm;

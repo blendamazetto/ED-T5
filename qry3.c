@@ -154,7 +154,7 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
     }
 }
 
-void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], FILE* saidaSvgQry, int idEnv, Envoltoria env)
+void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], int idEnv, Envoltoria env)
 {
     No node;
     Info fig, c;

@@ -23,6 +23,8 @@
 
 int insidePolygon(Lista pontos, Ponto ponto);
 
+void getDirecao(double x1, double x2, double y1, double y2, char direcao[]);
+
 int indiceReg(char* r);
 /*
     *Calcula a distancia entre duas figuras

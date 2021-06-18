@@ -123,6 +123,8 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     char final[60];
     int tam = tamanhoDaLista(grafo);
     double x1, y1, x2, y2;
+    char ultimaRua[200] = "\0";
+    char direcao[10];
 
     strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
     strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
@@ -144,7 +146,6 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
-    fprintf(saida, "Inicia no vertice com ID: %s\n", inicial);
     
     for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
     {
@@ -161,12 +162,16 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
 
         fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
 
-        fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
+        if(strcmp(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2)))) != 0)
+        {
+            getDirecao(x1, x2, y1, y2, direcao);
+            fprintf(saida, "Siga na direcao %s na Rua: %s\n", direcao, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+            strcpy(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+        }
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
     fprintf(saida, "PERCURSO MAIS RAPIDO:\n");
-    fprintf(saida, "Inicia no vertice com ID: %s\n", inicial);
 
     for(No node = getFirst(maisRapido); getNext(node) != NULL; node = getNext(node))
     {
@@ -183,13 +188,18 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
 
         fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmr);
 
-        fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
+        if(strcmp(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2)))) != 0)
+        {
+            getDirecao(x1, x2, y1, y2, direcao);
+            fprintf(saida, "Siga na direcao %s na Rua: %s\n", direcao, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+            strcpy(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+        }    
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS RAPIDO\n");
 
     Path pathMaisCurto = criaPath(grafo, pInicial, pFinal, maisCurto, cmc, idPInt);
-    idPInt = idPInt + 2;;
+    idPInt = idPInt + 1;
     Path pathMaisRapido = criaPath(grafo, pInicial, pFinal, maisRapido, cmc, idPInt);
 
     desenhaPathSvg(pathMaisCurto, svg);
@@ -202,6 +212,8 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     char final[60];
     int tam = tamanhoDaLista(grafo);
     double x1, y1, x2, y2;
+    char ultimaRua[200] = "\0";
+    char direcao[10];
 
     strcpy(inicial, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r1])));
     strcpy(final, getVerticeId(encontrarVerticeMaisProximo(grafo, registradores[r2])));
@@ -222,7 +234,6 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     fprintf(svg,"\t<text x=\"%lf\" y=\"%lf\" stroke=\"%s\" stroke-width=\"0.3\" fill=\"%s\">FIM</text>\n", getVerticeX(getVertice(grafo, final)), getVerticeY(getVertice(grafo, final)), "black", "black");
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
-    fprintf(saida, "Inicia no vertice com ID: %s\n", inicial);
     
     for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
     {
@@ -239,13 +250,17 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
 
         fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke-width=\"5\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cmc);
 
-        fprintf(saida, "vai para o vertice com ID: %s\n", getVerticeId(vertice2));
+        if(strcmp(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2)))) != 0)
+        {
+            getDirecao(x1, x2, y1, y2, direcao);
+            fprintf(saida, "Siga na direcao %s na Rua: %s\n", direcao, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+            strcpy(ultimaRua, getArestaNomeRua(getAresta(grafo, getVerticeId(vertice1), getVerticeId(vertice2))));
+        }
     }
 
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
 
     Path pathMaisCurto = criaPath(grafo, pInicial, pFinal, maisCurto, cmc, idPInt);
-    idPInt = idPInt + 2;
 
     desenhaPathSvg(pathMaisCurto, svg);
 }
