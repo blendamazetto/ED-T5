@@ -16,7 +16,7 @@ char *concatenacao(char dir_entrada[])
 	return(arqGeoConcatenado);
 }
 
-void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *dir_saida, char *arq_ecNome, char *arq_pmNome, char *arq_viaNome)
+void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *dir_saida, char *arq_ecNome, char *arq_pmNome, char *arq_viaNome, char* nomebaseRead, char *nomebaseWrite)
 {
     char *arqGeo = NULL;
     char *arqQry = NULL;
@@ -28,6 +28,7 @@ void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *
     char *arqEc = NULL;
     char *arqPm = NULL;
     char *arqVia = NULL;
+    char *nomebase = NULL;
 
     Lista listasObjetos[13];
     for (int i = 0; i < 13; i++)
@@ -60,6 +61,9 @@ void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *
     Grafo grafo[2];
     grafo[0] = createGrafo();
     grafo[1] = createGrafo();
+
+    Lista est = create();
+    Lista mor = create();
 
     int i;
     if(arq_geoNome == NULL || dir_saida == NULL)
@@ -160,14 +164,23 @@ void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *
 
     lerGeo(arqGeo,nomeSvgGeo, listasObjetos, arvoresObjetos, tabelas, hashAux);
 
-    if(arq_ecNome != NULL)
+    if(nomebaseRead != NULL)
     {
-        lerEc(arqEc, listasObjetos, arvoresObjetos, tabelas, hashAux);
+        readHashfile(nomebaseRead, tabelas, est, mor, listasObjetos);
+        balancearQuadTree(arvoresObjetos[8], est, getEstabelecimentoPonto, swapEstabelecimento);
+        balancearQuadTree(arvoresObjetos[9], mor, getMoradorPonto, swapMorador);
     }
-
-    if(arq_pmNome != NULL)
+    else
     {
-        lerPm(arqPm, listasObjetos, arvoresObjetos, tabelas, hashAux);
+        if(arq_ecNome != NULL)
+        {
+            lerEc(arqEc, listasObjetos, arvoresObjetos, tabelas, hashAux);
+        }
+
+        if(arq_pmNome != NULL)
+        {
+            lerPm(arqPm, listasObjetos, arvoresObjetos, tabelas, hashAux);
+        }
     }
 
     if(arq_viaNome != NULL)
@@ -178,17 +191,23 @@ void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *
     if (arq_consulta!= NULL)
     {
         nomeQry = concatenacao(arq_consulta);
-        saidaQry = (char*)malloc((strlen(dir_saida) + strlen(saida) + 6)* sizeof(char));
+        saidaQry = (char*)malloc((strlen(dir_saida) + strlen(saida) + 8)* sizeof(char));
         sprintf(saidaQry,"%s-%s",saida,nomeQry);
 
         lerQry(saidaQry,arqQry, listasQry, arvoresObjetos, tabelas, listasObjetos, grafo);
+    }
+
+    if(nomebaseWrite != NULL)
+    {
+        nomebase = concatenacao(nomebaseWrite);
+        saveHashfile(nomebase, tabelas, arvoresObjetos, tamanhoDaLista(listasObjetos[12]), tamanhoDaLista(listasObjetos[10]));
     }
 
     deleteHashTable(tabelas[0], tamanho(listasObjetos[11]), 0);
     deleteHashTable(tabelas[2], tamanho(listasObjetos[10]), 1);
     deleteHashTable(tabelas[3], tamanho(listasObjetos[3]), 0);
     deleteHashTable(tabelas[1], tamanho(listasObjetos[12]), 0);
-
+    
     for(i = 0; i < 12; i++)
     {
         if(i != 8)
@@ -212,13 +231,22 @@ void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *
         removeList(hashAux[i],NULL);
     }
 
-    for(i = 0; i < 9; i++)
+    removeList(listasQry[0],free);
+    removeList(listasQry[1],desalocaRetangulo);
+    removeList(listasQry[2],free);
+    removeList(listasQry[3],desalocarPontoCirculo);
+    removeList(listasQry[4],desalocaTexto);
+
+    for(i = 5; i < 9 ; i++)
     {
-        removeList(listasQry[i],NULL);
+        removeList(listasQry[i],free);
     }
 
     desalocarGrafo(grafo[0]);
     desalocarGrafo(grafo[1]);
+
+    removeList(mor, NULL);
+    removeList(est, NULL);
 
     free(arqGeo);
     free(arqQry);

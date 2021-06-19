@@ -103,4 +103,10 @@ void setMoradorNum(Morador morador, double num);
 */
 void swapMorador(Morador m1, Morador m2);
 
+double getMoradorX(Morador morador);
+
+double getMoradorY(Morador morador);
+
+int getSizeMorador();
+
 #endif

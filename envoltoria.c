@@ -49,6 +49,18 @@ void printarEnvoltoria(Envoltoria env, FILE *svg)
             fprintf(svg," %lf,%lf",getPontoX(p),getPontoY(p));
         }
         fprintf(svg," \"/>\n");
+        removeList(no->pontos, free);
     }
+}
+
+void desalocarNoEnv(No node)
+{
+    NodeEnvStruct* no = (NodeEnvStruct*) node;
+    free(no);
+}
+
+void desalocarEnv(Lista env)
+{
+    removeList(env, desalocarNoEnv);
 }
 

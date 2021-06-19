@@ -147,10 +147,10 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     
-    for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
+    for(No node = getLast(maisCurto); getNext(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
-        Vertice vertice2 = getInfo(getNext(node));
+        Vertice vertice2 = getInfo(getPrevious(node));
         if(vertice2 == NULL)
         {
             break;
@@ -173,10 +173,10 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
     fprintf(saida, "PERCURSO MAIS RAPIDO:\n");
 
-    for(No node = getFirst(maisRapido); getNext(node) != NULL; node = getNext(node))
+    for(No node = getLast(maisRapido); getNext(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
-        Vertice vertice2 = getInfo(getNext(node));
+        Vertice vertice2 = getInfo(getPrevious(node));
         if(vertice2 == NULL)
         {
             break;
@@ -204,6 +204,15 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
 
     desenhaPathSvg(pathMaisCurto, svg);
     desenhaPathSvg(pathMaisRapido, svg);
+
+    free(pInicial);
+    free(pFinal);
+
+    desalocarPath(pathMaisCurto);
+    desalocarPath(pathMaisRapido);
+
+    removeList(maisCurto, free);
+    removeList(maisRapido, free);
 }
 
 void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *saida, FILE *svg, int idPInt)
@@ -235,10 +244,10 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     
-    for(No node = getFirst(maisCurto); getNext(node) != NULL; node = getNext(node))
+    for(No node = getLast(maisCurto); getNext(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
-        Vertice vertice2 = getInfo(getNext(node));
+        Vertice vertice2 = getInfo(getPrevious(node));
         if(vertice2 == NULL)
         {
             break;
@@ -263,6 +272,13 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
     Path pathMaisCurto = criaPath(grafo, pInicial, pFinal, maisCurto, cmc, idPInt);
 
     desenhaPathSvg(pathMaisCurto, svg);
+
+    free(pInicial);
+    free(pFinal);
+
+    desalocarPath(pathMaisCurto);
+
+    removeList(maisCurto, free);
 }
 
 void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], QuadTree arvoresObjetos[])
@@ -354,5 +370,8 @@ void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, F
     }
 
     removerVerticesDentroPoligono(grafo, casos);
+
     pQuestionMark(r1, r2, cmc, cmr, grafo, registradores, saida, svg, idPInt);
+
+    removeList(casos, NULL);
 }

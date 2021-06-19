@@ -14,4 +14,6 @@ void adicionarPontoEnvoltoria(int id, Ponto ponto, Envoltoria env);
 
 void printarEnvoltoria(Envoltoria env, FILE *svg);
 
+void desalocarEnv(Lista env);
+
 #endif

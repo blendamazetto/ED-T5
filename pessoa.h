@@ -90,4 +90,6 @@ void setPessoaSobrenome(Pessoa pessoa, char sobrenome[]);
 */
 void swapPessoa(Pessoa p1, Pessoa p2);
 
+int getSizePessoa();
+
 #endif

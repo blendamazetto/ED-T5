@@ -95,3 +95,8 @@ void swapPessoa(Pessoa p1, Pessoa p2)
     *a = *b;
     *b = temp;
 }
+
+int getSizePessoa()
+{
+    return sizeof(PessoaStruct);
+}

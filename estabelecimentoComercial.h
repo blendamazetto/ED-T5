@@ -3,6 +3,7 @@
 #define __ESTABELECIMENTO_H
 
 #include "ponto.h"
+
 //Define "Estabelecimento" como um void pointer
 typedef void* Estabelecimento;
 
@@ -69,6 +70,10 @@ char* getEstabelecimentoNome(Estabelecimento estabelecimento);
 */
 Ponto getEstabelecimentoPonto(Estabelecimento estabelecimento);
 
+double getEstabelecimentoX(Estabelecimento estabelecimento);
+
+double getEstabelecimentoY(Estabelecimento estabelecimento);
+
 /*
 * seta o cnpj de um estabelecimento
 * recebe um void pointer para o estabelecimento e um char com o que sera setado
@@ -131,5 +136,7 @@ void setEstabelecimentoPonto(Estabelecimento estabelecimento, Ponto ponto);
 * nao retorna nada
 */
 void swapEstabelecimento(Estabelecimento e1, Estabelecimento e2);
+
+int getSizeEstabelecimento();
 
 #endif

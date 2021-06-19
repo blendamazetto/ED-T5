@@ -5,6 +5,7 @@
 
 typedef struct ec{
 
+    Ponto ponto;
     char cnpj[25];
     char cpf[20];
     char codt[20];
@@ -12,7 +13,8 @@ typedef struct ec{
     char face[2];
     double num;
     char nome[255];
-    Ponto ponto;
+    double x;
+    double y;
 
 }EstabelecimentoStruct;
 
@@ -28,6 +30,8 @@ Estabelecimento criaEstabelecimento(char cnpj[], char cpf[], char codt[], char c
     estab->num = num;
     strcpy(estab->nome, nome);
     estab->ponto = ponto;
+    estab->x = getPontoX(ponto);
+    estab->y = getPontoY(ponto);
 
     return estab;
 }
@@ -78,6 +82,18 @@ Ponto getEstabelecimentoPonto(Estabelecimento estabelecimento)
 {
     EstabelecimentoStruct* e = (EstabelecimentoStruct*) estabelecimento;
     return e->ponto;
+}
+
+double getEstabelecimentoX(Estabelecimento estabelecimento)
+{
+    EstabelecimentoStruct* e = (EstabelecimentoStruct*) estabelecimento;
+    return e->x;
+}
+
+double getEstabelecimentoY(Estabelecimento estabelecimento)
+{
+    EstabelecimentoStruct* e = (EstabelecimentoStruct*) estabelecimento;
+    return e->y;
 }
 
 void setEstabelecimentoCnpj(Estabelecimento estabelecimento, char cnpj[])
@@ -136,4 +152,9 @@ void swapEstabelecimento(Estabelecimento e1, Estabelecimento e2)
 
     *a = *b;
     *b = temp;
+}
+
+int getSizeEstabelecimento()
+{
+    return sizeof(EstabelecimentoStruct);
 }

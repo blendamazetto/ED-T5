@@ -20,6 +20,30 @@ Grafo createGrafo()
     return create();
 }
 
+
+void removerArestasByDestino(Grafo grafo, char id[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        No noAdj = getFirst(no->adjacencia);
+        while(noAdj!= NULL)
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            if(strcmp(id, aux->j) == 0)
+            {
+                No temporario = noAdj;
+                noAdj = getNext(noAdj);
+                free(aux->aresta);
+                free(aux);
+                removerNo(no->adjacencia, temporario, NULL);
+            }
+            else
+            noAdj = getNext(noAdj);
+        }
+    }
+}
+
 void removerVerticesDentroPoligono(Grafo grafo, Lista casos)
 {
     Ponto p = createPonto(0,0);
@@ -43,11 +67,15 @@ void removerVerticesDentroPoligono(Grafo grafo, Lista casos)
     for (int b = 0; b < i; b++)
     {
         removerVertice(grafo, listaIndices[b]);
+        removerArestasByDestino(grafo, listaIndices[b]);
     } 
+
     for (int b = 0; b < i; b++)
     {
         free(listaIndices[b]);
     } 
+
+    free(p);
 }
 
 void adicionarVertice(Grafo grafo, Vertice vertice)
@@ -328,6 +356,7 @@ void printarGrafo(Grafo grafo, FILE *svg, char cor[])
                 fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cor);
             }
         }
+        
     }
 }
 
@@ -494,7 +523,6 @@ int indiceMenorDistancia(Hash hashtable, double *distancia, int tam, Grafo grafo
 Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(Aresta aresta))
 {
     Hash visitado = createHashTable(tam);
-    Lista pathInvertido = create();
     Lista path = create();
     Vertice vertice = getVertice(grafo, inicial), verticeAux;
     Aresta aresta, arestaAux;
@@ -517,56 +545,59 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(
     {
         primeiro = 1;
         nodeVertice = getNodeGrafo(grafo, getVerticeId(vertice));
-        NodeGrafoStruct* al = getInfo(nodeVertice);
+        if(nodeVertice != NULL)
+        {
+            NodeGrafoStruct* al = getInfo(nodeVertice);
+            for(No j = getFirst(al->adjacencia); j != NULL; j = getNext(j))
+            {   
+                aux = getInfo(j);
+                strcpy(destino, aux->j);
+                verticeAux = getVertice(grafo, destino);
 
-        for(No j = getFirst(al->adjacencia); j != NULL; j = getNext(j))
-        {   
-            aux = getInfo(j);
-            strcpy(destino, aux->j);
-            verticeAux = getVertice(grafo, destino);
-
-            if(verticeAux != NULL)
-            {
-                if(searchHashTable(getVerticeId(verticeAux), visitado, tam) == NULL)
+                if(verticeAux != NULL)
                 {
-                    if(primeiro)
+                    if(searchHashTable(getVerticeId(verticeAux), visitado, tam) == NULL)
                     {
-                        inicial =  getVerticeId(vertice);
-                        aresta = getArestabyNo(getInfo(j));
-                        strcpy(final, getDestino(getInfo(j)));
-                        menor = getPeso(aresta);
-                        primeiro = 0;
-                        distAux =  getPeso(aresta) + distAtual;
-
-                        if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                        if(primeiro)
                         {
-                            dist = distAtual + getPeso(aresta);
-                            distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
-                            anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
-                        }
-                    }
-                    else
-                    {
-                        arestaAux = getArestabyNo(getInfo(j));
-                        distAux =  getPeso(arestaAux) + distAtual;
-
-                        if(menor > getPeso(aux->aresta))
-                        {
-                            inicial = getVerticeId(vertice);
+                            inicial =  getVerticeId(vertice);
+                            aresta = getArestabyNo(getInfo(j));
                             strcpy(final, getDestino(getInfo(j)));
                             menor = getPeso(aresta);
-                            aresta = getArestabyNo(getInfo(j));         
+                            primeiro = 0;
+                            distAux =  getPeso(aresta) + distAtual;
+
+                            if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                            {
+                                dist = distAtual + getPeso(aresta);
+                                distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                                anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                            }
                         }
-                        if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                        else
                         {
-                            dist = distAtual + getPeso(arestaAux);
-                            distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
-                            anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                            arestaAux = getArestabyNo(getInfo(j));
+                            distAux =  getPeso(arestaAux) + distAtual;
+
+                            if(menor > getPeso(aux->aresta))
+                            {
+                                inicial = getVerticeId(vertice);
+                                strcpy(final, getDestino(getInfo(j)));
+                                menor = getPeso(aresta);
+                                aresta = getArestabyNo(getInfo(j));         
+                            }
+                            if(distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] >  distAux)
+                            {
+                                dist = distAtual + getPeso(arestaAux);
+                                distancia[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = dist;
+                                anterior[getPosicaoDoVertice(grafo, getVerticeId(verticeAux))] = getPosicaoDoVertice(grafo, getVerticeId(vertice));
+                            }
                         }
                     }
                 }
             }
-        }       
+        }
+               
         primeiro = 1;
         insertHashTable(info, getVerticeId(vertice), tam, visitado);
         distAtual = distancia[indiceMenorDistancia(visitado, distancia, tam, grafo)];
@@ -595,14 +626,6 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(
     }
 
     insert(path, copiarVertice(getVertice(grafo, start)));
-
-    for (No noAux = getLast(path); noAux != NULL; noAux = getPrevious(noAux))
-    {
-        Vertice v = copiarVertice(getInfo(noAux));
-        insert(pathInvertido, v);
-    }
-    
-    removeList(path, free);
     deleteHashTable(visitado, tam, 0);
-    return pathInvertido;
+    return path;
 }

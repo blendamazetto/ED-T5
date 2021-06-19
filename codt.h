@@ -46,4 +46,6 @@ void setCodtDescricao(Codt c, char descricao[]);
 */
 void desalocarCodt(Codt c);
 
+int getSizeCodt();
+
 #endif

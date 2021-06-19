@@ -11,4 +11,6 @@ Path criaPath(Grafo grafo, Ponto inicial, Ponto final, Lista vertices, char cor[
 
 void desenhaPathSvg(Path path, FILE *svg);
 
+void desalocarPath(No node);
+
 #endif

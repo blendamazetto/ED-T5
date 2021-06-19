@@ -50,3 +50,8 @@ void desalocarCodt(Codt c)
 
     free(co);
 }
+
+int getSizeCodt()
+{
+    return sizeof(CodtStruct);
+}

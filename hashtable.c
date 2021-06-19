@@ -38,6 +38,60 @@ Hash createHashTable(int tamanhoHash)
     return hash;
 }
 
+void adicionarListaNaHashCodt(Hash hashtable, Lista lista)
+{
+    for(No node = getFirst(lista); node != NULL; node = getNext(node))
+    {
+        Codt e = getValorItem(getInfo(node));
+        insertHashTable(e, getCodtCodt(e), tamanhoDaLista(lista), hashtable);
+    }
+}
+
+void adicionarListaNaHashPessoa(Hash hashtable, Lista lista)
+{
+    for(No node = getFirst(lista); node != NULL; node = getNext(node))
+    {
+        Pessoa p = getValorItem(getInfo(node));
+        insertHashTable(p, getPessoaCpf(p), tamanhoDaLista(lista), hashtable);
+    }
+}
+
+void adicionarListaNaHashMorador(Hash hashtable, Lista lista)
+{
+    for(No node = getFirst(lista); node != NULL; node = getNext(node))
+    {
+        Morador m = getValorItem(getInfo(node));
+        insertHashTable(getMoradorCep(m), getMoradorCpf(m), tamanhoDaLista(lista), hashtable);
+    }
+}
+
+void adicionarHashNaListaCodt(Hash hashtable, Lista lista, int tamanho)
+{
+    HashStruct* h = hashtable;
+    for(int i=0; i < tamanho; i++)
+    {
+        insert(lista, h[i].info);
+    }
+}
+
+void adicionarHashNaListaPessoa(Hash hashtable, Lista lista, int tamanho)
+{
+    HashStruct* h = hashtable;
+    for(int i=0; i < tamanho; i++)
+    {
+        insertList(h[i].info, lista);
+    }
+}
+
+void adicionarHashNaListaMorador(Hash hashtable, Lista lista, int tamanho)
+{
+    HashStruct* h = hashtable;
+    for(int i=0; i < tamanho; i++)
+    {
+        insertList(h[i].info, lista);
+    }
+}
+
 void insertHashTable(Info info, char key[], int tamanho, Hash hashtable)
 {
     HashStruct* h = hashtable;
@@ -132,6 +186,8 @@ void deleteHashTable(Hash hashtable, int tamanho, int a)
             }
         }
     }
+
+    free(h);
 }
 
 void setHashTable(char key[], Hash hashtable, int tamanho, Info info)

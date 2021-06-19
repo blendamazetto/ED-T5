@@ -3,6 +3,10 @@
 #define __HASHTABLE__
 
 #include "lista.h"
+#include "codt.h"
+#include "pessoa.h"
+#include "morador.h"
+#include "item.h"
 //Define "Hash" como um void pointer
 typedef void* Hash;
 
@@ -19,6 +23,18 @@ unsigned int hash (char key[], int tamanhoHash);
 * retorna um ponteiro para a hashtable que foi criada
 */
 Hash createHashTable(int tamanhoHash);
+
+void adicionarListaNaHashCodt(Hash hashtable, Lista lista);
+
+void adicionarListaNaHashPessoa(Hash hashtable, Lista lista);
+
+void adicionarListaNaHashMorador(Hash hashtable, Lista lista);
+
+void adicionarHashNaListaCodt(Hash hashtable, Lista lista, int tamanho);
+
+void adicionarHashNaListaPessoa(Hash hashtable, Lista lista, int tamanho);
+
+void adicionarHashNaListaMorador(Hash hashtable, Lista lista, int tamanho);
 
 /*
 * insere um elemento na hashtable

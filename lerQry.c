@@ -26,7 +26,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     char j[20], k[20], cmc[22], cmr[22];
     int ident, intJ, intK, max, iniciouSufx = 0, idPInt = 0, idEnv = 0;
     double x, y, r, w ,h, num, n;
-    char tipo[5], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[1], cep[20], cpf[20], cnpj[25], compl[20], t[3], tp[20], indiceRegistrador[3], indiceRegistrador2[3], lastSufx[25];
+    char tipo[5], faceAux[7], sufx[25], sfx[25], corb[20], corp[20], id[20], identificacao[20], parametroOpcional[1], face[2], cep[20], cpf[20], cnpj[25], compl[20], t[3], tp[20], indiceRegistrador[4], indiceRegistrador2[4], lastSufx[25];
     int b;
     Lista casosCovid = create();
     Ponto registradores[11]; 
@@ -204,8 +204,10 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
         else if (strcmp(tipo, "@e?")==0)
         {
-            fscanf(qry,"%s %s %s %lf", indiceRegistrador, cep, face, &num);
-            fprintf(saida,"%s %s %s %s %lf\n", tipo, indiceRegistrador, cep, face, num);
+            fscanf(qry,"%s %s %s %lf", indiceRegistrador, cep, faceAux, &num);
+            fprintf(saida,"%s %s %s %s %lf\n", tipo, indiceRegistrador, cep, faceAux, num);
+            face[0] = faceAux[5];
+            face[1] = '\0';
             eQuestionMark(indiceReg(indiceRegistrador), cep, face, num, arvoresObjetos, registradores, listasQry);
         }
         else if (strcmp(tipo, "@g?")==0)
@@ -237,7 +239,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
                 svg = fopen(pathSvg, "a");
                 pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg, idPInt);
-                idPInt = idPInt + 2;;
+                idPInt = idPInt + 2;
                 free(pathSvg);
                 fclose(svg);
             }
@@ -253,7 +255,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                     iniciouSufx = 1;
                 }
                 pQuestionMark(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, cmr, grafo[0], registradores, saida, svg, idPInt);
-                idPInt = idPInt + 2;;
+                idPInt = idPInt + 2;
                 strcpy(lastSufx, sufx);
                 free(pathSvg);
                 fclose(svg);
@@ -346,6 +348,14 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         free(pathSvg);
         fclose(svg);
     }
+
+    for(int b = 0; b < 11; b++)
+    {
+        free(registradores[b]);
+    }
+
+    removeList(casosCovid, desalocarPontoCasos);
+    desalocarEnv(env);
     fclose(saida);
     fclose(qry);
     free(saidaSvg);

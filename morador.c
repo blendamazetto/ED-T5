@@ -5,12 +5,14 @@
 
 typedef struct m{
 
+    Ponto ponto;
     char cpf[20];
     char face[2];
     double num;
     char compl[20];
     char cep[20];
-    Ponto ponto;
+    double x;
+    double y;
 
 }MoradorStruct;
 
@@ -24,8 +26,21 @@ Morador criaMorador(char cpf[], char face[], char compl[], char cep[], double nu
     strcpy(m->cep, cep);
     m->num = num;
     m->ponto = ponto;
+    m->x = getPontoX(ponto);
+    m->y = getPontoY(ponto);
 
     return m;
+}
+double getMoradorX(Morador morador)
+{
+    MoradorStruct* m = (MoradorStruct*) morador;
+    return m->x;
+}
+
+double getMoradorY(Morador morador)
+{
+    MoradorStruct* m = (MoradorStruct*) morador;
+    return m->y;
 }
 
 char* getMoradorCpf(Morador morador)
@@ -108,4 +123,9 @@ void swapMorador(Morador m1, Morador m2)
 
     *a = *b;
     *b = temp;
+}
+
+int getSizeMorador()
+{
+    return sizeof(MoradorStruct);
 }

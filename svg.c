@@ -202,7 +202,7 @@ void desenhaLinha(Linha l, FILE* svg)
     char cor[22];
     strcpy(cor, getLinhaCor(l));
 
-    fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cor);
+    fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\" stroke-width=\"4\"/>\n", x1, y1, x2, y2, cor);
 }
 
 void desenhaLinhaTracejada(Linha l, FILE* svg)

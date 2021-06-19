@@ -40,7 +40,7 @@ void desenhaPathSvg(Path path, FILE *svg)
     int primeiro = 1;
     fprintf(svg, "\n\t<path style=\"fill:none;stroke:%s;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\n\t d=\" M", ps->cor);
 
-    for(No node = getFirst(ps->vertices); node != NULL; node = getNext(node))
+    for(No node = getLast(ps->vertices); node != NULL; node = getPrevious(node))
     {
         Vertice v = getInfo(node);
 
@@ -56,4 +56,13 @@ void desenhaPathSvg(Path path, FILE *svg)
     }
     fprintf(svg, "\" id=\"%d\" />", ps->idPInt);
     fprintf(svg, "\n\t<circle cx=\"\" cy=\"\" r=\"5\" fill=\"red\"><animateMotion dur=\"6s\" repeatCount=\"indefinite\"><mpath xlink:href=\"#%d\"/></animateMotion></circle>\n", ps->idPInt);
+}
+
+void desalocarPath(No node)
+{
+    PathStruct* no = (PathStruct*) node;
+    removeList(no->vertices, free);
+    free(no->inicial);
+    free(no->final);
+    free(no);
 }

@@ -221,7 +221,7 @@ void lerEc(char arqEc[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
     for(No node = getFirst(hashAux[1]); node != NULL; node = getNext(node))
     {
         Info info = getInfo(node);
-        insertHashTable(getCodtDescricao(info), getCodtCodt(info), tamanhoDaLista(hashAux[1]), tabelas[1]);
+        insertHashTable(info, getCodtCodt(info), tamanhoDaLista(hashAux[1]), tabelas[1]);
     }
 
     fclose(ec);

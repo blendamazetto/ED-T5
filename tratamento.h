@@ -15,7 +15,8 @@
 #include "posto.h"
 #include "hashtable.h"
 #include "grafo.h"
+#include "lerHf.h"
 
-void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *dir_saida, char *arq_ecNome, char *arq_pmNome, char *arq_viaNome);
+void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *dir_saida, char *arq_ecNome, char *arq_pmNome, char *arq_viaNome, char*nomebaseRead, char *nomebaseWrite);
 
 #endif
