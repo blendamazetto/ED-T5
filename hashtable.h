@@ -24,16 +24,22 @@ unsigned int hash (char key[], int tamanhoHash);
 */
 Hash createHashTable(int tamanhoHash);
 
+//Faz a conversão de uma lista para um hashtable, no caso, a lista de CODT
 void adicionarListaNaHashCodt(Hash hashtable, Lista lista);
 
+//Faz a conversão de uma lista para um hashtable no caso, a lista de Pessoas
 void adicionarListaNaHashPessoa(Hash hashtable, Lista lista);
 
+//Faz a conversão de uma lista para um hashtable no caso, a lista de Moradores
 void adicionarListaNaHashMorador(Hash hashtable, Lista lista);
 
+//Faz a conversão de uma Hashtable para uma lista, no caso, a hash de CODT
 void adicionarHashNaListaCodt(Hash hashtable, Lista lista, int tamanho);
 
+//Faz a conversão de uma Hashtable para uma lista, no caso, a hash de Pessoas
 void adicionarHashNaListaPessoa(Hash hashtable, Lista lista, int tamanho);
 
+//Faz a conversão de uma Hashtable para uma lista, no caso, a hash de Moradores
 void adicionarHashNaListaMorador(Hash hashtable, Lista lista, int tamanho);
 
 /*

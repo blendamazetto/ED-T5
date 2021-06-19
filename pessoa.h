@@ -90,6 +90,7 @@ void setPessoaSobrenome(Pessoa pessoa, char sobrenome[]);
 */
 void swapPessoa(Pessoa p1, Pessoa p2);
 
+//retorna o tamanho da struct pessoa
 int getSizePessoa();
 
 #endif

@@ -17,6 +17,9 @@
 #include "grafo.h"
 #include "lerHf.h"
 
+/*
+    Pega os argumentos passados, faz as adaptacoes e chama as funcoes de leitura
+*/
 void tratamento(char *dir_entrada, char *arq_geoNome, char *arq_consulta, char *dir_saida, char *arq_ecNome, char *arq_pmNome, char *arq_viaNome, char*nomebaseRead, char *nomebaseWrite);
 
 #endif

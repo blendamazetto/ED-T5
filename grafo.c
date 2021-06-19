@@ -20,6 +20,36 @@ Grafo createGrafo()
     return create();
 }
 
+
+No getNodeAdjacencia(Grafo grafo, char i[], char j[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(strcmp(getVerticeId(no->vertice), i) == 0)
+        {
+            for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+            {
+                NodeAdjacenciaStruct* aux = getInfo(noAdj);
+                if(strcmp(aux->j, j) == 0)
+                {
+                    return node;
+                }
+            }
+        }
+    }
+    return NULL;
+}
+
+void removerAresta(Grafo grafo, char i[], char j[])
+{
+    No node = getNodeAdjacencia(grafo, i, j);
+    NodeAdjacenciaStruct* aux = getInfo(node);
+    free(aux->aresta);
+    free(aux);
+    removerNo(grafo, node, NULL);
+}
+
 void removerBf(Grafo grafo, char face[], char cep[])
 {
     char orient[10];
@@ -243,6 +273,20 @@ void removerVerticeDesconexo(Grafo grafo)
     }
 }
 
+char* getVerticebyPonto(Grafo grafo, double x, double y)
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(getVerticeX(no->vertice) == x && getVerticeY(no->vertice) == y)
+        {
+            return getVerticeId(no->vertice);
+        }
+    }
+
+    return NULL;
+}
+
 void removerVerticesDentroPoligono(Grafo grafo, Lista casos)
 {
     Ponto p = createPonto(0,0);
@@ -338,20 +382,6 @@ Vertice getVertice(Grafo grafo, char id[])
     return NULL;
 }
 
-char* getVerticebyPonto(Grafo grafo, double x, double y)
-{
-    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* no = getInfo(node);
-        if(getVerticeX(no->vertice) == x && getVerticeY(no->vertice) == y)
-        {
-            return getVerticeId(no->vertice);
-        }
-    }
-
-    return NULL;
-}
-
 Aresta getAresta(Grafo grafo, char i[], char j[])
 {
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
@@ -372,26 +402,6 @@ Aresta getAresta(Grafo grafo, char i[], char j[])
     return NULL;
 }
 
-No getNodeAdjacencia(Grafo grafo, char i[], char j[])
-{
-    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* no = getInfo(node);
-        if(strcmp(getVerticeId(no->vertice), i) == 0)
-        {
-            for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
-            {
-                NodeAdjacenciaStruct* aux = getInfo(noAdj);
-                if(strcmp(aux->j, j) == 0)
-                {
-                    return node;
-                }
-            }
-        }
-    }
-    return NULL;
-}
-
 Lista getListaAdjacencia(Grafo grafo, char id[])
 {
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
@@ -403,15 +413,6 @@ Lista getListaAdjacencia(Grafo grafo, char id[])
         }
     }
     return NULL;
-}
-
-void removerAresta(Grafo grafo, char i[], char j[])
-{
-    No node = getNodeAdjacencia(grafo, i, j);
-    NodeAdjacenciaStruct* aux = getInfo(node);
-    free(aux->aresta);
-    free(aux);
-    removerNo(grafo, node, NULL);
 }
 
 void removerArestabyLdir(Grafo grafo, char ldir[])

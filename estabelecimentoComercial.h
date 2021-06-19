@@ -137,6 +137,7 @@ void setEstabelecimentoPonto(Estabelecimento estabelecimento, Ponto ponto);
 */
 void swapEstabelecimento(Estabelecimento e1, Estabelecimento e2);
 
+//retorna o tamanho da struct "Estabelecimento"
 int getSizeEstabelecimento();
 
 #endif

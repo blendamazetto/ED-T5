@@ -103,10 +103,13 @@ void setMoradorNum(Morador morador, double num);
 */
 void swapMorador(Morador m1, Morador m2);
 
+//retorna o valor x do ponto onde o morador esta localizado
 double getMoradorX(Morador morador);
 
+//retorna o valor y do ponto onde o morador esta localizado
 double getMoradorY(Morador morador);
 
+//retorna o tamanho da struct morador
 int getSizeMorador();
 
 #endif

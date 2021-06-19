@@ -40,24 +40,6 @@ double getVerticeY(Vertice vertice)
     return vert->y;
 }
 
-void setVerticeId(Vertice vertice, char id[])
-{
-    VerticeStruct* vert = (VerticeStruct*) vertice;
-    strcpy(vert->id, id);
-}
-
-void setVerticeX(Vertice vertice, double x)
-{
-    VerticeStruct* vert = (VerticeStruct*) vertice;
-    vert->x = x;
-}
-
-void setVerticeY(Vertice vertice, double y)
-{
-    VerticeStruct* vert = (VerticeStruct*) vertice;
-    vert->y = y;
-}
-
 Vertice copiarVertice(Vertice vert)
 {
     VerticeStruct* vertice = (VerticeStruct*) malloc(sizeof(VerticeStruct));

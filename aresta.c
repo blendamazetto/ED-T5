@@ -72,48 +72,6 @@ double getArestaVm(Aresta aresta)
     return ares->vm;
 }
 
-void setArestaI(Aresta aresta, char i[])
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    strcpy(are->i, i);
-}
-
-void setArestaJ(Aresta aresta, char j[])
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    strcpy(are->j, j);
-}
-
-void setArestaLdir(Aresta aresta, char ldir[])
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    strcpy(are->ldir, ldir);
-}
-
-void setArestaLesq(Aresta aresta, char lesq[])
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    strcpy(are->lesq, lesq);
-}
-
-void setArestaNomeRua(Aresta aresta, char nomeRua[])
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    strcpy(are->nomeRua, nomeRua);
-}
-
-void setArestaCmp(Aresta aresta, double cmp)
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    are->cmp = cmp;
-}
-
-void setArestaVm(Aresta aresta, double vm)
-{
-    ArestaStruct* are = (ArestaStruct*) aresta;
-    are->vm = vm;
-}
-
 double getArestaTempo(Aresta aresta)
 {
     ArestaStruct* are = (ArestaStruct*) aresta;

@@ -46,6 +46,7 @@ void setCodtDescricao(Codt c, char descricao[]);
 */
 void desalocarCodt(Codt c);
 
+//retorna o tamanho da struct codt
 int getSizeCodt();
 
 #endif

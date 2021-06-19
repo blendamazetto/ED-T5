@@ -43,7 +43,11 @@ void lerEc(char arqEc[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash 
 */
 void lerPm(char arqPm[], Lista listasObjetos[], QuadTree arvoresObjetos[], Hash tabelas[], Lista hashAux[]);
 
+/*
+*Le o arquivo via
+*precisa do nome do arquivo via e um grafo
+*não retorna nada
+*/
 void lerVia(char arqVia[], Grafo grafo[]);
-
 
 #endif

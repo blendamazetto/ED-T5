@@ -21,10 +21,19 @@
 #include "grafo.h"
 #include "circulo.h"
 
+/*
+    *Faz os calculos necessarios para determinar se um ponto esta dentro de um poligono
+*/
 int insidePolygon(Lista pontos, Ponto ponto);
 
+/*
+    *Retorna a direcao de uma aresta, se ela esta no sentido norte, sul, leste ou oeste
+*/
 void getDirecao(double x1, double x2, double y1, double y2, char direcao[]);
 
+/*
+    *Faz o calculo para saber o indice do registrador que é passado como char
+*/
 int indiceReg(char* r);
 /*
     *Calcula a distancia entre duas figuras

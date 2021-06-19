@@ -6,9 +6,9 @@
 #include "item.h"
 
 typedef struct hashfile{
-    char filename[80];
-    int nBaldes;
-    int numRPB;
+    char nomeArq[80];
+    int nbuckets;
+    int numRecPerBucket;
     int tamRec;
     int tamCh;
 }HashfileStruct;
@@ -31,55 +31,13 @@ int getKey(char *chave, int nbuckets)
     return res;
 }
 
-void fwriteBalde(FILE* file, Balde *b, int numRPB, int tamRec, int tamCh)
-{
-    fwrite(&b->nItens, sizeof(int), 1, file);
-    for(int j = 0; j < numRPB; j++)
-    {
-        fwrite(getChaveItem(b->itens[j]), sizeof(char),tamCh,file);
-        fwrite(getValorItem(b->itens[j]),tamRec,1,file);
-    }
-    fwrite(&b->next, sizeof(long int), 1, file);
-}
-
-void freadBalde(FILE* file, Balde *b, int numRPB, int tamRec, int tamCh)
-{
-    fread(&b->nItens, sizeof(int), 1, file);
-    for(int j = 0; j < numRPB; j++)
-    {
-        fread(getChaveItem(b->itens[j]), sizeof(char),tamCh,file);
-        fread(getValorItem(b->itens[j]),tamRec,1,file);
-    }
-    fread(&b->next, sizeof(long int), 1, file);
-}
-
-Balde inicializarBalde(int numRPB, int tamRec, int tamCh)
-{
-    Balde balde;
-    balde.itens = (Item*)malloc(sizeof(Item) * numRPB);
-    for(int i = 0; i < numRPB; i++)
-    {
-        balde.itens[i] = alocarItem(tamCh, tamRec);
-    }
-    return balde;
-}
-
-void desalocarBalde(Balde balde, int numRPB)
-{
-    for(int i = 0; i < numRPB; i++)
-    {
-        desalocaValorItem(balde.itens[i]);
-    }
-    free(balde.itens);
-}
-
 Hashfile fcreateHF(char *nome,int nbuckets,int numRecPerBkt, int tamRec, int tamCh)
 {
     HashfileStruct* hf = malloc(sizeof(HashfileStruct));
     FILE* file = fopen(nome,"wb");
-    strcpy(hf->filename,nome);
-    hf->nBaldes = nbuckets;
-    hf->numRPB = numRecPerBkt;
+    strcpy(hf->nomeArq,nome);
+    hf->nbuckets = nbuckets;
+    hf->numRecPerBucket = numRecPerBkt;
     hf->tamRec = tamRec;
     hf->tamCh = tamCh;
     fwrite(nome,sizeof(char),80,file);
@@ -113,27 +71,70 @@ Hashfile fopenHF(char *nome)
         return NULL;
     }
     HashfileStruct* hf = malloc(sizeof(HashfileStruct));
-    fread(hf->filename,sizeof(char),80,file);
-    fread(&hf->nBaldes,sizeof(int),1,file);
-    fread(&hf->numRPB,sizeof(int),1,file);
+    fread(hf->nomeArq,sizeof(char),80,file);
+    fread(&hf->nbuckets,sizeof(int),1,file);
+    fread(&hf->numRecPerBucket,sizeof(int),1,file);
     fread(&hf->tamRec,sizeof(int),1,file);
     fread(&hf->tamCh,sizeof(int),1,file);
     fclose(file);
     return hf;
 }
 
+void fwriteBalde(FILE* file, Balde *b, int numRecPerBucket, int tamRec, int tamCh)
+{
+    fwrite(&b->nItens, sizeof(int), 1, file);
+    for(int j = 0; j < numRecPerBucket; j++)
+    {
+        fwrite(getChaveItem(b->itens[j]), sizeof(char),tamCh,file);
+        fwrite(getValorItem(b->itens[j]),tamRec,1,file);
+    }
+    fwrite(&b->next, sizeof(long int), 1, file);
+}
+
+void freadBalde(FILE* file, Balde *b, int numRecPerBucket, int tamRec, int tamCh)
+{
+    fread(&b->nItens, sizeof(int), 1, file);
+    for(int j = 0; j < numRecPerBucket; j++)
+    {
+        fread(getChaveItem(b->itens[j]), sizeof(char),tamCh,file);
+        fread(getValorItem(b->itens[j]),tamRec,1,file);
+    }
+    fread(&b->next, sizeof(long int), 1, file);
+}
+
+
+Balde inicializarBalde(int numRecPerBucket, int tamRec, int tamCh)
+{
+    Balde balde;
+    balde.itens = (Item*)malloc(sizeof(Item) * numRecPerBucket);
+    for(int i = 0; i < numRecPerBucket; i++)
+    {
+        balde.itens[i] = alocarItem(tamCh, tamRec);
+    }
+    return balde;
+}
+
+void desalocarBalde(Balde balde, int numRecPerBucket)
+{
+    for(int i = 0; i < numRecPerBucket; i++)
+    {
+        desalocaValorItem(balde.itens[i]);
+    }
+    free(balde.itens);
+}
+
 int fwriteRec(Hashfile hf, Item buf)
 {
     HashfileStruct* h = (HashfileStruct*) hf;
-    FILE* file = fopen(h->filename,"r+b");
-    int posicao = getKey(getChaveItem(buf), h->nBaldes);
+    FILE* file = fopen(h->nomeArq,"r+b");
+    int posicao = getKey(getChaveItem(buf), h->nbuckets);
     int tamHf = 80*sizeof(char) + 4*sizeof(int);
-    int tamBalde = sizeof(long int) + sizeof(int) + h->numRPB * (h->tamRec + h->tamCh * sizeof(char));
+    int tamBalde = sizeof(long int) + sizeof(int) + h->numRecPerBucket * (h->tamRec + h->tamCh * sizeof(char));
     fseek(file,tamHf + posicao * tamBalde, SEEK_SET);
     long int posIn = ftell(file);
-    Balde balde = inicializarBalde(h->numRPB, h->tamRec, h->tamCh);
-    freadBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
-    while (balde.nItens == h->numRPB)
+    Balde balde = inicializarBalde(h->numRecPerBucket, h->tamRec, h->tamCh);
+    freadBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
+    while (balde.nItens == h->numRecPerBucket)
     {
         if(balde.next == -1)
         {
@@ -143,7 +144,7 @@ int fwriteRec(Hashfile hf, Item buf)
             posIn = ftell(file); 
             balde.next = posIn;
             fseek(file, posAnt, SEEK_SET);
-            fwriteBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+            fwriteBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
             balde.nItens = 0;
             balde.next = -1;
         }
@@ -151,16 +152,16 @@ int fwriteRec(Hashfile hf, Item buf)
         {
             fseek(file, balde.next, SEEK_SET);
             posIn = ftell(file);
-            freadBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+            freadBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
         }
     }
     strcpy(getChaveItem(balde.itens[balde.nItens]), getChaveItem(buf));
     memcpy(getValorItem(balde.itens[balde.nItens]), getValorItem(buf), h->tamRec);
     balde.nItens++;
     fseek(file, posIn, SEEK_SET);
-    fwriteBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+    fwriteBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
     fclose(file);
-    desalocarBalde(balde, h->numRPB);
+    desalocarBalde(balde, h->numRecPerBucket);
     return 1;
 }
 
@@ -168,14 +169,14 @@ int freadHF(Hashfile hf, char *ch, Item buf)
 {
     HashfileStruct* h = (HashfileStruct*) hf;
     Item* i = (Item*) buf;
-    FILE* file = fopen(h->filename,"rb");
-    int posicao = getKey(ch, h->nBaldes);
+    FILE* file = fopen(h->nomeArq,"rb");
+    int posicao = getKey(ch, h->nbuckets);
     int tamHf = 80*sizeof(char) + 4*sizeof(int);
-    int tamBalde = sizeof(long int) + sizeof(int) + h->numRPB * (h->tamRec + h->tamCh * sizeof(char));
+    int tamBalde = sizeof(long int) + sizeof(int) + h->numRecPerBucket * (h->tamRec + h->tamCh * sizeof(char));
     fseek(file,tamHf + posicao * tamBalde, SEEK_SET);
-    Balde balde = inicializarBalde(h->numRPB, h->tamRec, h->tamCh);
+    Balde balde = inicializarBalde(h->numRecPerBucket, h->tamRec, h->tamCh);
     do{
-        freadBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+        freadBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
         for(int j = 0; j < balde.nItens; j++)
         {
             if(strcmp(ch,getChaveItem(balde.itens[j])) == 0)
@@ -184,26 +185,26 @@ int freadHF(Hashfile hf, char *ch, Item buf)
                 memcpy(aux, getValorItem(balde.itens[j]),h->tamRec);
                 *i = createItem(getChaveItem(balde.itens[j]), aux);
                 fclose(file);
-                desalocarBalde(balde, h->numRPB);
+                desalocarBalde(balde, h->numRecPerBucket);
                 return 1;
             }
         }
     } while (balde.next != -1);
     fclose(file);
-    desalocarBalde(balde, h->numRPB);
+    desalocarBalde(balde, h->numRecPerBucket);
     return 0;
 }
 
 void dumpFileHF(Hashfile hf, Info F, PrintRecord p)
 {
     HashfileStruct* h = (HashfileStruct*) hf;
-    FILE* file = fopen(h->filename,"rb");
+    FILE* file = fopen(h->nomeArq,"rb");
     int tamHf = 80*sizeof(char) + 4*sizeof(int);
     fseek(file,tamHf, SEEK_SET);
-    Balde balde = inicializarBalde(h->numRPB, h->tamRec, h->tamCh);
-    for(int i = 0; i < h->nBaldes; i++)
+    Balde balde = inicializarBalde(h->numRecPerBucket, h->tamRec, h->tamCh);
+    for(int i = 0; i < h->nbuckets; i++)
     {
-        freadBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+        freadBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
         long int aux = ftell(file);
         while(1)
         {
@@ -219,11 +220,11 @@ void dumpFileHF(Hashfile hf, Info F, PrintRecord p)
                 break;
             }
             fseek(file,balde.next,SEEK_SET);
-            freadBalde(file, &balde, h->numRPB, h->tamRec, h->tamCh);
+            freadBalde(file, &balde, h->numRecPerBucket, h->tamRec, h->tamCh);
         }
         fseek(file,aux,SEEK_SET);        
     }
-    desalocarBalde(balde, h->numRPB);
+    desalocarBalde(balde, h->numRecPerBucket);
     fclose(file);
 }
 

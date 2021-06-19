@@ -3,20 +3,27 @@
 
 typedef void* Vertice;
 
+//Cria um vertice
 Vertice criaVertice(char id[], double x, double y);
 
+/*
+    Retorna o Id de um vertice
+*/
 char* getVerticeId(Vertice vertice);
 
+/*
+    retorna o valor x de um vertice
+*/
 double getVerticeX(Vertice vertice);
 
+/*
+    retorna o valor y de um vertice
+*/
 double getVerticeY(Vertice vertice);
 
-void setVerticeId(Vertice vertice, char id[]);
-
-void setVerticeX(Vertice vertice, double x);
-
-void setVerticeY(Vertice vertice, double y);
-
+/*
+    aloca um novo vertice com as informacoes do vertice passado como parametro
+*/
 Vertice copiarVertice(Vertice vert);
 
 #endif
