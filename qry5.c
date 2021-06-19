@@ -283,6 +283,12 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
 
 void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], QuadTree arvoresObjetos[])
 {
+    FILE *svaaab;
+    svaaab = fopen("./testes/antes.svg", "w");
+    fprintf(svaaab, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+    printarGrafo(grafo, svaaab, "red");
+    fprintf(svaaab, "</svg>");
+
     char quadra[25];
     int somaLeste = 0;
     int somaOeste = 0;
@@ -358,6 +364,14 @@ void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], 
             removerBf(grafo, "S", quadra);
         }
     }
+
+    //removerVerticeDesconexo(grafo);
+
+    FILE *svaaa;
+    svaaa = fopen("./testes/depois.svg", "w");
+    fprintf(svaaa, "<svg version=\"1.1\" baseProfile=\"full\" width=\"10000\" height=\"10000\" xmlns=\"http://www.w3.org/2000/svg\">\n");
+    printarGrafo(grafo, svaaa, "red");
+    fprintf(svaaa, "</svg>");
 }
 
 void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, FILE* saida, Ponto registradores[], FILE *svg,  int idPInt, Envoltoria env, int idEnv)

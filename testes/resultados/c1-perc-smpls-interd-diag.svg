@@ -1619,4 +1619,8 @@
 	<line x1="1175.000000" y1="368.000000" x2="1295.000000" y2="368.000000" stroke="red" stroke-width="4"/>
 	<line x1="365.000000" y1="748.000000" x2="485.000000" y2="748.000000" stroke="red" stroke-width="4"/>
 	<line x1="227.000000" y1="855.000000" x2="227.000000" y2="935.000000" stroke="red" stroke-width="4"/>
+	<line x1="124.800000" y1="92.800000" x2="124.800000" y2="0.000000" stroke="black" stroke-width="4"/>
+	<line x1="1404.000000" y1="1044.000000" x2="1404.000000" y2="0.000000" stroke="black" stroke-width="4"/>
+	<text x="124.800000" y="11.000000" stroke="black" stroke-width="0.3" fill="black">REGISTRADOR 3</text>
+	<text x="1404.000000" y="11.000000" stroke="black" stroke-width="0.3" fill="black">REGISTRADOR 5</text>
 </svg>

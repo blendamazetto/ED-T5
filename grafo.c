@@ -33,7 +33,7 @@ No getNodeAdjacencia(Grafo grafo, char i[], char j[])
                 NodeAdjacenciaStruct* aux = getInfo(noAdj);
                 if(strcmp(aux->j, j) == 0)
                 {
-                    return node;
+                    return noAdj;
                 }
             }
         }
@@ -43,17 +43,30 @@ No getNodeAdjacencia(Grafo grafo, char i[], char j[])
 
 void removerAresta(Grafo grafo, char i[], char j[])
 {
-    No node = getNodeAdjacencia(grafo, i, j);
-    NodeAdjacenciaStruct* aux = getInfo(node);
-    free(aux->aresta);
-    free(aux);
-    removerNo(grafo, node, NULL);
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(strcmp(getVerticeId(no->vertice), i) == 0)
+        {
+            for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+            {
+                NodeAdjacenciaStruct* aux = getInfo(noAdj);
+                if(strcmp(aux->j, j) == 0)
+                {
+                    free(aux->aresta);
+                    free(aux);
+                    removerNo(no->adjacencia, noAdj, NULL);
+                    return;
+                }
+            }
+        }
+    }
 }
 
 void removerBf(Grafo grafo, char face[], char cep[])
 {
     char orient[10];
-    char x1, y1, x2, y2;
+    double x1, y1, x2, y2;
     int i =0;
 
     char * idInicio[tamanhoDaLista(grafo)];
@@ -65,7 +78,7 @@ void removerBf(Grafo grafo, char face[], char cep[])
         for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
         {
             NodeAdjacenciaStruct* aux = getInfo(noAdj);
-            Vertice v1 = getVertice(grafo, getVerticeId(no->vertice));
+            Vertice v1 = no->vertice;
             Vertice v2 = getVertice(grafo, aux->j);
             if(v2 != NULL)
             {
@@ -77,7 +90,7 @@ void removerBf(Grafo grafo, char face[], char cep[])
 
                 if(strcmp(face, "S") == 0)
                 {
-                    if(strcmp(orient, "leste") == 0)
+                    if(strcmp(orient, "oeste") == 0)
                     {
                         if(strcmp(getArestaLdir(aux->aresta), cep) == 0)
                         {
@@ -88,7 +101,7 @@ void removerBf(Grafo grafo, char face[], char cep[])
                             i++;
                         }
                     }
-                    else if(strcmp(orient, "oeste") == 0)
+                    else if(strcmp(orient, "leste") == 0)
                     {
                         if(strcmp(getArestaLesq(aux->aresta), cep) == 0)
                         {
@@ -178,6 +191,7 @@ void removerBf(Grafo grafo, char face[], char cep[])
             }
         }
     }
+
     for (int b = 0; b < i; b++)
     {
         removerAresta(grafo, idInicio[b], idFim[b]);
@@ -188,6 +202,7 @@ void removerBf(Grafo grafo, char face[], char cep[])
         free(idFim[b]);
     }
 }
+
 Grafo copiarGrafo(Grafo grafo)
 {
     Grafo copia = create();
@@ -555,8 +570,7 @@ void printarGrafo(Grafo grafo, FILE *svg, char cor[])
                 y2 = getVerticeY(getVertice(grafo, aux->j));
                 fprintf(svg, "\t<line x1=\"%lf\" y1=\"%lf\" x2=\"%lf\" y2=\"%lf\" stroke=\"%s\"/>\n", x1, y1, x2, y2, cor);
             }
-        }
-        
+        }     
     }
 }
 
