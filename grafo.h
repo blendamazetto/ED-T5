@@ -12,6 +12,12 @@ typedef void* Grafo;
 
 Grafo createGrafo();
 
+void removerBf(Grafo grafo, char face[], char cep[]);
+
+Grafo copiarGrafo(Grafo grafo);
+
+void removerVerticeDesconexo(Grafo grafo);
+
 void removerVerticesDentroPoligono(Grafo grafo, Lista casos);
 
 void adicionarVertice(Grafo grafo, Vertice vertice);

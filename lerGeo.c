@@ -339,5 +339,8 @@ void lerVia(char arqVia[], Grafo grafo[])
         }
     }
 
+    removerVerticeDesconexo(grafo[0]);
+    removerVerticeDesconexo(grafo[1]);
+
     fclose(via);
 }

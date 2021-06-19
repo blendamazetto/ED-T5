@@ -20,6 +20,161 @@ Grafo createGrafo()
     return create();
 }
 
+void removerBf(Grafo grafo, char face[], char cep[])
+{
+    char orient[10];
+    char x1, y1, x2, y2;
+    int i =0;
+
+    char * idInicio[tamanhoDaLista(grafo)];
+    char * idFim[tamanhoDaLista(grafo)];
+
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            Vertice v1 = getVertice(grafo, getVerticeId(no->vertice));
+            Vertice v2 = getVertice(grafo, aux->j);
+            if(v2 != NULL)
+            {
+                x1 = getVerticeX(v1);
+                y1 = getVerticeY(v1);
+                x2 = getVerticeX(v2);
+                y2 = getVerticeY(v2);
+                getDirecao(x1, x2, y1, y2, orient);
+
+                if(strcmp(face, "S") == 0)
+                {
+                    if(strcmp(orient, "leste") == 0)
+                    {
+                        if(strcmp(getArestaLdir(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                    else if(strcmp(orient, "oeste") == 0)
+                    {
+                        if(strcmp(getArestaLesq(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                }
+                else if(strcmp(face, "N") == 0)
+                {   
+                    if(strcmp(orient, "leste") == 0)
+                    {
+                        if(strcmp(getArestaLdir(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                    else if(strcmp(orient, "oeste") == 0)
+                    {
+                        if(strcmp(getArestaLesq(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                }
+                else if(strcmp(face, "L") == 0)
+                {
+                    if(strcmp(orient, "norte") == 0)
+                    {
+                        if(strcmp(getArestaLesq(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                    else if(strcmp(orient, "sul") == 0)
+                    {
+                        if(strcmp(getArestaLdir(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                }
+                else if(strcmp(face, "O") == 0)
+                {
+                    if(strcmp(orient, "norte") == 0)
+                    {
+                        if(strcmp(getArestaLdir(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                    else if(strcmp(orient, "sul") == 0)
+                    {
+                        if(strcmp(getArestaLesq(aux->aresta), cep) == 0)
+                        {
+                            idInicio[i] = malloc(sizeof(char) * 60);
+                            idFim[i] = malloc(sizeof(char) * 60);
+                            strcpy(idInicio[i], getVerticeId(no->vertice));
+                            strcpy(idFim[i], aux->j);
+                            i++;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for (int b = 0; b < i; b++)
+    {
+        removerAresta(grafo, idInicio[b], idFim[b]);
+    } 
+    for (int b = 0; b < i; b++)
+    {
+        free(idInicio[b]);
+        free(idFim[b]);
+    }
+}
+Grafo copiarGrafo(Grafo grafo)
+{
+    Grafo copia = create();
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        adicionarVertice(copia, copiarVertice(no->vertice));
+
+        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            adicionarAresta(copia, getVerticeId(no->vertice), aux->j, copiarAresta(aux->aresta));
+        }
+    }
+
+    return copia;
+}
 
 void removerArestasByDestino(Grafo grafo, char id[])
 {
@@ -41,6 +196,50 @@ void removerArestasByDestino(Grafo grafo, char id[])
             else
             noAdj = getNext(noAdj);
         }
+    }
+}
+
+int procurarDestino(Grafo grafo, char id[])
+{
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
+        {
+            NodeAdjacenciaStruct* aux = getInfo(noAdj);
+            if(strcmp(aux->j, id) == 0)
+            {
+                return 1;
+            }
+        }
+    }
+    return 0;   
+}
+
+void removerVerticeDesconexo(Grafo grafo)
+{
+    char * listaIndices[tamanhoDaLista(grafo)];
+    int i = 0;
+    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
+    {
+        NodeGrafoStruct* no = getInfo(node);
+        if(tamanhoDaLista(no->adjacencia) == 0)
+        {
+            listaIndices[i] = malloc(sizeof(char) * 60);
+            strcpy(listaIndices[i], getVerticeId(no->vertice));
+            i++;
+        }
+    }
+    for (int b = 0; b < i; b++)
+    {
+        if(procurarDestino(grafo, listaIndices[b]) == 0)
+        {
+            removerVertice(grafo, listaIndices[b]);
+        }
+    } 
+    for (int b = 0; b < i; b++)
+    {
+        free(listaIndices[b]);
     }
 }
 

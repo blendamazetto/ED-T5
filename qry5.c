@@ -286,57 +286,83 @@ void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], 
     char quadra[25];
     int somaLeste = 0;
     int somaOeste = 0;
+    int somaSul = 0;
+    int somaNorte = 0;
 
     for(No node = getFirst(casosCovid); node != NULL; node = getNext(node))
     {
         somaLeste = 0;
         somaOeste = 0;
+        somaSul = 0;
+        somaNorte = 0;
 
         Info info = getInfo(node);
         strcpy(quadra, getCasosCEP(info));
 
         for(No no = getFirst(casosCovid); no != NULL; no = getNext(no))
         {
-            Info inf = getInfo(node);
+            Info inf = getInfo(no);
             if(strcmp(quadra, getCasosCEP(inf)) == 0)
             {
                 if(strcmp(getCasosFace(inf), "L") == 0)
                 {
                     somaLeste = somaLeste + getCasosN(inf);
                 }
-                if(strcmp(getCasosFace(inf), "O") == 0)
+                else if(strcmp(getCasosFace(inf), "O") == 0)
                 {
                     somaOeste = somaOeste + getCasosN(inf);
                 }
+                else if(strcmp(getCasosFace(inf), "N") == 0)
+                {
+                    somaNorte = somaNorte + getCasosN(inf);
+                }
+                else if(strcmp(getCasosFace(inf), "S") == 0)
+                {
+                    somaSul = somaSul + getCasosN(inf);
+                }
             }
         }
-
         if(somaLeste > max)
         {
             Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
-
-            removerArestabyLdir(grafo, quadra);
             fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
-
-            Linha l = criaLinha((getQuadraX(q) - 2), getQuadraY(q), (getQuadraX(q) - 2), (getQuadraY(q) + getQuadraH(q)), "red");
+            Linha l = criaLinha((getQuadraX(q) - 3), getQuadraY(q), (getQuadraX(q) - 3), (getQuadraY(q) + getQuadraH(q)), "red");
             insert(listasQry[2], l);
-        }
+            removerBf(grafo, "L", quadra);
 
+        }
         if(somaOeste > max)
         {
             Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
-
-            removerArestabyLesq(grafo, quadra);
             fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
-
-            Linha l = criaLinha((getQuadraX(q) + getQuadraW(q) + 2), getQuadraY(q), (getQuadraX(q) + getQuadraW(q) + 2), (getQuadraY(q) + getQuadraH(q)), "red");
+            Linha l = criaLinha((getQuadraX(q) + getQuadraW(q) + 3), getQuadraY(q), (getQuadraX(q) + getQuadraW(q) + 3), (getQuadraY(q) + getQuadraH(q)), "red");
             insert(listasQry[2], l);
+            removerBf(grafo, "O", quadra);
+
+        }
+        if(somaNorte > max)
+        {
+            Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
+            fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
+            Linha l = criaLinha(getQuadraX(q), (getQuadraY(q) + getQuadraH(q) + 3) ,(getQuadraX(q) + getQuadraW(q)), (getQuadraY(q) + getQuadraH(q) + 3), "red");
+            insert(listasQry[2], l);
+            removerBf(grafo, "N", quadra);
+
+        }
+        if(somaSul > max)
+        {
+            Info q = getInfoByIdQt(arvoresObjetos[3], quadra);
+            fprintf(saida, "CEP: %s FACE: %s\n", quadra, getCasosFace(info));
+            Linha l = criaLinha(getQuadraX(q), (getQuadraY(q) - 3) ,(getQuadraX(q) + getQuadraW(q)), (getQuadraY(q) - 3), "red");
+            insert(listasQry[2], l);
+            removerBf(grafo, "S", quadra);
         }
     }
 }
 
 void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, FILE* saida, Ponto registradores[], FILE *svg,  int idPInt, Envoltoria env, int idEnv)
 {
+    Grafo copia = copiarGrafo(grafo);
     Ponto ponto;
     Lista l = create();
     Lista casos = NULL;
@@ -369,9 +395,11 @@ void sp(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Lista casosCovid, F
         adicionarPontoEnvoltoria(idEnv, p, env);
     }
 
-    removerVerticesDentroPoligono(grafo, casos);
+    removerVerticesDentroPoligono(copia, casos);
 
-    pQuestionMark(r1, r2, cmc, cmr, grafo, registradores, saida, svg, idPInt);
+    pQuestionMark(r1, r2, cmc, cmr, copia, registradores, saida, svg, idPInt);
 
     removeList(casos, NULL);
+
+    desalocarGrafo(copia);
 }
