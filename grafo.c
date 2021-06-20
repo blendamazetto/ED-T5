@@ -20,7 +20,6 @@ Grafo createGrafo()
     return create();
 }
 
-
 No getNodeAdjacencia(Grafo grafo, char i[], char j[])
 {
     for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
@@ -417,55 +416,6 @@ Aresta getAresta(Grafo grafo, char i[], char j[])
     return NULL;
 }
 
-Lista getListaAdjacencia(Grafo grafo, char id[])
-{
-    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* no = getInfo(node);
-        if(strcmp(getVerticeId(no->vertice), id) == 0)
-        {
-            return no->adjacencia;
-        }
-    }
-    return NULL;
-}
-
-void removerArestabyLdir(Grafo grafo, char ldir[])
-{
-    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* no = getInfo(node);
-        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
-        {
-            NodeAdjacenciaStruct* aux = getInfo(noAdj);
-            if(strcmp(ldir, getArestaLdir(aux->aresta)) == 0)
-            {
-                free(aux->aresta);
-                free(aux);
-                removerNo(grafo, node, NULL);
-            }
-        }
-    }
-}
-
-void removerArestabyLesq(Grafo grafo, char lesq[])
-{
-    for(No node = getFirst(grafo); node!= NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* no = getInfo(node);
-        for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
-        {
-            NodeAdjacenciaStruct* aux = getInfo(noAdj);
-            if(strcmp(lesq, getArestaLesq(aux->aresta)) == 0)
-            {
-                free(aux->aresta);
-                free(aux);
-                removerNo(grafo, node, NULL);
-            }
-        }
-    }
-}
-
 void desalocarNodeAdjacencia(No node)
 {
     NodeAdjacenciaStruct* aux = (NodeAdjacenciaStruct*) node;
@@ -559,7 +509,7 @@ void printarGrafo(Grafo grafo, FILE *svg, char cor[])
         x1 = getVerticeX(no->vertice);
         y1 = getVerticeY(no->vertice);
 
-        fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", x1, y1, 5.0, "black", "black");
+        fprintf(svg, "\t<circle cx=\"%lf\" cy=\"%lf\" r=\"%lf\" stroke=\"%s\" fill=\"%s\"/>\n ", x1, y1, 5.0, "blue", "white");
 
         for(No noAdj = getFirst(no->adjacencia); noAdj!= NULL; noAdj = getNext(noAdj))
         {
@@ -572,6 +522,43 @@ void printarGrafo(Grafo grafo, FILE *svg, char cor[])
             }
         }     
     }
+}
+
+char* getIdPorPosicao(Grafo grafo, int i, char id[])
+{
+    int cont = 0;
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(strcmp(id, getVerticeId(aux->vertice)) == 0)
+        {
+            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
+            {
+                if(cont == i)
+                {
+                    NodeAdjacenciaStruct* nas = getInfo(ih);
+                    return nas->j;
+                }
+                cont++;
+            }
+        }
+    }
+    return NULL;
+}
+
+char* getIdPorPosicaoVertice(Grafo grafo, int i)
+{
+    int cont = 0;
+    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
+    {
+        NodeGrafoStruct* aux = getInfo(ij);
+        if(cont == i)
+        {
+            return getVerticeId(aux->vertice);
+        }
+        cont++;     
+    }
+    return NULL;
 }
 
 Grafo algoritmoPrim(Grafo grafo, int tam)
@@ -646,98 +633,9 @@ Grafo algoritmoPrim(Grafo grafo, int tam)
     return arvoreMinima;
 }
 
-int getPosicaoDoVertice(Grafo grafo, char id[])
-{
-    int cont = 0;
-    for(No i = getFirst(grafo); i != NULL; i = getNext(i))
-    {
-        NodeGrafoStruct* al = getInfo(i);
-        if(strcmp(getVerticeId(al->vertice), id) == 0)
-        {
-            return cont;
-        }
-        cont++;
-    }
-    return 0;
-}
-
-char* getIdPorPosicao(Grafo grafo, int i, char id[])
-{
-    int cont = 0;
-    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
-    {
-        NodeGrafoStruct* aux = getInfo(ij);
-        if(strcmp(id, getVerticeId(aux->vertice)) == 0)
-        {
-            for(No ih = getFirst(aux->adjacencia); ih != NULL; ih = getNext(ih))
-            {
-                if(cont == i)
-                {
-                    NodeAdjacenciaStruct* nas = getInfo(ih);
-                    return nas->j;
-                }
-                cont++;
-            }
-        }
-    }
-    return NULL;
-}
-
-char* getIdPorPosicaoVertice(Grafo grafo, int i)
-{
-    int cont = 0;
-    for(No ij = getFirst(grafo); ij != NULL; ij = getNext(ij))
-    {
-        NodeGrafoStruct* aux = getInfo(ij);
-        if(cont == i)
-        {
-            return getVerticeId(aux->vertice);
-        }
-        cont++;     
-    }
-    return NULL;
-}
-
-Vertice getVerticebyPosicao(Grafo grafo, int i)
-{
-    int cont = 0;
-    for(No node = getFirst(grafo); node != NULL; node = getNext(node))
-    {
-        NodeGrafoStruct* aux = getInfo(node);
-        if(cont == i)
-        {
-            return aux->vertice;
-        }
-        cont++;     
-    }
-    return NULL;
-}
-
-int indiceMenorDistancia(Hash hashtable, double *distancia, int tam, Grafo grafo)
-{
-    int indice = -1;
-    double menorDistancia = 10000.0;
-    char id[60];
-
-    for(int i = 0; i < tam; i++)
-    {
-        strcpy(id, getIdPorPosicaoVertice(grafo, i));
-        if(searchHashTable(id, hashtable, tam) == NULL)
-        {
-            if(menorDistancia >= distancia[i])
-            {
-                menorDistancia = distancia[i];
-                indice = i;
-            }
-        }
-    }
-    return indice;
-}
-
-
 Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(Aresta aresta))
 {
-    Hash visitado = createHashTable(tam);
+    Hash visitado = createHashTable(tam), anterio = createHashTable(tam), distanc = createHashTable(tam);
     Lista path = create();
     Vertice vertice = getVertice(grafo, inicial), verticeAux;
     Aresta aresta, arestaAux;
@@ -749,8 +647,6 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(
     strcpy(buscaAux, fim);
     strcpy(idAnterior, fim);
     strcpy(start, inicial);
-    Hash anterio = createHashTable(tam);
-    Hash distanc = createHashTable(tam);
     double *ds = malloc(sizeof(double));
     *ds = 99999;
     char* tempId = malloc(sizeof(char) * 60 + 1);

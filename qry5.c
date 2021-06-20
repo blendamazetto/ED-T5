@@ -109,8 +109,8 @@ void ccv(Grafo grafo, char sufx[], char saidaQry[])
 
     Grafo prim = algoritmoPrim(grafo, tam);
 
-    printarGrafo(grafo, svg, "black");
-    printarGrafo(prim, svg, "yellow");
+    printarGrafo(grafo, svg, "lightgray");
+    printarGrafo(prim, svg, "black");
 
     finalizaSvg(svg);
     free(pathSvg);

@@ -307,12 +307,14 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%s %s %s %s", sufx, indiceRegistrador, indiceRegistrador2, cmc);
             fprintf(saida,"%s %s %s %s %s\n", tipo, sufx, indiceRegistrador, indiceRegistrador2, cmc);
+            Grafo prim = algoritmoPrim(grafo[1], tamanhoDaLista(grafo[1]));
+
             if(strcmp(sufx, "-") == 0)
             {
                 char* pathSvg = malloc((6 + strlen(lastSufx) + strlen(saidaQry))*sizeof(char));
                 sprintf(pathSvg,"%s-%s.svg", saidaQry, lastSufx);
                 svg = fopen(pathSvg, "a");
-                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg, idPInt);
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, prim, registradores, saida, svg, idPInt);
                 idPInt = idPInt + 2;
                 free(pathSvg);
                 fclose(svg);
@@ -328,7 +330,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
                     gerarSvgGeo(svg, arvoresObjetos, NULL);
                     iniciouSufx = 1;
                 }
-                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, grafo[1], registradores, saida, svg, idPInt);
+                pb(indiceReg(indiceRegistrador), indiceReg(indiceRegistrador2), cmc, prim, registradores, saida, svg, idPInt);
                 idPInt = idPInt + 2;
                 strcpy(lastSufx, sufx);
                 free(pathSvg);
