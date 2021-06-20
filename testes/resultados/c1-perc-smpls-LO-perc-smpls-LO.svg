@@ -1556,71 +1556,94 @@
  	<circle cx="326.478578" cy="107.593270" r="5" stroke="green" fill="blue"/>
  	<circle cx="1252.745717" cy="225.398806" r="5" stroke="green" fill="blue"/>
  	<circle cx="1056.274452" cy="631.278601" r="5" stroke="green" fill="blue"/>
- 	<rect x="1215.000000" y="935.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="375.000000" y="1030.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="240.000000" y="650.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="1050.000000" y="650.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="255.000000" y="270.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="1080.000000" y="935.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="270.000000" y="555.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="165.000000" y="460.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="240.000000" y="1030.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="435.000000" y="175.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="780.000000" y="270.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="525.000000" y="460.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="285.000000" y="380.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="780.000000" y="475.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="975.000000" y="665.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="795.000000" y="555.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="960.000000" y="745.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="810.000000" y="270.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="240.000000" y="555.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="1185.000000" y="285.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="465.000000" y="665.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<rect x="285.000000" y="935.000000" width="10.000000" height="10.000000" fill="orange" stroke="orange" stroke-width ="1"/>
-	<text x="1215.000000" y="945.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="375.000000" y="1040.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="240.000000" y="660.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="1050.000000" y="660.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="255.000000" y="280.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="1080.000000" y="945.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="270.000000" y="565.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="165.000000" y="470.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="240.000000" y="1040.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="435.000000" y="185.000000" stroke="white" stroke-width="0.3" fill="white">20</text>
-	<text x="780.000000" y="280.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="525.000000" y="470.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="285.000000" y="390.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="780.000000" y="485.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="975.000000" y="675.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="795.000000" y="565.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="960.000000" y="755.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="810.000000" y="280.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="240.000000" y="565.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="1185.000000" y="295.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="465.000000" y="675.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<text x="285.000000" y="945.000000" stroke="white" stroke-width="0.3" fill="white">40</text>
-	<line x1="353.000000" y1="475.000000" x2="353.000000" y2="555.000000" stroke="red" stroke-width="4"/>
-	<line x1="767.000000" y1="190.000000" x2="767.000000" y2="270.000000" stroke="red" stroke-width="4"/>
-	<line x1="770.000000" y1="187.000000" x2="890.000000" y2="187.000000" stroke="red" stroke-width="4"/>
-	<line x1="497.000000" y1="380.000000" x2="497.000000" y2="460.000000" stroke="red" stroke-width="4"/>
-	<line x1="230.000000" y1="463.000000" x2="350.000000" y2="463.000000" stroke="red" stroke-width="4"/>
-	<line x1="893.000000" y1="475.000000" x2="893.000000" y2="555.000000" stroke="red" stroke-width="4"/>
-	<line x1="770.000000" y1="558.000000" x2="890.000000" y2="558.000000" stroke="red" stroke-width="4"/>
-	<line x1="905.000000" y1="748.000000" x2="1025.000000" y2="748.000000" stroke="red" stroke-width="4"/>
-	<line x1="905.000000" y1="662.000000" x2="1025.000000" y2="662.000000" stroke="red" stroke-width="4"/>
-	<line x1="893.000000" y1="475.000000" x2="893.000000" y2="555.000000" stroke="red" stroke-width="4"/>
-	<line x1="770.000000" y1="558.000000" x2="890.000000" y2="558.000000" stroke="red" stroke-width="4"/>
-	<line x1="905.000000" y1="748.000000" x2="1025.000000" y2="748.000000" stroke="red" stroke-width="4"/>
-	<line x1="905.000000" y1="662.000000" x2="1025.000000" y2="662.000000" stroke="red" stroke-width="4"/>
-	<line x1="767.000000" y1="190.000000" x2="767.000000" y2="270.000000" stroke="red" stroke-width="4"/>
-	<line x1="770.000000" y1="187.000000" x2="890.000000" y2="187.000000" stroke="red" stroke-width="4"/>
-	<line x1="353.000000" y1="475.000000" x2="353.000000" y2="555.000000" stroke="red" stroke-width="4"/>
-	<line x1="1175.000000" y1="368.000000" x2="1295.000000" y2="368.000000" stroke="red" stroke-width="4"/>
-	<line x1="365.000000" y1="748.000000" x2="485.000000" y2="748.000000" stroke="red" stroke-width="4"/>
-	<line x1="227.000000" y1="855.000000" x2="227.000000" y2="935.000000" stroke="red" stroke-width="4"/>
-	<line x1="124.800000" y1="92.800000" x2="124.800000" y2="0.000000" stroke="black" stroke-width="4"/>
-	<line x1="1404.000000" y1="1044.000000" x2="1404.000000" y2="0.000000" stroke="black" stroke-width="4"/>
-	<text x="124.800000" y="11.000000" stroke="black" stroke-width="0.3" fill="black">REGISTRADOR 3</text>
-	<text x="1404.000000" y="11.000000" stroke="black" stroke-width="0.3" fill="black">REGISTRADOR 5</text>
+ 	<circle cx="125.000000" cy="91.250000" r="5.000000" stroke="yellow" fill="yellow"/>
+ 	<text x="125.000000" y="91.250000" stroke="black" stroke-width="0.3" fill="black">INICIO</text>
+	<circle cx="1407.500000" cy="91.250000" r="5.000000" stroke="yellow" fill="yellow"/>
+ 	<text x="1407.500000" y="91.250000" stroke="black" stroke-width="0.3" fill="black">FIM</text>
+	<line x1="126.000000" y1="92.250000" x2="159.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="159.750000" y1="92.250000" x2="193.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="193.500000" y1="92.250000" x2="227.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="227.250000" y1="92.250000" x2="261.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="261.000000" y1="92.250000" x2="294.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="294.750000" y1="92.250000" x2="328.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="328.500000" y1="92.250000" x2="362.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="362.250000" y1="92.250000" x2="396.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="396.000000" y1="92.250000" x2="429.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="429.750000" y1="92.250000" x2="463.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="463.500000" y1="92.250000" x2="497.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="497.250000" y1="92.250000" x2="531.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="531.000000" y1="92.250000" x2="564.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="564.750000" y1="92.250000" x2="598.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="598.500000" y1="92.250000" x2="632.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="632.250000" y1="92.250000" x2="666.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="666.000000" y1="92.250000" x2="699.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="699.750000" y1="92.250000" x2="733.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="733.500000" y1="92.250000" x2="767.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="767.250000" y1="92.250000" x2="801.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="801.000000" y1="92.250000" x2="834.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="834.750000" y1="92.250000" x2="868.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="868.500000" y1="92.250000" x2="902.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="902.250000" y1="92.250000" x2="936.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="936.000000" y1="92.250000" x2="969.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="969.750000" y1="92.250000" x2="1003.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1003.500000" y1="92.250000" x2="1037.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1037.250000" y1="92.250000" x2="1071.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1071.000000" y1="92.250000" x2="1104.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1104.750000" y1="92.250000" x2="1138.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1138.500000" y1="92.250000" x2="1172.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1172.250000" y1="92.250000" x2="1206.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1206.000000" y1="92.250000" x2="1239.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1239.750000" y1="92.250000" x2="1273.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1273.500000" y1="92.250000" x2="1307.250000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1307.250000" y1="92.250000" x2="1341.000000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1341.000000" y1="92.250000" x2="1374.750000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="1374.750000" y1="92.250000" x2="1408.500000" y2="92.250000" stroke-width="5" stroke="blue"/>
+	<line x1="124.000000" y1="90.250000" x2="124.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="124.000000" y1="58.000000" x2="157.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="157.750000" y1="58.000000" x2="191.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="191.500000" y1="58.000000" x2="225.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="225.250000" y1="58.000000" x2="259.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="259.000000" y1="58.000000" x2="292.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="292.750000" y1="58.000000" x2="326.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="326.500000" y1="58.000000" x2="360.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="360.250000" y1="58.000000" x2="394.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="394.000000" y1="58.000000" x2="427.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="427.750000" y1="58.000000" x2="461.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="461.500000" y1="58.000000" x2="495.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="495.250000" y1="58.000000" x2="529.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="529.000000" y1="58.000000" x2="562.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="562.750000" y1="58.000000" x2="596.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="596.500000" y1="58.000000" x2="630.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="630.250000" y1="58.000000" x2="664.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="664.000000" y1="58.000000" x2="697.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="697.750000" y1="58.000000" x2="731.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="731.500000" y1="58.000000" x2="765.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="765.250000" y1="58.000000" x2="799.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="799.000000" y1="58.000000" x2="832.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="832.750000" y1="58.000000" x2="866.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="866.500000" y1="58.000000" x2="900.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="900.250000" y1="58.000000" x2="934.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="934.000000" y1="58.000000" x2="967.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="967.750000" y1="58.000000" x2="1001.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1001.500000" y1="58.000000" x2="1035.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1035.250000" y1="58.000000" x2="1069.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1069.000000" y1="58.000000" x2="1102.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1102.750000" y1="58.000000" x2="1136.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1136.500000" y1="58.000000" x2="1170.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1170.250000" y1="58.000000" x2="1204.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1204.000000" y1="58.000000" x2="1237.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1237.750000" y1="58.000000" x2="1271.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1271.500000" y1="58.000000" x2="1305.250000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1305.250000" y1="58.000000" x2="1339.000000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1339.000000" y1="58.000000" x2="1372.750000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1372.750000" y1="58.000000" x2="1406.500000" y2="58.000000" stroke-width="5" stroke="yellow"/>
+	<line x1="1406.500000" y1="58.000000" x2="1406.500000" y2="90.250000" stroke-width="5" stroke="yellow"/>
+
+	<path style="fill:none;stroke:blue;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+	 d=" M 125.000000 91.250000L 158.750000 91.250000L 192.500000 91.250000L 226.250000 91.250000L 260.000000 91.250000L 293.750000 91.250000L 327.500000 91.250000L 361.250000 91.250000L 395.000000 91.250000L 428.750000 91.250000L 462.500000 91.250000L 496.250000 91.250000L 530.000000 91.250000L 563.750000 91.250000L 597.500000 91.250000L 631.250000 91.250000L 665.000000 91.250000L 698.750000 91.250000L 732.500000 91.250000L 766.250000 91.250000L 800.000000 91.250000L 833.750000 91.250000L 867.500000 91.250000L 901.250000 91.250000L 935.000000 91.250000L 968.750000 91.250000L 1002.500000 91.250000L 1036.250000 91.250000L 1070.000000 91.250000L 1103.750000 91.250000L 1137.500000 91.250000L 1171.250000 91.250000L 1205.000000 91.250000L 1238.750000 91.250000L 1272.500000 91.250000L 1306.250000 91.250000L 1340.000000 91.250000L 1373.750000 91.250000L 1407.500000 91.250000" id="0" />
+	<circle cx="" cy="" r="5" fill="red"><animateMotion dur="6s" repeatCount="indefinite"><mpath xlink:href="#0"/></animateMotion></circle>
+
+	<path style="fill:none;stroke:blue;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+	 d=" M 125.000000 91.250000L 125.000000 59.000000L 158.750000 59.000000L 192.500000 59.000000L 226.250000 59.000000L 260.000000 59.000000L 293.750000 59.000000L 327.500000 59.000000L 361.250000 59.000000L 395.000000 59.000000L 428.750000 59.000000L 462.500000 59.000000L 496.250000 59.000000L 530.000000 59.000000L 563.750000 59.000000L 597.500000 59.000000L 631.250000 59.000000L 665.000000 59.000000L 698.750000 59.000000L 732.500000 59.000000L 766.250000 59.000000L 800.000000 59.000000L 833.750000 59.000000L 867.500000 59.000000L 901.250000 59.000000L 935.000000 59.000000L 968.750000 59.000000L 1002.500000 59.000000L 1036.250000 59.000000L 1070.000000 59.000000L 1103.750000 59.000000L 1137.500000 59.000000L 1171.250000 59.000000L 1205.000000 59.000000L 1238.750000 59.000000L 1272.500000 59.000000L 1306.250000 59.000000L 1340.000000 59.000000L 1373.750000 59.000000L 1407.500000 59.000000L 1407.500000 91.250000" id="1" />
+	<circle cx="" cy="" r="5" fill="red"><animateMotion dur="6s" repeatCount="indefinite"><mpath xlink:href="#1"/></animateMotion></circle>
 </svg>

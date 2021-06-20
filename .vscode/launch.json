@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/siguel",
-            "args": ["./siguel", "-e", "./testes", "-f", "c1.geo", "-o", "./testes/resultados", "-ec", "c1.ec", "-pm", "c1.pm","-v", "c1-v.via", "-q", "perc-smpls-diag.qry"],
+            "args": ["./siguel", "-e", "./testes", "-f", "c1.geo", "-o", "./testes/resultados", "-v", "c1-v.via", "-q", "perc-smpls-bike-diag.qry"],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": [],

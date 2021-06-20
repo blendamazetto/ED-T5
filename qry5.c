@@ -358,7 +358,6 @@ void bf(int max, Grafo grafo, Lista casosCovid, FILE* saida, Lista listasQry[], 
             removerBf(grafo, "S", quadra);
         }
     }
-
     removerVerticeDesconexo(grafo);
 }
 

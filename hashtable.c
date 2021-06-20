@@ -186,8 +186,6 @@ void deleteHashTable(Hash hashtable, int tamanho, int a)
             }
         }
     }
-
-    free(h);
 }
 
 void setHashTable(char key[], Hash hashtable, int tamanho, Info info)

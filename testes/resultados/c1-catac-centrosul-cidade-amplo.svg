@@ -575,14 +575,10 @@
 	<text x="530.000000" y="420.000000" fill="black">b04.4</text>
 	<rect x="1040.000000" y="570.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1070.000000" y="610.000000" fill="black">b06.8</text>
-	<rect x="635.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="665.000000" y="420.000000" fill="black">b04.5</text>
 	<rect x="770.000000" y="475.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="800.000000" y="515.000000" fill="black">b05.6</text>
 	<rect x="1040.000000" y="475.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1070.000000" y="515.000000" fill="black">b05.8</text>
-	<rect x="770.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="800.000000" y="420.000000" fill="black">b04.6</text>
 	<rect x="905.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="935.000000" y="420.000000" fill="black">b04.7</text>
 	<rect x="230.000000" y="760.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
@@ -615,12 +611,8 @@
 	<text x="530.000000" y="325.000000" fill="black">b03.4</text>
 	<rect x="1175.000000" y="570.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1205.000000" y="610.000000" fill="black">b06.9</text>
-	<rect x="635.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="665.000000" y="325.000000" fill="black">b03.5</text>
 	<rect x="1175.000000" y="475.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1205.000000" y="515.000000" fill="black">b05.9</text>
-	<rect x="770.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="800.000000" y="325.000000" fill="black">b03.6</text>
 	<rect x="1040.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1070.000000" y="420.000000" fill="black">b04.8</text>
 	<rect x="1040.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
@@ -641,6 +633,8 @@
 	<text x="1070.000000" y="705.000000" fill="black">b07.8</text>
 	<rect x="1310.000000" y="665.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="705.000000" fill="black">b07.10</text>
+	<rect x="500.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
+	<text x="530.000000" y="135.000000" fill="black">b01.4</text>
 	<rect x="95.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="125.000000" y="420.000000" fill="black">b04.1</text>
 	<rect x="230.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
@@ -653,24 +647,14 @@
 	<text x="260.000000" y="135.000000" fill="black">b01.2</text>
 	<rect x="365.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="395.000000" y="230.000000" fill="black">b02.3</text>
-	<rect x="500.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="530.000000" y="230.000000" fill="black">b02.4</text>
 	<rect x="1310.000000" y="570.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="610.000000" fill="black">b06.10</text>
-	<rect x="635.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="665.000000" y="230.000000" fill="black">b02.5</text>
 	<rect x="1310.000000" y="475.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="515.000000" fill="black">b05.10</text>
-	<rect x="770.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="800.000000" y="230.000000" fill="black">b02.6</text>
 	<rect x="1175.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1205.000000" y="420.000000" fill="black">b04.9</text>
-	<rect x="905.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="935.000000" y="325.000000" fill="black">b03.7</text>
 	<rect x="1175.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1205.000000" y="325.000000" fill="black">b03.9</text>
-	<rect x="905.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="935.000000" y="230.000000" fill="black">b02.7</text>
 	<rect x="1310.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="135.000000" fill="black">b01.10</text>
 	<rect x="95.000000" y="950.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
@@ -687,18 +671,10 @@
 	<text x="1205.000000" y="800.000000" fill="black">b08.9</text>
 	<rect x="365.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="395.000000" y="135.000000" fill="black">b01.3</text>
-	<rect x="500.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="530.000000" y="135.000000" fill="black">b01.4</text>
-	<rect x="635.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="665.000000" y="135.000000" fill="black">b01.5</text>
-	<rect x="770.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="800.000000" y="135.000000" fill="black">b01.6</text>
 	<rect x="1310.000000" y="380.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="420.000000" fill="black">b04.10</text>
 	<rect x="1310.000000" y="285.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1340.000000" y="325.000000" fill="black">b03.10</text>
-	<rect x="905.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
-	<text x="935.000000" y="135.000000" fill="black">b01.7</text>
 	<rect x="1175.000000" y="95.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
 	<text x="1205.000000" y="135.000000" fill="black">b01.9</text>
 	<rect x="1310.000000" y="190.000000" width="120.000000" height="80.000000" fill="Khaki" stroke="dimgray" stroke-width="1.0px" filter="url(#shadow0)" />
@@ -743,7 +719,6 @@
  	<circle cx="620.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="635.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="635.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="695.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="755.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="905.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="890.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -762,14 +737,10 @@
  	<circle cx="635.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="620.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="620.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="695.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1025.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="905.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="830.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="905.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="890.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="560.000000" cy="650.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="620.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -787,17 +758,11 @@
  	<circle cx="500.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="560.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="695.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1040.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1025.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="770.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="965.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="905.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="650.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="560.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="620.000000" cy="705.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -818,20 +783,10 @@
  	<circle cx="485.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="560.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="695.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1160.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1040.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1025.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="830.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1025.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="560.000000" cy="840.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -855,23 +810,10 @@
  	<circle cx="485.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="560.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1175.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1160.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1040.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="830.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1040.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="965.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="350.000000" cy="650.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -900,22 +842,10 @@
  	<circle cx="425.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="560.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1295.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1175.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1100.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="830.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1160.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="965.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="350.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="425.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="760.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -948,25 +878,10 @@
  	<circle cx="425.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="500.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1310.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1295.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1160.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="830.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1175.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1100.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="350.000000" cy="705.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1001,25 +916,10 @@
  	<circle cx="365.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="425.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="610.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1310.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1175.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1295.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="965.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="290.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="350.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1056,25 +956,9 @@
  	<circle cx="350.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="570.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1235.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1310.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1100.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="965.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1114,25 +998,8 @@
  	<circle cx="350.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1295.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="515.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1235.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1100.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="950.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="840.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="665.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1160,6 +1027,7 @@
  	<circle cx="1370.000000" cy="650.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="500.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1170,27 +1038,8 @@
  	<circle cx="350.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1310.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1100.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1100.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="990.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1218,6 +1067,7 @@
  	<circle cx="1430.000000" cy="650.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="500.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1227,30 +1077,11 @@
  	<circle cx="350.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1370.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1235.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1040.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1040.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1025.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="760.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="155.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1279,25 +1110,16 @@
  	<circle cx="350.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="555.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1370.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1025.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1100.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1040.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1040.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="965.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1025.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="800.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="855.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="855.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1321,22 +1143,14 @@
  	<circle cx="350.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="365.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="485.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="500.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="620.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="635.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="890.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="905.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1235.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1235.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1100.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1040.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1025.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="840.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="895.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="895.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1352,16 +1166,14 @@
  	<circle cx="1310.000000" cy="895.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="855.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="745.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="755.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="770.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1370.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1295.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1175.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1235.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1100.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1040.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="855.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="950.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1374,10 +1186,14 @@
  	<circle cx="1310.000000" cy="990.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1310.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="895.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1310.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1160.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="95.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="190.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1040.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="895.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="950.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="990.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1389,8 +1205,14 @@
  	<circle cx="1310.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="950.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1370.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1370.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1370.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="135.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="230.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="95.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="990.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="230.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
@@ -1400,16 +1222,54 @@
  	<circle cx="1370.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="990.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="935.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
- 	<circle cx="1430.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1370.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="475.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="215.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1295.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="1430.000000" cy="1030.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="175.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="325.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="285.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="380.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1235.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1235.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1160.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="420.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1295.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1175.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1430.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1370.000000" cy="270.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1370.000000" cy="365.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1310.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1235.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
+ 	<circle cx="1370.000000" cy="460.000000" r="1.000000" stroke="red" stroke-width="1.0px" fill="orange"/>
  	<circle cx="492.500000" cy="657.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="752.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="492.500000" cy="752.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="762.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="752.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="657.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
@@ -1419,10 +1279,6 @@
  	<circle cx="357.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="492.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="762.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="627.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="897.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="87.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="847.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="87.500000" cy="657.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
@@ -1434,15 +1290,7 @@
  	<circle cx="87.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="627.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1032.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1032.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="492.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="492.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="627.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1167.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="762.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1032.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="492.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="492.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="762.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
@@ -1453,28 +1301,28 @@
  	<circle cx="87.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="222.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="357.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="492.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1167.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1167.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="492.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="627.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1302.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="762.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="897.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1167.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="897.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1167.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="762.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="492.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="492.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1032.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1032.500000" cy="847.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1167.500000" cy="752.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1167.500000" cy="657.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1302.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1302.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="897.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1032.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
- 	<circle cx="1167.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1167.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1032.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1032.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="492.500000" cy="87.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="492.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1167.500000" cy="942.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="1302.500000" cy="752.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1167.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1302.500000" cy="467.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1167.500000" cy="562.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1167.500000" cy="182.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1302.500000" cy="372.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1167.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
+ 	<circle cx="1302.500000" cy="277.500000" r="1.000000" stroke="blue" stroke-width="1.0px" fill="steelblue"/>
  	<circle cx="560.000000" cy="610.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="425.000000" cy="610.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="695.000000" cy="800.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
@@ -1490,8 +1338,7 @@
  	<circle cx="425.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="560.000000" cy="515.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="965.000000" cy="515.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="560.000000" cy="420.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="830.000000" cy="420.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
+ 	<circle cx="1235.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="155.000000" cy="895.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="290.000000" cy="610.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="425.000000" cy="800.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
@@ -1507,11 +1354,8 @@
  	<circle cx="290.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="425.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1100.000000" cy="515.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="560.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="695.000000" cy="420.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
+ 	<circle cx="1235.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1100.000000" cy="420.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="695.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="830.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="290.000000" cy="895.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="290.000000" cy="705.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="155.000000" cy="610.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
@@ -1527,45 +1371,23 @@
  	<circle cx="155.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="290.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1235.000000" cy="515.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="560.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1370.000000" cy="420.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="695.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="965.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="830.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
+ 	<circle cx="1100.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="290.000000" cy="990.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="155.000000" cy="800.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1100.000000" cy="895.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1370.000000" cy="990.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1370.000000" cy="515.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="560.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="695.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="1235.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="965.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="1235.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
+ 	<circle cx="1370.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
+ 	<circle cx="1100.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="965.000000" cy="990.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1100.000000" cy="990.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1235.000000" cy="990.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="1370.000000" cy="895.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="1370.000000" cy="325.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="1100.000000" cy="230.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="1100.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="965.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
- 	<circle cx="830.000000" cy="135.000000" r="1.000000" stroke="lightgrey" stroke-width="1.0px" fill="blue"/>
  	<circle cx="928.040543" cy="255.418324" r="5" stroke="green" fill="blue"/>
  	<circle cx="947.338572" cy="775.773389" r="5" stroke="green" fill="blue"/>
  	<circle cx="326.478578" cy="107.593270" r="5" stroke="green" fill="blue"/>
  	<circle cx="1252.745717" cy="225.398806" r="5" stroke="green" fill="blue"/>
  	<circle cx="1056.274452" cy="631.278601" r="5" stroke="green" fill="blue"/>
- 	<circle cx="125.000000" cy="91.250000" r="5.000000" stroke="yellow" fill="yellow"/>
- 	<text x="125.000000" y="91.250000" stroke="black" stroke-width="0.3" fill="black">INICIO</text>
-	<circle cx="1407.500000" cy="1033.750000" r="5.000000" stroke="yellow" fill="yellow"/>
- 	<text x="1407.500000" y="1033.750000" stroke="black" stroke-width="0.3" fill="black">FIM</text>
-
-	<path style="fill:none;stroke:darkgray;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-	 d=" M 125.000000 91.250000L 158.750000 91.250000L 192.500000 91.250000L 226.250000 91.250000L 260.000000 91.250000L 293.750000 91.250000L 327.500000 91.250000L 361.250000 91.250000L 361.250000 115.000000L 361.250000 138.750000L 361.250000 162.500000L 361.250000 186.250000L 361.250000 210.000000L 361.250000 233.750000L 361.250000 257.500000L 361.250000 281.250000L 361.250000 305.000000L 361.250000 328.750000L 361.250000 352.500000L 361.250000 376.250000L 361.250000 400.000000L 361.250000 423.750000L 361.250000 447.500000L 361.250000 471.250000L 395.000000 471.250000L 428.750000 471.250000L 462.500000 471.250000L 496.250000 471.250000L 530.000000 471.250000L 563.750000 471.250000L 597.500000 471.250000L 631.250000 471.250000L 631.250000 495.000000L 631.250000 518.750000L 631.250000 542.500000L 631.250000 566.250000L 631.250000 590.000000L 631.250000 613.750000L 631.250000 637.500000L 631.250000 661.250000L 631.250000 685.000000L 631.250000 708.750000L 631.250000 732.500000L 631.250000 756.250000L 631.250000 780.000000L 631.250000 803.750000L 631.250000 827.500000L 631.250000 851.250000L 631.250000 875.000000L 631.250000 898.750000L 631.250000 922.500000L 631.250000 946.250000L 631.250000 968.125000L 631.250000 990.000000L 631.250000 1011.875000L 631.250000 1033.750000L 665.000000 1033.750000L 698.750000 1033.750000L 732.500000 1033.750000L 766.250000 1033.750000L 800.000000 1033.750000L 833.750000 1033.750000L 867.500000 1033.750000L 901.250000 1033.750000L 935.000000 1033.750000L 968.750000 1033.750000L 1002.500000 1033.750000L 1036.250000 1033.750000L 1070.000000 1033.750000L 1103.750000 1033.750000L 1137.500000 1033.750000L 1171.250000 1033.750000L 1205.000000 1033.750000L 1238.750000 1033.750000L 1272.500000 1033.750000L 1306.250000 1033.750000L 1340.000000 1033.750000L 1373.750000 1033.750000L 1407.500000 1033.750000" id="0" />
-	<circle cx="" cy="" r="5" fill="red"><animateMotion dur="6s" repeatCount="indefinite"><mpath xlink:href="#0"/></animateMotion></circle>
-
-	<path style="fill:none;stroke:darkgray;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-	 d=" M 125.000000 91.250000L 125.000000 59.000000L 158.750000 59.000000L 192.500000 59.000000L 226.250000 59.000000L 260.000000 59.000000L 293.750000 59.000000L 327.500000 59.000000L 361.250000 59.000000L 395.000000 59.000000L 428.750000 59.000000L 462.500000 59.000000L 496.250000 59.000000L 530.000000 59.000000L 563.750000 59.000000L 597.500000 59.000000L 631.250000 59.000000L 665.000000 59.000000L 698.750000 59.000000L 732.500000 59.000000L 766.250000 59.000000L 800.000000 59.000000L 833.750000 59.000000L 867.500000 59.000000L 901.250000 59.000000L 935.000000 59.000000L 968.750000 59.000000L 1002.500000 59.000000L 1036.250000 59.000000L 1070.000000 59.000000L 1103.750000 59.000000L 1137.500000 59.000000L 1171.250000 59.000000L 1205.000000 59.000000L 1238.750000 59.000000L 1272.500000 59.000000L 1306.250000 59.000000L 1340.000000 59.000000L 1373.750000 59.000000L 1407.500000 59.000000L 1441.250000 59.000000L 1441.250000 91.250000L 1441.250000 115.000000L 1441.250000 138.750000L 1441.250000 162.500000L 1441.250000 186.250000L 1441.250000 210.000000L 1441.250000 233.750000L 1441.250000 257.500000L 1441.250000 281.250000L 1441.250000 305.000000L 1441.250000 328.750000L 1441.250000 352.500000L 1441.250000 376.250000L 1441.250000 400.000000L 1441.250000 423.750000L 1441.250000 447.500000L 1441.250000 471.250000L 1441.250000 495.000000L 1441.250000 518.750000L 1441.250000 542.500000L 1441.250000 566.250000L 1441.250000 590.000000L 1441.250000 613.750000L 1441.250000 637.500000L 1441.250000 661.250000L 1441.250000 685.000000L 1441.250000 708.750000L 1441.250000 732.500000L 1441.250000 756.250000L 1441.250000 780.000000L 1441.250000 803.750000L 1441.250000 827.500000L 1441.250000 851.250000L 1441.250000 875.000000L 1441.250000 898.750000L 1441.250000 922.500000L 1441.250000 946.250000L 1441.250000 968.125000L 1441.250000 990.000000L 1441.250000 1011.875000L 1441.250000 1033.750000L 1441.250000 1061.000000L 1407.500000 1061.000000L 1407.500000 1033.750000" id="1" />
-	<circle cx="" cy="" r="5" fill="red"><animateMotion dur="6s" repeatCount="indefinite"><mpath xlink:href="#1"/></animateMotion></circle>
-</svg>
+ 	<circle cx="780.000000" cy="232.000000" r="290.000000" stroke="#6C6753" fill="#CCFF00" opacity="0.5" />
+ </svg>

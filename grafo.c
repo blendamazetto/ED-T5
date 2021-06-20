@@ -736,13 +736,20 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(
 
     while(1)
     {
-        insert(path, copiarVertice(getVertice(grafo, idAnterior)));
-        strcpy(idAnt, searchHashTable(idAnterior, anterio, tam));
-        strcpy(idAnterior, idAnt);
-
-        if(strcmp(start, idAnterior) == 0)
+        if(getVertice(grafo, idAnterior) == NULL)
         {
-            break;
+            return NULL;
+        }
+        else
+        {
+            insert(path, copiarVertice(getVertice(grafo, idAnterior)));
+            strcpy(idAnt, searchHashTable(idAnterior, anterio, tam));
+            strcpy(idAnterior, idAnt);
+
+            if(strcmp(start, idAnterior) == 0)
+            {
+                break;
+            }
         }
     }
 

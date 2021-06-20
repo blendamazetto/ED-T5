@@ -157,8 +157,6 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
 
                 removeList(maisCurto, free);
             }
-
-
         }
     }
 
