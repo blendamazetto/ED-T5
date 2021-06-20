@@ -14,7 +14,7 @@ typedef struct hash
 
 unsigned int hash (char key[], int tamanhoHash)
 {
-    int lenght = strnlen(key, 200);
+    int lenght = strlen(key);
     unsigned int hash_value = 0;
 
     for(int i=0; i < lenght; i++)
@@ -211,7 +211,8 @@ void setHashTable(char key[], Hash hashtable, int tamanho, Info info)
 void buscarMenorValor(Hash hashtable, int tamanho, char idMenorValor[], Hash visitado)
 {
     double menorValor = 999999;
-    double *valor;
+    double *valor = malloc(sizeof(double));
+    *valor = 0;
 
     HashStruct* h = hashtable;
     for(int i=0; i < tamanho; i++)

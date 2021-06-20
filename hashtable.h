@@ -91,8 +91,15 @@ void deleteHashTable(Hash hashtable, int tamanho,  int a);
 */
 void setHashTable(char key[], Hash hashtable, int tamanho, Info info);
 
+/*
+    Retorna o menor valor presente em uma hashtable
+*/
 void buscarMenorValor(Hash hashtable, int tamanho, char idMenorValor[], Hash visitado);
 
+/*
+    Retorna o tamanho real de uma hashtable, a hashtable é alocada com o tamanho inicial tam
+    esse funcao retorna quantos itens foram alocados na hashtable
+*/
 int tamanhoDaHashtable(Hash hashtable, int tam);
 
 
