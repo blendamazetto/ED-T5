@@ -31,6 +31,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
     Lista casosCovid = create();
     Ponto registradores[11]; 
     Envoltoria env = createEnvoltoria();
+    Lista pathSoc = create();
 
     for(int b = 0; b < 11; b++)
     {
@@ -136,7 +137,8 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         {
             fscanf(qry,"%d %s %s %lf",&b, cep, face, &num);
             fprintf(saida,"soc %d %s %s %lf\n", b, cep, face, num);
-            soc(arvoresObjetos, b, cep, face, num, saida, listasQry, grafo[0]);
+            soc(arvoresObjetos, b, cep, face, num, saida, listasQry, grafo[0], idPInt, pathSoc);
+            idPInt = idPInt + b;
         }
         else if(strcmp(tipo, "ci")==0)
         {
@@ -335,7 +337,7 @@ void lerQry (char saidaQry[], char arqQry[], Lista listasQry, QuadTree arvoresOb
         }
     }
 
-    gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry, env);
+    gerarSvgQry(arvoresObjetos, listasQry, saidaSvgQry, env, pathSoc);
      
     finalizaSvg(saidaSvgQry);
 

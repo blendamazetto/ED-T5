@@ -227,6 +227,8 @@ void buscarMenorValor(Hash hashtable, int tamanho, char idMenorValor[], Hash vis
             }
         }
     }
+
+    free(valor);
 }
 
 int tamanhoDaHashtable(Hash hashtable, int tam)

@@ -5,6 +5,7 @@
 #include "quadtree.h"
 #include "qry.h"
 #include "envoltoria.h"
+#include "path.h"
 
 /*
     *Faz contas para colocar um retangulo laranja na face determinada no comando
@@ -20,7 +21,7 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
     *Retorna nada
     
 */
-void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo);
+void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo, int idPint, Lista pathSoc);
 
 /*
     *Utilizando funcoes determinadas implementa o comando ci

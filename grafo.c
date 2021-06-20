@@ -852,5 +852,13 @@ Lista dijsktra(Grafo grafo, char inicial[], char fim[], int tam, double getPeso(
 
     insert(path, copiarVertice(getVertice(grafo, start)));
     deleteHashTable(visitado, tam, 0);
+    deleteHashTable(distanc, tam, 0);
+    deleteHashTable(anterio, tam, 0);
+
+    free(ds);
+    free(distHash);
+    free(distAtual);
+    free(tempId);
+
     return path;
 }

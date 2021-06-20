@@ -253,7 +253,7 @@ void gerarSvgGeo(FILE* svg, QuadTree tree[], Lista l)
     }
 }
 
-void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry, Envoltoria env)
+void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry, Envoltoria env, Lista pathSoc)
 {
     gerarSvgGeo(saidaSvgQry, arvoresObjetos, NULL);
 
@@ -349,4 +349,12 @@ void gerarSvgQry(QuadTree arvoresObjetos[], Lista listasQry[], FILE* saidaSvgQry
     }
 
     printarEnvoltoria(env, saidaSvgQry);
+
+    for(No node = getFirst(pathSoc); node != NULL; node = getNext(node))
+    {
+        Info path = getInfo(node);
+        desenhaPathSvg(path, saidaSvgQry);
+    }
+
+    removeList(pathSoc, desalocarPath);
 }

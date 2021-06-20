@@ -49,7 +49,7 @@ void cv (QuadTree arvoresObjetos[], double n, char cep[], char face[], double nu
     }
 }
 
-void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo)
+void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, FILE* saida, Lista listasQry[], Grafo grafo, int idPInt, Lista pathSoc)
 {
     double x, y, x1, y1, x2, y2;
     Ponto inicio = createPonto(0, 0);
@@ -149,9 +149,22 @@ void soc(QuadTree arvoresObjetos[], int k, char cep[], char face[], double num, 
                     Linha l = criaLinha(x1, y1, x2, y2, "red");
                     insert(listasQry[2], l);
                 }
+
+                Path pathMaisCurto = criaPath(grafo, inicio, fim, maisCurto, "gray", idPInt);
+                idPInt = idPInt + 1;
+
+                insert(pathSoc, pathMaisCurto);
+
+                removeList(maisCurto, free);
             }
+
+
         }
     }
+
+    free(inicio);
+    free(fim);
+    removeList(l, NULL);
 }
 
 void ci(FILE* saida, QuadTree arvoresObjetos[], double x, double y, double r, Lista listasQry[], int idEnv, Envoltoria env)
