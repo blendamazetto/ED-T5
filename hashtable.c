@@ -208,7 +208,39 @@ void setHashTable(char key[], Hash hashtable, int tamanho, Info info)
 }
 
 
+void buscarMenorValor(Hash hashtable, int tamanho, char idMenorValor[], Hash visitado)
+{
+    double menorValor = 999999;
+    double *valor;
 
+    HashStruct* h = hashtable;
+    for(int i=0; i < tamanho; i++)
+    {
+        *valor = *(double*)h[i].info;
+        if(searchHashTable(h[i].key, visitado, tamanho) == NULL)
+        {
+            if(*valor < menorValor)
+            {
+                strcpy(idMenorValor, h[i].key);
+                menorValor = *valor;
+            }
+        }
+    }
+}
+
+int tamanhoDaHashtable(Hash hashtable, int tam)
+{
+    int j = tam;
+    HashStruct* h = hashtable;
+    for(int i=0; i < tam; i++)
+    {
+        if(strcmp(h[i].key, "NULL") == 0)
+        {
+            j--;
+        }
+    }
+    return j;
+}
 
 
 

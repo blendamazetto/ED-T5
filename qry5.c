@@ -147,7 +147,7 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     
-    for(No node = getLast(maisCurto); getNext(node) != NULL; node = getPrevious(node))
+    for(No node = getLast(maisCurto); getPrevious(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getPrevious(node));
@@ -173,7 +173,7 @@ void pQuestionMark(int r1, int r2, char cmc[], char cmr[], Grafo grafo, Ponto re
     fprintf(saida, "FINAL PERCURSO MAIS CURTO\n");
     fprintf(saida, "PERCURSO MAIS RAPIDO:\n");
 
-    for(No node = getLast(maisRapido); getNext(node) != NULL; node = getPrevious(node))
+    for(No node = getLast(maisRapido); getPrevious(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getPrevious(node));
@@ -244,7 +244,7 @@ void pb(int r1, int r2, char cmc[], Grafo grafo, Ponto registradores[], FILE *sa
 
     fprintf(saida, "PERCURSO MAIS CURTO:\n");
     
-    for(No node = getLast(maisCurto); getNext(node) != NULL; node = getPrevious(node))
+    for(No node = getLast(maisCurto); getPrevious(node) != NULL; node = getPrevious(node))
     {
         Vertice vertice1 = getInfo(node);
         Vertice vertice2 = getInfo(getPrevious(node));

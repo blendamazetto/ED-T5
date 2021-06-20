@@ -91,4 +91,9 @@ void deleteHashTable(Hash hashtable, int tamanho,  int a);
 */
 void setHashTable(char key[], Hash hashtable, int tamanho, Info info);
 
+void buscarMenorValor(Hash hashtable, int tamanho, char idMenorValor[], Hash visitado);
+
+int tamanhoDaHashtable(Hash hashtable, int tam);
+
+
 #endif
